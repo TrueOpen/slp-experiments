@@ -1,0 +1,104 @@
+========================================================
+  SLP 大模型分步验证
+  模型: TinyLlama/TinyLlama-1.1B-Chat-v1.0
+  prompt: "The sky is"  MAXCTX=8  SAMPLES=[0, 2, 5, 10, 1000]  FULL=上游全量基线
+========================================================
+
+[stage] 1/5 加载+量化 …
+2026-09-14T17:39:52.430499Z  WARN zkml::layers::transformer::positional::rope: Minimum values are too distant for cosine/sine matrices in positional rope with id N5
+2026-09-14T17:39:52.570587Z  WARN zkml::layers::transformer::positional::rope: Minimum values are too distant for cosine/sine matrices in positional rope with id N6
+2026-09-14T17:39:52.774140Z  WARN zkml::layers::transformer::positional::rope: Minimum values are too distant for cosine/sine matrices in positional rope with id N20
+2026-09-14T17:39:52.774981Z  WARN zkml::layers::transformer::positional::rope: Minimum values are too distant for cosine/sine matrices in positional rope with id N21
+2026-09-14T17:39:52.779467Z  WARN zkml::layers::transformer::positional::rope: Minimum values are too distant for cosine/sine matrices in positional rope with id N35
+2026-09-14T17:39:52.780267Z  WARN zkml::layers::transformer::positional::rope: Minimum values are too distant for cosine/sine matrices in positional rope with id N36
+2026-09-14T17:39:52.784885Z  WARN zkml::layers::transformer::positional::rope: Minimum values are too distant for cosine/sine matrices in positional rope with id N50
+2026-09-14T17:39:52.785690Z  WARN zkml::layers::transformer::positional::rope: Minimum values are too distant for cosine/sine matrices in positional rope with id N51
+2026-09-14T17:39:52.790348Z  WARN zkml::layers::transformer::positional::rope: Minimum values are too distant for cosine/sine matrices in positional rope with id N65
+2026-09-14T17:39:52.791148Z  WARN zkml::layers::transformer::positional::rope: Minimum values are too distant for cosine/sine matrices in positional rope with id N66
+2026-09-14T17:39:52.795754Z  WARN zkml::layers::transformer::positional::rope: Minimum values are too distant for cosine/sine matrices in positional rope with id N80
+2026-09-14T17:39:52.796592Z  WARN zkml::layers::transformer::positional::rope: Minimum values are too distant for cosine/sine matrices in positional rope with id N81
+2026-09-14T17:39:52.801250Z  WARN zkml::layers::transformer::positional::rope: Minimum values are too distant for cosine/sine matrices in positional rope with id N95
+2026-09-14T17:39:52.802084Z  WARN zkml::layers::transformer::positional::rope: Minimum values are too distant for cosine/sine matrices in positional rope with id N96
+2026-09-14T17:39:52.806615Z  WARN zkml::layers::transformer::positional::rope: Minimum values are too distant for cosine/sine matrices in positional rope with id N110
+2026-09-14T17:39:52.807409Z  WARN zkml::layers::transformer::positional::rope: Minimum values are too distant for cosine/sine matrices in positional rope with id N111
+2026-09-14T17:39:52.812052Z  WARN zkml::layers::transformer::positional::rope: Minimum values are too distant for cosine/sine matrices in positional rope with id N125
+2026-09-14T17:39:52.812852Z  WARN zkml::layers::transformer::positional::rope: Minimum values are too distant for cosine/sine matrices in positional rope with id N126
+2026-09-14T17:39:52.817507Z  WARN zkml::layers::transformer::positional::rope: Minimum values are too distant for cosine/sine matrices in positional rope with id N140
+2026-09-14T17:39:52.818313Z  WARN zkml::layers::transformer::positional::rope: Minimum values are too distant for cosine/sine matrices in positional rope with id N141
+2026-09-14T17:39:52.829716Z  WARN zkml::layers::transformer::positional::rope: Minimum values are too distant for cosine/sine matrices in positional rope with id N155
+2026-09-14T17:39:52.830652Z  WARN zkml::layers::transformer::positional::rope: Minimum values are too distant for cosine/sine matrices in positional rope with id N156
+2026-09-14T17:39:52.835426Z  WARN zkml::layers::transformer::positional::rope: Minimum values are too distant for cosine/sine matrices in positional rope with id N170
+2026-09-14T17:39:52.836402Z  WARN zkml::layers::transformer::positional::rope: Minimum values are too distant for cosine/sine matrices in positional rope with id N171
+2026-09-14T17:39:52.841343Z  WARN zkml::layers::transformer::positional::rope: Minimum values are too distant for cosine/sine matrices in positional rope with id N185
+2026-09-14T17:39:52.842187Z  WARN zkml::layers::transformer::positional::rope: Minimum values are too distant for cosine/sine matrices in positional rope with id N186
+2026-09-14T17:39:52.846888Z  WARN zkml::layers::transformer::positional::rope: Minimum values are too distant for cosine/sine matrices in positional rope with id N200
+2026-09-14T17:39:52.847748Z  WARN zkml::layers::transformer::positional::rope: Minimum values are too distant for cosine/sine matrices in positional rope with id N201
+2026-09-14T17:39:52.852585Z  WARN zkml::layers::transformer::positional::rope: Minimum values are too distant for cosine/sine matrices in positional rope with id N215
+2026-09-14T17:39:52.853434Z  WARN zkml::layers::transformer::positional::rope: Minimum values are too distant for cosine/sine matrices in positional rope with id N216
+2026-09-14T17:39:52.858730Z  WARN zkml::layers::transformer::positional::rope: Minimum values are too distant for cosine/sine matrices in positional rope with id N230
+2026-09-14T17:39:52.859613Z  WARN zkml::layers::transformer::positional::rope: Minimum values are too distant for cosine/sine matrices in positional rope with id N231
+2026-09-14T17:39:52.864480Z  WARN zkml::layers::transformer::positional::rope: Minimum values are too distant for cosine/sine matrices in positional rope with id N245
+2026-09-14T17:39:52.865349Z  WARN zkml::layers::transformer::positional::rope: Minimum values are too distant for cosine/sine matrices in positional rope with id N246
+2026-09-14T17:39:52.870303Z  WARN zkml::layers::transformer::positional::rope: Minimum values are too distant for cosine/sine matrices in positional rope with id N260
+2026-09-14T17:39:52.871159Z  WARN zkml::layers::transformer::positional::rope: Minimum values are too distant for cosine/sine matrices in positional rope with id N261
+2026-09-14T17:39:52.876027Z  WARN zkml::layers::transformer::positional::rope: Minimum values are too distant for cosine/sine matrices in positional rope with id N275
+2026-09-14T17:39:52.876899Z  WARN zkml::layers::transformer::positional::rope: Minimum values are too distant for cosine/sine matrices in positional rope with id N276
+2026-09-14T17:39:52.881823Z  WARN zkml::layers::transformer::positional::rope: Minimum values are too distant for cosine/sine matrices in positional rope with id N290
+2026-09-14T17:39:52.882707Z  WARN zkml::layers::transformer::positional::rope: Minimum values are too distant for cosine/sine matrices in positional rope with id N291
+2026-09-14T17:39:52.887651Z  WARN zkml::layers::transformer::positional::rope: Minimum values are too distant for cosine/sine matrices in positional rope with id N305
+2026-09-14T17:39:52.888496Z  WARN zkml::layers::transformer::positional::rope: Minimum values are too distant for cosine/sine matrices in positional rope with id N306
+2026-09-14T17:39:52.893909Z  WARN zkml::layers::transformer::positional::rope: Minimum values are too distant for cosine/sine matrices in positional rope with id N320
+2026-09-14T17:39:52.894789Z  WARN zkml::layers::transformer::positional::rope: Minimum values are too distant for cosine/sine matrices in positional rope with id N321
+[stage] 1/5 加载+量化 ✓  用时 20.6s
+
+[stage] 2/5 生成上下文(权重承诺) …
+[stage] 2/5 生成上下文(权重承诺) ✓  用时 353.2s
+
+[stage] 3/5 推理出 trace …
+[stage] 3/5 推理出 trace ✓  用时 88.2s
+
+[stage] 4/5 sampled 证明(封存全部层+抽样证, SAMPLES=0) …
+2026-09-14T17:47:31.727661Z  WARN dp_crypto::sumcheck::util: thread size 30 is not power of 2, using 16 threads instead.
+[stage] 4/5 sampled 证明(封存全部层+抽样证, SAMPLES=0) ✓  用时 62.5s
+    → 封存 47 层, 证明其中 2 层
+    → 证明大小 75.50 KiB
+
+[stage] 5/5 sampled 验证(SAMPLES=0) …
+[stage] 5/5 sampled 验证(SAMPLES=0) ✓  用时 0.9s
+
+[stage] 4/5 sampled 证明(封存全部层+抽样证, SAMPLES=2) …
+[stage] 4/5 sampled 证明(封存全部层+抽样证, SAMPLES=2) ✓  用时 159.1s
+    → 封存 47 层, 证明其中 4 层
+    → 证明大小 1.25 MiB
+
+[stage] 5/5 sampled 验证(SAMPLES=2) …
+[stage] 5/5 sampled 验证(SAMPLES=2) ✓  用时 1.5s
+
+[stage] 4/5 sampled 证明(封存全部层+抽样证, SAMPLES=5) …
+[stage] 4/5 sampled 证明(封存全部层+抽样证, SAMPLES=5) ✓  用时 276.8s
+    → 封存 47 层, 证明其中 7 层
+    → 证明大小 1.77 MiB
+
+[stage] 5/5 sampled 验证(SAMPLES=5) …
+[stage] 5/5 sampled 验证(SAMPLES=5) ✓  用时 1.7s
+
+[stage] 4/5 sampled 证明(封存全部层+抽样证, SAMPLES=10) …
+[stage] 4/5 sampled 证明(封存全部层+抽样证, SAMPLES=10) ✓  用时 324.7s
+    → 封存 47 层, 证明其中 12 层
+    → 证明大小 5.08 MiB
+
+[stage] 5/5 sampled 验证(SAMPLES=10) …
+[stage] 5/5 sampled 验证(SAMPLES=10) ✓  用时 3.7s
+
+[stage] 4/5 sampled 证明(封存全部层+抽样证, SAMPLES=1000) …
+[stage] 4/5 sampled 证明(封存全部层+抽样证, SAMPLES=1000) ✓  用时 1256.1s
+    → 封存 47 层, 证明其中 47 层
+    → 证明大小 25.98 MiB
+
+[stage] 5/5 sampled 验证(SAMPLES=1000) …
+[stage] 5/5 sampled 验证(SAMPLES=1000) ✓  用时 17.7s
+
+[stage] 基线 上游全量证明(单 chunk) …
+
+thread 'main' (46603) has overflowed its stack
+fatal runtime error: stack overflow, aborting

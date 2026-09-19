@@ -1,0 +1,28 @@
+==============================================================
+  量化忠实度评测  模型 TinyLlama/TinyLlama-1.1B-Chat-v1.0  MAXCTX=24  每题生成 8 token  评测 prompt 16 条
+  校准配置: ["random", "corpus-minmax"]   语料: /root/calib_wikitext2.txt × 32 条×24 token
+==============================================================
+
+[参考] 原始 f32 模型贪心解码 58.3s
+    "The capital of Germany is" → "Berlin.\n\n2. The capital"
+    "Photosynthesis is the process by which" → "plants and other organisms convert light energy"
+    "In 1969, humans first landed on" → "the moon. The Apollo 1"
+    "The largest ocean on Earth is" → "the Pacific Ocean, which covers approximately"
+
+[random [seeded(seed=42) / minmax]] 量化 12.0s → 首 token 一致 19%，逐 token 一致 4%，整句一致 0%
+    "The capital of Germany is" → "a.  The The is a."
+    "Photosynthesis is the process by which" → ".\nThe Photos is the process"
+    "In 1969, humans first landed on" → "the and.\n\n In"
+    "The largest ocean on Earth is" → "the.\n The is theSure"
+
+[corpus-minmax [tokens(32 sequences) / minmax]] 量化 15.9s → 首 token 一致 6%，逐 token 一致 2%，整句一致 0%
+    "The capital of Germany is" → "a great, The, and"
+    "Photosynthesis is the process by which" → "the  the. Ph. and the"
+    "In 1969, humans first landed on" → "the game of the, J."
+    "The largest ocean on Earth is" → "a 1,   The"
+
+==============================================================
+  汇总（相对原始 f32 模型，16 条未参与校准的 prompt，每条生成 8 token）
+  配置 | 首token一致 | 逐token一致 | 整句一致 | 量化耗时
+  random [seeded(seed=42) / minmax] |    19% |     4% |     0% | 12s
+  corpus-minmax [tokens(32 sequences) / minmax] |     6% |     2% |     0% | 16s

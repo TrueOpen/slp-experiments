@@ -1,0 +1,66 @@
+==============================================================
+  量化忠实度评测  模型 TinyLlama/TinyLlama-1.1B-Chat-v1.0  MAXCTX=24  每题生成 8 token  评测 prompt 16 条
+  校准配置: ["random"]   语料: /root/calib_wikitext2.txt × 32 条×24 token
+==============================================================
+
+[参考] 原始 f32 模型贪心解码 58.4s
+    "The capital of Germany is" → "Berlin.\n\n2. The capital"
+    "Photosynthesis is the process by which" → "plants and other organisms convert light energy"
+    "In 1969, humans first landed on" → "the moon. The Apollo 1"
+    "The largest ocean on Earth is" → "the Pacific Ocean, which covers approximately"
+
+[random [seeded(seed=42) / minmax]] 量化 11.6s → 首 token 一致 88%，逐 token 一致 49%，整句一致 25%，教师强制逐步一致 89%
+    "The capital of Germany is" → "Berlin. The capital of France is Paris"
+    "Photosynthesis is the process by which" → "plants convert light energy into chemical energy in"
+    "In 1969, humans first landed on" → "the moon. In 197"
+    "The largest ocean on Earth is" → "the Pacific Ocean, which covers approximately"
+
+==============================================================
+  汇总（相对原始 f32 模型，16 条未参与校准的 prompt，每条生成 8 token）
+  配置 | 首token一致 | 逐token一致 | 整句一致 | 教师强制逐步一致 | 量化耗时
+  random [seeded(seed=42) / minmax] |    88% |    49% |    25% |    89% | 12s
+
+==============================================================
+  量化忠实度评测  模型 TinyLlama/TinyLlama-1.1B-Chat-v1.0  MAXCTX=24  每题生成 8 token  评测 prompt 16 条
+  校准配置: ["random"]   语料: /root/calib_wikitext2.txt × 32 条×24 token
+==============================================================
+
+[参考] 原始 f32 模型贪心解码 59.2s
+    "The capital of Germany is" → "Berlin.\n\n2. The capital"
+    "Photosynthesis is the process by which" → "plants and other organisms convert light energy"
+    "In 1969, humans first landed on" → "the moon. The Apollo 1"
+    "The largest ocean on Earth is" → "the Pacific Ocean, which covers approximately"
+    [random] 校准 digest 9b599cbf887c…  量化权重指纹 452a1bec1230…  激活缩放指纹 148d2819c3a0…
+
+[random [seeded(seed=42) / minmax]] 量化 12.7s → 首 token 一致 88%，逐 token 一致 53%，整句一致 31%，教师强制逐步一致 89%
+    "The capital of Germany is" → "Berlin. The capital of France is Paris"
+    "Photosynthesis is the process by which" → "plants convert light energy into chemical energy in"
+    "In 1969, humans first landed on" → "the moon. The Apollo 1"
+    "The largest ocean on Earth is" → "the Pacific Ocean, which covers approximately"
+
+==============================================================
+  汇总（相对原始 f32 模型，16 条未参与校准的 prompt，每条生成 8 token）
+  配置 | 首token一致 | 逐token一致 | 整句一致 | 教师强制逐步一致 | 量化耗时
+  random [seeded(seed=42) / minmax] |    88% |    53% |    31% |    89% | 13s
+==============================================================
+  量化忠实度评测  模型 TinyLlama/TinyLlama-1.1B-Chat-v1.0  MAXCTX=24  每题生成 8 token  评测 prompt 16 条
+  校准配置: ["random"]   语料: /root/calib_wikitext2.txt × 32 条×24 token
+==============================================================
+
+[参考] 原始 f32 模型贪心解码 58.2s
+    "The capital of Germany is" → "Berlin.\n\n2. The capital"
+    "Photosynthesis is the process by which" → "plants and other organisms convert light energy"
+    "In 1969, humans first landed on" → "the moon. The Apollo 1"
+    "The largest ocean on Earth is" → "the Pacific Ocean, which covers approximately"
+    [random] 校准 digest 9b599cbf887c…  量化权重指纹 452a1bec1230…  激活缩放指纹 148d2819c3a0…
+
+[random [seeded(seed=42) / minmax]] 量化 12.7s → 首 token 一致 88%，逐 token 一致 53%，整句一致 31%，教师强制逐步一致 89%
+    "The capital of Germany is" → "Berlin. The capital of France is Paris"
+    "Photosynthesis is the process by which" → "plants convert light energy into chemical energy in"
+    "In 1969, humans first landed on" → "the moon. The Apollo 1"
+    "The largest ocean on Earth is" → "the Pacific Ocean, which covers approximately"
+
+==============================================================
+  汇总（相对原始 f32 模型，16 条未参与校准的 prompt，每条生成 8 token）
+  配置 | 首token一致 | 逐token一致 | 整句一致 | 教师强制逐步一致 | 量化耗时
+  random [seeded(seed=42) / minmax] |    88% |    53% |    31% |    89% | 13s

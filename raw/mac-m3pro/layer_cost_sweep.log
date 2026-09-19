@@ -1,0 +1,20 @@
+=== D=256 ===
+LAYER_COST_CSV,d=256,seq=128,ffn_mult=4,params=525568,build_s=0.13,run_s=0.16,setup_s=0.52,prove_s=1.61,verify_s=0.01,proof_kib=121.0
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 254 filtered out; finished in 2.43s
+           551960576  maximum resident set size
+=== D=512 ===
+LAYER_COST_CSV,d=512,seq=128,ffn_mult=4,params=2099712,build_s=0.25,run_s=0.64,setup_s=1.98,prove_s=4.45,verify_s=0.01,proof_kib=135.1
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 254 filtered out; finished in 7.33s
+          2312060928  maximum resident set size
+=== D=1024 ===
+LAYER_COST_CSV,d=1024,seq=128,ffn_mult=4,params=8393728,build_s=0.62,run_s=5.32,setup_s=2.40,prove_s=5.97,verify_s=0.02,proof_kib=144.8
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 254 filtered out; finished in 14.34s
+          2799730688  maximum resident set size
+=== D=2048 ===
+LAYER_COST_CSV,d=2048,seq=128,ffn_mult=4,params=33564672,build_s=1.92,run_s=33.46,setup_s=4.10,prove_s=9.89,verify_s=0.02,proof_kib=155.5
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 254 filtered out; finished in 49.41s
+          4524130304  maximum resident set size
+=== D=4096 ===
+LAYER_COST_CSV,d=4096,seq=128,ffn_mult=4,params=134238208,build_s=6.96,run_s=123.60,setup_s=11.58,prove_s=25.08,verify_s=0.03,proof_kib=169.5
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 254 filtered out; finished in 167.33s
+          8420737024  maximum resident set size

@@ -1,0 +1,48 @@
+==============================================================
+  量化忠实度评测  模型 TinyLlama/TinyLlama-1.1B-Chat-v1.0  MAXCTX=24  每题生成 8 token  评测 prompt 16 条
+  校准配置: ["random"]   语料: /root/calib_wikitext2.txt × 32 条×24 token
+==============================================================
+2026-09-13T10:17:33.216684Z  INFO zkml::model::llm: LLM Driver: Loading model llama2 from SafeTensors: model_cache/TinyLlama/TinyLlama-1.1B-Chat-v1.0/model.safetensors
+2026-09-13T10:17:33.869339Z  INFO cubecl_cuda::compute::server: Peer data transfer not available for device 0
+2026-09-13T10:17:45.807911Z  INFO zkml_model_run{inputs=1 nodes=334}:zkml_layer_run{node_id=N2 op="rms-norm"}: cubecl_runtime::tune::tune_cache: Load autotune cache ...
+2026-09-13T10:17:45.808090Z  INFO zkml_model_run{inputs=1 nodes=334}:zkml_layer_run{node_id=N2 op="rms-norm"}: cubecl_runtime::tune::tune_cache: Loaded 12 autotune cached entries
+2026-09-13T10:17:45.955441Z  INFO zkml_model_run{inputs=1 nodes=334}:zkml_layer_run{node_id=N3 op="einsum"}: cubecl_runtime::tune::tune_cache: Load autotune cache ...
+2026-09-13T10:17:45.955651Z  INFO zkml_model_run{inputs=1 nodes=334}:zkml_layer_run{node_id=N3 op="einsum"}: cubecl_runtime::tune::tune_cache: Loaded 57 autotune cached entries
+2026-09-13T10:17:49.128689Z  INFO zkml_model_run{inputs=1 nodes=334}:zkml_layer_run{node_id=N32 op="rms-norm"}: cubecl_runtime::tune::tune_cache: Load autotune cache ...
+2026-09-13T10:17:49.128867Z  INFO zkml_model_run{inputs=1 nodes=334}:zkml_layer_run{node_id=N32 op="rms-norm"}: cubecl_runtime::tune::tune_cache: Loaded 17 autotune cached entries
+
+[参考] 原始 f32 模型贪心解码 60.1s
+    "The capital of Germany is" → "Berlin.\n\n2. The capital"
+    "Photosynthesis is the process by which" → "plants and other organisms convert light energy"
+    "In 1969, humans first landed on" → "the moon. The Apollo 1"
+    "The largest ocean on Earth is" → "the Pacific Ocean, which covers approximately"
+2026-09-13T10:18:33.358696Z  INFO zkml::model::llm: LLM Driver: Loading model llama2 from SafeTensors: model_cache/TinyLlama/TinyLlama-1.1B-Chat-v1.0/model.safetensors
+2026-09-13T10:18:43.717060Z  INFO zkml::model::llm: quantization calibration: seeded(seed=42) / minmax (1 sequence(s) x 24 tokens), digest 9b599cbf887c7bf245ba977ddc1a32612999f29def342710d6078afecc830809
+2026-09-13T10:18:45.562222Z  INFO zkml::quantization::strategy: Quantized model with 579 layers, output node ids: [Node(335)]
+2026-09-13T10:19:09.762299Z  INFO slp_fidelity: [random] prompt 0 (6 tok) 贪心 8 步 24.1s
+2026-09-13T10:19:26.317115Z  INFO slp_fidelity: [random] prompt 1 (10 tok) 贪心 8 步 16.6s
+2026-09-13T10:19:46.549542Z  INFO slp_fidelity: [random] prompt 2 (13 tok) 贪心 8 步 20.2s
+2026-09-13T10:20:01.164838Z  INFO slp_fidelity: [random] prompt 3 (7 tok) 贪心 8 步 14.6s
+2026-09-13T10:20:15.466180Z  INFO slp_fidelity: [random] prompt 4 (9 tok) 贪心 8 步 14.3s
+2026-09-13T10:20:29.806285Z  INFO slp_fidelity: [random] prompt 5 (7 tok) 贪心 8 步 14.3s
+2026-09-13T10:20:43.959641Z  INFO slp_fidelity: [random] prompt 6 (5 tok) 贪心 8 步 14.2s
+2026-09-13T10:20:58.105392Z  INFO slp_fidelity: [random] prompt 7 (7 tok) 贪心 8 步 14.1s
+2026-09-13T10:21:12.113749Z  INFO slp_fidelity: [random] prompt 8 (7 tok) 贪心 8 步 14.0s
+2026-09-13T10:21:26.395969Z  INFO slp_fidelity: [random] prompt 9 (9 tok) 贪心 8 步 14.3s
+2026-09-13T10:21:40.745658Z  INFO slp_fidelity: [random] prompt 10 (8 tok) 贪心 8 步 14.3s
+2026-09-13T10:21:54.979344Z  INFO slp_fidelity: [random] prompt 11 (6 tok) 贪心 8 步 14.2s
+2026-09-13T10:22:09.292546Z  INFO slp_fidelity: [random] prompt 12 (7 tok) 贪心 8 步 14.3s
+2026-09-13T10:22:23.470413Z  INFO slp_fidelity: [random] prompt 13 (8 tok) 贪心 8 步 14.2s
+2026-09-13T10:22:37.706131Z  INFO slp_fidelity: [random] prompt 14 (6 tok) 贪心 8 步 14.2s
+2026-09-13T10:22:51.818902Z  INFO slp_fidelity: [random] prompt 15 (5 tok) 贪心 8 步 14.1s
+
+[random [seeded(seed=42) / minmax]] 量化 12.3s → 首 token 一致 88%，逐 token 一致 53%，整句一致 31%
+    "The capital of Germany is" → "Berlin. The capital of France is Paris"
+    "Photosynthesis is the process by which" → "plants convert light energy into chemical energy in"
+    "In 1969, humans first landed on" → "the moon. The Apollo 1"
+    "The largest ocean on Earth is" → "the Pacific Ocean, which covers approximately"
+
+==============================================================
+  汇总（相对原始 f32 模型，16 条未参与校准的 prompt，每条生成 8 token）
+  配置 | 首token一致 | 逐token一致 | 整句一致 | 量化耗时
+  random [seeded(seed=42) / minmax] |    88% |    53% |    31% | 12s

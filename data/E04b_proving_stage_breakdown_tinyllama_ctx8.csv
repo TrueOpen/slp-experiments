@@ -1,0 +1,7 @@
+stage_label,total_s,share_pct
+Claims generation,29.37,40.2
+Witness context,14.96,20.5
+Generate proof,13.51,18.5
+Witness poly commitments generation,6.47,8.8
+Lookup Table claims generation,4.6,6.3
+Challenge storage,4.19,5.7

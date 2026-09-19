@@ -1,0 +1,100 @@
+===== prof_llm =====
+PROFILE input 25 tokens, ctx 32, generic=false
+PROFILE quantized in 19.5s
+PROFILE forward 0: 10.19s
+PROFILE forward 1: 6.53s
+PROFILE forward 2: 6.87s
+PROFILE forwards [10.190476285999999, 6.531442969, 6.869760423]
+op                calls    busy_s   share
+requant             729     14.95   66.5%
+einsum              399      3.20   14.2%
+softmax              66      1.89    8.4%
+positional          132      0.99    4.4%
+rms-norm            135      0.42    1.8%
+attention-mask       66      0.34    1.5%
+activation           66      0.23    1.0%
+add                 132      0.21    0.9%
+logits                3      0.21    0.9%
+embeddings            3      0.04    0.2%
+total busy 22.49s over all quantized forwards
+
+===== prof_generic =====
+PROFILE input 25 tokens, ctx 32, generic=true
+PROFILE quantized in 19.2s
+PROFILE forward 0: 6.42s
+PROFILE forward 1: 1.52s
+PROFILE forward 2: 1.05s
+PROFILE forwards [6.417397298, 1.521805875, 1.047577681]
+op                calls    busy_s   share
+einsum              399      3.20   40.8%
+softmax              66      1.67   21.2%
+requant             729      0.95   12.1%
+positional          132      0.55    7.1%
+rms-norm            135      0.55    7.0%
+attention-mask       66      0.28    3.6%
+logits                3      0.26    3.3%
+activation           66      0.21    2.6%
+add                 132      0.14    1.8%
+embeddings            3      0.05    0.6%
+total busy 7.86s over all quantized forwards
+
+===== prof_llm_fixed =====
+PROFILE input 25 tokens, ctx 32, generic=false
+PROFILE quantized in 18.8s
+PROFILE forward 0: 6.41s
+PROFILE forward 1: 1.40s
+PROFILE forward 2: 1.02s
+PROFILE forwards [6.409639459, 1.402634028, 1.016611656]
+op                calls    busy_s   share
+einsum              399      3.23   41.3%
+softmax              66      1.57   20.0%
+requant             729      0.86   11.0%
+positional          132      0.72    9.2%
+rms-norm            135      0.37    4.8%
+attention-mask       66      0.33    4.2%
+activation           66      0.28    3.6%
+logits                3      0.21    2.7%
+add                 132      0.20    2.6%
+embeddings            3      0.05    0.7%
+total busy 7.82s over all quantized forwards
+
+===== prof_generic_fixed =====
+PROFILE input 25 tokens, ctx 32, generic=true
+PROFILE quantized in 18.7s
+PROFILE forward 0: 6.31s
+PROFILE forward 1: 1.03s
+PROFILE forward 2: 0.96s
+PROFILE forwards [6.309493136, 1.025780567, 0.960911728]
+op                calls    busy_s   share
+einsum              399      2.96   41.7%
+softmax              66      1.19   16.7%
+positional          132      0.92   12.9%
+requant             729      0.76   10.8%
+rms-norm            135      0.30    4.2%
+attention-mask       66      0.27    3.8%
+activation           66      0.22    3.2%
+add                 132      0.22    3.1%
+logits                3      0.21    3.0%
+embeddings            3      0.04    0.6%
+total busy 7.10s over all quantized forwards
+
+===== prof_full514 =====
+PROFILE input 512 tokens, ctx 514, generic=false
+PROFILE quantized in 24.3s
+PROFILE forward 0: 46.71s
+PROFILE forward 1: 25.63s
+PROFILE forward 2: 25.63s
+PROFILE forwards [46.711946664, 25.634910389, 25.62724931]
+op                calls    busy_s   share
+einsum              399     29.08   54.1%
+softmax              66      6.12   11.4%
+requant             729      6.12   11.4%
+attention-mask       66      4.80    8.9%
+activation           66      2.64    4.9%
+add                 132      1.71    3.2%
+rms-norm            135      1.56    2.9%
+positional          132      1.09    2.0%
+logits                3      0.57    1.1%
+embeddings            3      0.06    0.1%
+total busy 53.75s over all quantized forwards
+

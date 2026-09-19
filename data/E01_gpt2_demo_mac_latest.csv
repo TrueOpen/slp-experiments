@@ -1,0 +1,13 @@
+role,item,value
+worker,prompt,"""The sky is"""
+worker,inference,6.71 s
+worker,seal + prove,28.0 s
+worker,receipt,"model=gpt2.Q8_0.gguf, quantized=true, proven 5/27 chunks"
+worker,proof size,916.10 KiB
+verifier,tier-2 sampled GKR proof,ACCEPT (0.16 s)
+verifier,tampered output,REJECT (Verification failed for node with ID N161: Logit::Argmax)
+verifier,"tier-1 Freivalds (exact, d=768)",ACCEPT
+verifier,tier-1 tampered matmul,REJECT
+verifier,"tier-1 Freivalds (fp16, honest)",ACCEPT (within tol 0.1)
+verifier,tier-1 gross tamper,REJECT
+verifier,tier-1 in-tolerance drift,ADMITTED (fp16 attack surface: audit-grade only)

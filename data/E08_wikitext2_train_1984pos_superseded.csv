@@ -1,0 +1,5 @@
+model,ppl,top1_hit_pct,argmax_agree_f32_pct,top5_overlap_pct,kl_f32_q_nats,quantize_s
+f32 原始模型,66.58,30.4,100,100,0,-
+random [seeded(seed=42) / minmax],80.57,28.8,76.4,75.9,0.3229,38s
+corpus [tokens(32 sequences) / minmax],80.39,28.7,77.3,76.9,0.3224,19s
+generic [seeded(seed=42) / minmax / generic-observer],2308.17,5.1,13.7,19.2,4.0277,11s

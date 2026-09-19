@@ -1,0 +1,34 @@
+    Finished `release` profile [optimized + debuginfo] target(s) in 0.98s
+     Running `/Users/xinchuanxueyuan/Documents/zkml/deep-prove/target/release/examples/slp-demo`
+
+========================================================================
+  SLP DEMO 1/2  --  QUANTIZED (canonical) model: full ZK, tiers 0-3
+========================================================================
+[worker] prompt        : "The sky is"
+[worker] inference     : 6.71 s
+[2m2026-09-17T04:52:41.493019Z[0m [33m WARN[0m [2mdp_crypto::sumcheck::util[0m[2m:[0m thread size 11 is not power of 2, using 8 threads instead.
+[worker] seal + prove  : 28.0 s
+[worker] receipt       : model=gpt2.Q8_0.gguf, quantized=true, proven 5/27 chunks
+[worker] proof size    : 916.10 KiB
+[verifier] tier-2 sampled GKR proof .......... ACCEPT ✓  (0.16 s)
+[verifier] tampered output ................... REJECT ✓  (Verification failed for node with ID N161: Logit::Argmax)
+[verifier] tier-1 Freivalds (exact, d=768) ... ACCEPT ✓
+[verifier] tier-1 tampered matmul ............ REJECT ✓
+
+========================================================================
+  SLP DEMO 2/2  --  fp16 (non-quantized) model: ZK unavailable, tier-1 only
+========================================================================
+[worker] fp16 model: GKR tier-2 is UNAVAILABLE (circuit needs field integers).
+[worker] fallback  : tier-1 Freivalds with a calibrated tolerance band.
+
+[verifier] tier-1 Freivalds (fp16, honest) ... ACCEPT ✓ (within tol 0.1)
+[verifier] tier-1 gross tamper ............... REJECT ✓
+[verifier] tier-1 in-tolerance drift ........ ADMITTED ⚠  (fp16 attack surface: audit-grade only)
+
+========================================================================
+  DEMO COMPLETE
+========================================================================
+Quantized model  -> sealed + sampled GKR proof + Freivalds, cheat caught.
+fp16 model       -> tier-1 Freivalds tolerance check, cheat caught, in-tolerance drift admitted (the fp16 attack surface).
+
+DEMO_EXIT=0

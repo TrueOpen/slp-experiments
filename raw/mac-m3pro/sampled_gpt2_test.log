@@ -1,0 +1,560 @@
+    Finished `test` profile [optimized + debuginfo] target(s) in 0.30s
+     Running unittests src/lib.rs (target/debug/deps/zkml-23c29722f50cc2e8)
+
+running 1 test
+2026-08-28T07:07:34.224998Z  INFO zkml::model::llm: LLM Driver: Loading model gpt2 from GGUF: model_cache/gpt2.Q8_0.gguf
+2026-08-28T07:07:34.502874Z  INFO zkml::quantization::strategy: Using the 1 provided representative inputs to quantize model
+2026-08-28T07:07:34.502888Z DEBUG zkml::quantization::strategy: Running float inference with the 1-th input
+2026-08-28T07:07:34.906403Z DEBUG zkml::quantization::strategy: Quantising node EMBD, with node ID N1
+2026-08-28T07:07:35.229864Z DEBUG zkml::quantization::strategy: Quantising node POSI, with node ID N2
+2026-08-28T07:07:35.229985Z DEBUG zkml::quantization::strategy: Quantising node LNRM, with node ID N3
+2026-08-28T07:07:35.230143Z DEBUG zkml::quantization::strategy: Quantising node EINS, with node ID N4
+2026-08-28T07:07:35.240647Z DEBUG zkml::quantization::strategy: Quantising node EINS, with node ID N5
+2026-08-28T07:07:35.240660Z DEBUG zkml::quantization::strategy: Quantising node MASK, with node ID N6
+2026-08-28T07:07:35.240665Z DEBUG zkml::quantization::strategy: Quantising node SFTM, with node ID N7
+2026-08-28T07:07:35.240672Z DEBUG zkml::quantization::strategy: Quantising node EINS, with node ID N8
+2026-08-28T07:07:35.240681Z DEBUG zkml::quantization::strategy: Quantising node EINS, with node ID N9
+2026-08-28T07:07:35.244416Z DEBUG zkml::quantization::strategy: Quantising node _ADD, with node ID N10
+2026-08-28T07:07:35.244424Z DEBUG zkml::quantization::strategy: Quantising node LNRM, with node ID N11
+2026-08-28T07:07:35.244530Z DEBUG zkml::quantization::strategy: Quantising node EINS, with node ID N12
+2026-08-28T07:07:35.259169Z DEBUG zkml::quantization::strategy: Quantising node ACTI, with node ID N13
+2026-08-28T07:07:35.259191Z DEBUG zkml::quantization::strategy: Quantising node EINS, with node ID N14
+2026-08-28T07:07:35.275090Z DEBUG zkml::quantization::strategy: Quantising node _ADD, with node ID N15
+2026-08-28T07:07:35.275112Z DEBUG zkml::quantization::strategy: Quantising node LNRM, with node ID N16
+2026-08-28T07:07:35.275296Z DEBUG zkml::quantization::strategy: Quantising node EINS, with node ID N17
+2026-08-28T07:07:35.287949Z DEBUG zkml::quantization::strategy: Quantising node EINS, with node ID N18
+2026-08-28T07:07:35.287975Z DEBUG zkml::quantization::strategy: Quantising node MASK, with node ID N19
+2026-08-28T07:07:35.287980Z DEBUG zkml::quantization::strategy: Quantising node SFTM, with node ID N20
+2026-08-28T07:07:35.287985Z DEBUG zkml::quantization::strategy: Quantising node EINS, with node ID N21
+2026-08-28T07:07:35.287993Z DEBUG zkml::quantization::strategy: Quantising node EINS, with node ID N22
+2026-08-28T07:07:35.292277Z DEBUG zkml::quantization::strategy: Quantising node _ADD, with node ID N23
+2026-08-28T07:07:35.292287Z DEBUG zkml::quantization::strategy: Quantising node LNRM, with node ID N24
+2026-08-28T07:07:35.292432Z DEBUG zkml::quantization::strategy: Quantising node EINS, with node ID N25
+2026-08-28T07:07:35.308915Z DEBUG zkml::quantization::strategy: Quantising node ACTI, with node ID N26
+2026-08-28T07:07:35.308938Z DEBUG zkml::quantization::strategy: Quantising node EINS, with node ID N27
+2026-08-28T07:07:35.325490Z DEBUG zkml::quantization::strategy: Quantising node _ADD, with node ID N28
+2026-08-28T07:07:35.325500Z DEBUG zkml::quantization::strategy: Quantising node LNRM, with node ID N29
+2026-08-28T07:07:35.325618Z DEBUG zkml::quantization::strategy: Quantising node EINS, with node ID N30
+2026-08-28T07:07:35.337804Z DEBUG zkml::quantization::strategy: Quantising node EINS, with node ID N31
+2026-08-28T07:07:35.337815Z DEBUG zkml::quantization::strategy: Quantising node MASK, with node ID N32
+2026-08-28T07:07:35.337820Z DEBUG zkml::quantization::strategy: Quantising node SFTM, with node ID N33
+2026-08-28T07:07:35.337828Z DEBUG zkml::quantization::strategy: Quantising node EINS, with node ID N34
+2026-08-28T07:07:35.337837Z DEBUG zkml::quantization::strategy: Quantising node EINS, with node ID N35
+2026-08-28T07:07:35.342016Z DEBUG zkml::quantization::strategy: Quantising node _ADD, with node ID N36
+2026-08-28T07:07:35.342022Z DEBUG zkml::quantization::strategy: Quantising node LNRM, with node ID N37
+2026-08-28T07:07:35.342124Z DEBUG zkml::quantization::strategy: Quantising node EINS, with node ID N38
+2026-08-28T07:07:35.357964Z DEBUG zkml::quantization::strategy: Quantising node ACTI, with node ID N39
+2026-08-28T07:07:35.357978Z DEBUG zkml::quantization::strategy: Quantising node EINS, with node ID N40
+2026-08-28T07:07:35.376158Z DEBUG zkml::quantization::strategy: Quantising node _ADD, with node ID N41
+2026-08-28T07:07:35.376177Z DEBUG zkml::quantization::strategy: Quantising node LNRM, with node ID N42
+2026-08-28T07:07:35.376366Z DEBUG zkml::quantization::strategy: Quantising node EINS, with node ID N43
+2026-08-28T07:07:35.387672Z DEBUG zkml::quantization::strategy: Quantising node EINS, with node ID N44
+2026-08-28T07:07:35.387691Z DEBUG zkml::quantization::strategy: Quantising node MASK, with node ID N45
+2026-08-28T07:07:35.387696Z DEBUG zkml::quantization::strategy: Quantising node SFTM, with node ID N46
+2026-08-28T07:07:35.387701Z DEBUG zkml::quantization::strategy: Quantising node EINS, with node ID N47
+2026-08-28T07:07:35.387711Z DEBUG zkml::quantization::strategy: Quantising node EINS, with node ID N48
+2026-08-28T07:07:35.391329Z DEBUG zkml::quantization::strategy: Quantising node _ADD, with node ID N49
+2026-08-28T07:07:35.391338Z DEBUG zkml::quantization::strategy: Quantising node LNRM, with node ID N50
+2026-08-28T07:07:35.391494Z DEBUG zkml::quantization::strategy: Quantising node EINS, with node ID N51
+2026-08-28T07:07:35.407193Z DEBUG zkml::quantization::strategy: Quantising node ACTI, with node ID N52
+2026-08-28T07:07:35.407208Z DEBUG zkml::quantization::strategy: Quantising node EINS, with node ID N53
+2026-08-28T07:07:35.424486Z DEBUG zkml::quantization::strategy: Quantising node _ADD, with node ID N54
+2026-08-28T07:07:35.424497Z DEBUG zkml::quantization::strategy: Quantising node LNRM, with node ID N55
+2026-08-28T07:07:35.424649Z DEBUG zkml::quantization::strategy: Quantising node EINS, with node ID N56
+2026-08-28T07:07:35.436981Z DEBUG zkml::quantization::strategy: Quantising node EINS, with node ID N57
+2026-08-28T07:07:35.436997Z DEBUG zkml::quantization::strategy: Quantising node MASK, with node ID N58
+2026-08-28T07:07:35.437002Z DEBUG zkml::quantization::strategy: Quantising node SFTM, with node ID N59
+2026-08-28T07:07:35.437007Z DEBUG zkml::quantization::strategy: Quantising node EINS, with node ID N60
+2026-08-28T07:07:35.437014Z DEBUG zkml::quantization::strategy: Quantising node EINS, with node ID N61
+2026-08-28T07:07:35.441154Z DEBUG zkml::quantization::strategy: Quantising node _ADD, with node ID N62
+2026-08-28T07:07:35.441160Z DEBUG zkml::quantization::strategy: Quantising node LNRM, with node ID N63
+2026-08-28T07:07:35.441322Z DEBUG zkml::quantization::strategy: Quantising node EINS, with node ID N64
+2026-08-28T07:07:35.458486Z DEBUG zkml::quantization::strategy: Quantising node ACTI, with node ID N65
+2026-08-28T07:07:35.458499Z DEBUG zkml::quantization::strategy: Quantising node EINS, with node ID N66
+2026-08-28T07:07:35.474421Z DEBUG zkml::quantization::strategy: Quantising node _ADD, with node ID N67
+2026-08-28T07:07:35.474432Z DEBUG zkml::quantization::strategy: Quantising node LNRM, with node ID N68
+2026-08-28T07:07:35.474606Z DEBUG zkml::quantization::strategy: Quantising node EINS, with node ID N69
+2026-08-28T07:07:35.487680Z DEBUG zkml::quantization::strategy: Quantising node EINS, with node ID N70
+2026-08-28T07:07:35.487702Z DEBUG zkml::quantization::strategy: Quantising node MASK, with node ID N71
+2026-08-28T07:07:35.487707Z DEBUG zkml::quantization::strategy: Quantising node SFTM, with node ID N72
+2026-08-28T07:07:35.487711Z DEBUG zkml::quantization::strategy: Quantising node EINS, with node ID N73
+2026-08-28T07:07:35.487718Z DEBUG zkml::quantization::strategy: Quantising node EINS, with node ID N74
+2026-08-28T07:07:35.491261Z DEBUG zkml::quantization::strategy: Quantising node _ADD, with node ID N75
+2026-08-28T07:07:35.491269Z DEBUG zkml::quantization::strategy: Quantising node LNRM, with node ID N76
+2026-08-28T07:07:35.491421Z DEBUG zkml::quantization::strategy: Quantising node EINS, with node ID N77
+2026-08-28T07:07:35.507647Z DEBUG zkml::quantization::strategy: Quantising node ACTI, with node ID N78
+2026-08-28T07:07:35.507665Z DEBUG zkml::quantization::strategy: Quantising node EINS, with node ID N79
+2026-08-28T07:07:35.524278Z DEBUG zkml::quantization::strategy: Quantising node _ADD, with node ID N80
+2026-08-28T07:07:35.524295Z DEBUG zkml::quantization::strategy: Quantising node LNRM, with node ID N81
+2026-08-28T07:07:35.524445Z DEBUG zkml::quantization::strategy: Quantising node EINS, with node ID N82
+2026-08-28T07:07:35.535803Z DEBUG zkml::quantization::strategy: Quantising node EINS, with node ID N83
+2026-08-28T07:07:35.535817Z DEBUG zkml::quantization::strategy: Quantising node MASK, with node ID N84
+2026-08-28T07:07:35.535822Z DEBUG zkml::quantization::strategy: Quantising node SFTM, with node ID N85
+2026-08-28T07:07:35.535827Z DEBUG zkml::quantization::strategy: Quantising node EINS, with node ID N86
+2026-08-28T07:07:35.535847Z DEBUG zkml::quantization::strategy: Quantising node EINS, with node ID N87
+2026-08-28T07:07:35.539600Z DEBUG zkml::quantization::strategy: Quantising node _ADD, with node ID N88
+2026-08-28T07:07:35.539606Z DEBUG zkml::quantization::strategy: Quantising node LNRM, with node ID N89
+2026-08-28T07:07:35.539741Z DEBUG zkml::quantization::strategy: Quantising node EINS, with node ID N90
+2026-08-28T07:07:35.557677Z DEBUG zkml::quantization::strategy: Quantising node ACTI, with node ID N91
+2026-08-28T07:07:35.557700Z DEBUG zkml::quantization::strategy: Quantising node EINS, with node ID N92
+2026-08-28T07:07:35.575957Z DEBUG zkml::quantization::strategy: Quantising node _ADD, with node ID N93
+2026-08-28T07:07:35.575979Z DEBUG zkml::quantization::strategy: Quantising node LNRM, with node ID N94
+2026-08-28T07:07:35.576139Z DEBUG zkml::quantization::strategy: Quantising node EINS, with node ID N95
+2026-08-28T07:07:35.589416Z DEBUG zkml::quantization::strategy: Quantising node EINS, with node ID N96
+2026-08-28T07:07:35.589437Z DEBUG zkml::quantization::strategy: Quantising node MASK, with node ID N97
+2026-08-28T07:07:35.589442Z DEBUG zkml::quantization::strategy: Quantising node SFTM, with node ID N98
+2026-08-28T07:07:35.589447Z DEBUG zkml::quantization::strategy: Quantising node EINS, with node ID N99
+2026-08-28T07:07:35.589454Z DEBUG zkml::quantization::strategy: Quantising node EINS, with node ID N100
+2026-08-28T07:07:35.593095Z DEBUG zkml::quantization::strategy: Quantising node _ADD, with node ID N101
+2026-08-28T07:07:35.593103Z DEBUG zkml::quantization::strategy: Quantising node LNRM, with node ID N102
+2026-08-28T07:07:35.593241Z DEBUG zkml::quantization::strategy: Quantising node EINS, with node ID N103
+2026-08-28T07:07:35.610122Z DEBUG zkml::quantization::strategy: Quantising node ACTI, with node ID N104
+2026-08-28T07:07:35.610137Z DEBUG zkml::quantization::strategy: Quantising node EINS, with node ID N105
+2026-08-28T07:07:35.626080Z DEBUG zkml::quantization::strategy: Quantising node _ADD, with node ID N106
+2026-08-28T07:07:35.626092Z DEBUG zkml::quantization::strategy: Quantising node LNRM, with node ID N107
+2026-08-28T07:07:35.626227Z DEBUG zkml::quantization::strategy: Quantising node EINS, with node ID N108
+2026-08-28T07:07:35.639112Z DEBUG zkml::quantization::strategy: Quantising node EINS, with node ID N109
+2026-08-28T07:07:35.639125Z DEBUG zkml::quantization::strategy: Quantising node MASK, with node ID N110
+2026-08-28T07:07:35.639130Z DEBUG zkml::quantization::strategy: Quantising node SFTM, with node ID N111
+2026-08-28T07:07:35.639140Z DEBUG zkml::quantization::strategy: Quantising node EINS, with node ID N112
+2026-08-28T07:07:35.639155Z DEBUG zkml::quantization::strategy: Quantising node EINS, with node ID N113
+2026-08-28T07:07:35.642928Z DEBUG zkml::quantization::strategy: Quantising node _ADD, with node ID N114
+2026-08-28T07:07:35.642934Z DEBUG zkml::quantization::strategy: Quantising node LNRM, with node ID N115
+2026-08-28T07:07:35.643075Z DEBUG zkml::quantization::strategy: Quantising node EINS, with node ID N116
+2026-08-28T07:07:35.658127Z DEBUG zkml::quantization::strategy: Quantising node ACTI, with node ID N117
+2026-08-28T07:07:35.658138Z DEBUG zkml::quantization::strategy: Quantising node EINS, with node ID N118
+2026-08-28T07:07:35.674346Z DEBUG zkml::quantization::strategy: Quantising node _ADD, with node ID N119
+2026-08-28T07:07:35.674357Z DEBUG zkml::quantization::strategy: Quantising node LNRM, with node ID N120
+2026-08-28T07:07:35.674528Z DEBUG zkml::quantization::strategy: Quantising node EINS, with node ID N121
+2026-08-28T07:07:35.685105Z DEBUG zkml::quantization::strategy: Quantising node EINS, with node ID N122
+2026-08-28T07:07:35.685118Z DEBUG zkml::quantization::strategy: Quantising node MASK, with node ID N123
+2026-08-28T07:07:35.685123Z DEBUG zkml::quantization::strategy: Quantising node SFTM, with node ID N124
+2026-08-28T07:07:35.685128Z DEBUG zkml::quantization::strategy: Quantising node EINS, with node ID N125
+2026-08-28T07:07:35.685135Z DEBUG zkml::quantization::strategy: Quantising node EINS, with node ID N126
+2026-08-28T07:07:35.688150Z DEBUG zkml::quantization::strategy: Quantising node _ADD, with node ID N127
+2026-08-28T07:07:35.688156Z DEBUG zkml::quantization::strategy: Quantising node LNRM, with node ID N128
+2026-08-28T07:07:35.688356Z DEBUG zkml::quantization::strategy: Quantising node EINS, with node ID N129
+2026-08-28T07:07:35.705636Z DEBUG zkml::quantization::strategy: Quantising node ACTI, with node ID N130
+2026-08-28T07:07:35.705657Z DEBUG zkml::quantization::strategy: Quantising node EINS, with node ID N131
+2026-08-28T07:07:35.723429Z DEBUG zkml::quantization::strategy: Quantising node _ADD, with node ID N132
+2026-08-28T07:07:35.723444Z DEBUG zkml::quantization::strategy: Quantising node LNRM, with node ID N133
+2026-08-28T07:07:35.723569Z DEBUG zkml::quantization::strategy: Quantising node EINS, with node ID N134
+2026-08-28T07:07:35.735150Z DEBUG zkml::quantization::strategy: Quantising node EINS, with node ID N135
+2026-08-28T07:07:35.735170Z DEBUG zkml::quantization::strategy: Quantising node MASK, with node ID N136
+2026-08-28T07:07:35.735176Z DEBUG zkml::quantization::strategy: Quantising node SFTM, with node ID N137
+2026-08-28T07:07:35.735182Z DEBUG zkml::quantization::strategy: Quantising node EINS, with node ID N138
+2026-08-28T07:07:35.735190Z DEBUG zkml::quantization::strategy: Quantising node EINS, with node ID N139
+2026-08-28T07:07:35.739576Z DEBUG zkml::quantization::strategy: Quantising node _ADD, with node ID N140
+2026-08-28T07:07:35.739589Z DEBUG zkml::quantization::strategy: Quantising node LNRM, with node ID N141
+2026-08-28T07:07:35.739743Z DEBUG zkml::quantization::strategy: Quantising node EINS, with node ID N142
+2026-08-28T07:07:35.757628Z DEBUG zkml::quantization::strategy: Quantising node ACTI, with node ID N143
+2026-08-28T07:07:35.757644Z DEBUG zkml::quantization::strategy: Quantising node EINS, with node ID N144
+2026-08-28T07:07:35.774099Z DEBUG zkml::quantization::strategy: Quantising node _ADD, with node ID N145
+2026-08-28T07:07:35.774110Z DEBUG zkml::quantization::strategy: Quantising node LNRM, with node ID N146
+2026-08-28T07:07:35.774297Z DEBUG zkml::quantization::strategy: Quantising node EINS, with node ID N147
+2026-08-28T07:07:35.786159Z DEBUG zkml::quantization::strategy: Quantising node EINS, with node ID N148
+2026-08-28T07:07:35.786170Z DEBUG zkml::quantization::strategy: Quantising node MASK, with node ID N149
+2026-08-28T07:07:35.786174Z DEBUG zkml::quantization::strategy: Quantising node SFTM, with node ID N150
+2026-08-28T07:07:35.786180Z DEBUG zkml::quantization::strategy: Quantising node EINS, with node ID N151
+2026-08-28T07:07:35.786190Z DEBUG zkml::quantization::strategy: Quantising node EINS, with node ID N152
+2026-08-28T07:07:35.789918Z DEBUG zkml::quantization::strategy: Quantising node _ADD, with node ID N153
+2026-08-28T07:07:35.789925Z DEBUG zkml::quantization::strategy: Quantising node LNRM, with node ID N154
+2026-08-28T07:07:35.790064Z DEBUG zkml::quantization::strategy: Quantising node EINS, with node ID N155
+2026-08-28T07:07:35.806930Z DEBUG zkml::quantization::strategy: Quantising node ACTI, with node ID N156
+2026-08-28T07:07:35.806941Z DEBUG zkml::quantization::strategy: Quantising node EINS, with node ID N157
+2026-08-28T07:07:35.824484Z DEBUG zkml::quantization::strategy: Quantising node _ADD, with node ID N158
+2026-08-28T07:07:35.824502Z DEBUG zkml::quantization::strategy: Quantising node LNRM, with node ID N159
+2026-08-28T07:07:35.824631Z DEBUG zkml::quantization::strategy: Quantising node EINS, with node ID N160
+2026-08-28T07:07:36.155038Z DEBUG zkml::quantization::strategy: Quantising node LGIT, with node ID N161
+2026-08-28T07:07:36.156384Z  INFO zkml::quantization::strategy: Quantized model with 261 layers, output node ids: [Node(162)]
+2026-08-28T07:07:36.156404Z DEBUG zkml::padding: Padding model with 1 inputs: shapes [[10]]
+2026-08-28T07:07:36.160076Z DEBUG zkml::padding: Padded model with 261 layers
+2026-08-28T07:07:36.160222Z DEBUG zkml::model::llm: Generating context for model with 261 layers
+2026-08-28T07:07:36.160231Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: Context : layer info generation ...
+2026-08-28T07:07:38.007249Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=1.846988083s peak= in_use= node: N1 (Embeddings(vocab:50257, hidden:768)), max_poly_len: 1
+2026-08-28T07:07:38.007620Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=332.708µs peak= in_use= node: N2 (Positional(10x768)), max_poly_len: 1
+2026-08-28T07:07:38.007686Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=5.959µs peak= in_use= node: N163 (Requant: right shift: 28, scale: 1), max_poly_len: 1024
+2026-08-28T07:07:38.007763Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=70.75µs peak= in_use= node: N3 (LayerNorm(dimension size: 768)), max_poly_len: 1024
+2026-08-28T07:07:38.007821Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=1.917µs peak= in_use= node: N164 (Requant: right shift: 20, scale: 19666), max_poly_len: 1024
+2026-08-28T07:07:38.072153Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=64.308458ms peak= in_use= node: N4 (EinSum(X(se)@WQ(ehd):WK(ehd):WV(ehd)->Q(hsd)+BIAS(hd):K(hsd)+BIAS(hd):V(hsd)+BIAS(hd))), max_poly_len: 1024
+2026-08-28T07:07:38.072239Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=5.875µs peak= in_use= node: N165 (Requant: right shift: 27, scale: 17084), max_poly_len: 1024
+2026-08-28T07:07:38.072298Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=2.292µs peak= in_use= node: N166 (Requant: right shift: 27, scale: 22882), max_poly_len: 1024
+2026-08-28T07:07:38.072312Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=7.5µs peak= in_use= node: N5 (EinSum(Q(hqd)@K(hsd)->A(hqs))), max_poly_len: 1024
+2026-08-28T07:07:38.072334Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=16.875µs peak= in_use= node: N6 (CasualMask(neg_inf: -2147483648)), max_poly_len: 1024
+2026-08-28T07:07:38.072342Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=2.5µs peak= in_use= node: N7 (Softmax), max_poly_len: 1024
+2026-08-28T07:07:38.072406Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=2.292µs peak= in_use= node: N167 (Requant: right shift: 28, scale: 30702), max_poly_len: 1024
+2026-08-28T07:07:38.072414Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=3.458µs peak= in_use= node: N8 (EinSum(A(hqs)@V(hsd)->O(hqd))), max_poly_len: 1024
+2026-08-28T07:07:38.072479Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=1.708µs peak= in_use= node: N168 (Requant: right shift: 30, scale: 24792), max_poly_len: 1024
+2026-08-28T07:07:38.094163Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=21.671333ms peak= in_use= node: N9 (EinSum(O(hqd)@WO(hde)->Y(qe)+BIAS(e))), max_poly_len: 1024
+2026-08-28T07:07:38.094209Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=4.708µs peak= in_use= node: N10 (Add Some(AddQuantInfo { left_multiplier: 70684048, right_multiplier: 32554, right_shift: 28, intermediate_bit_size: 62, output_scaling: ScalingFactor { min: -16.37421, max: 16.37421, scale: 0.007997172, quantized_domain: (-2048, 2047) } })), max_poly_len: 1024
+2026-08-28T07:07:38.094276Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=4.084µs peak= in_use= node: N169 (Requant: right shift: 28, scale: 1), max_poly_len: 1024
+2026-08-28T07:07:38.094360Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=75.042µs peak= in_use= node: N11 (LayerNorm(dimension size: 768)), max_poly_len: 1024
+2026-08-28T07:07:38.094417Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=1.792µs peak= in_use= node: N170 (Requant: right shift: 19, scale: 19000), max_poly_len: 1024
+2026-08-28T07:07:38.183084Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=88.654583ms peak= in_use= node: N12 (EinSum(X(se)@WU(ep)->U(sp)+BIAS(p))), max_poly_len: 1024
+2026-08-28T07:07:38.183126Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=5.667µs peak= in_use= node: N13 (GeLU), max_poly_len: 4096
+2026-08-28T07:07:38.267123Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=83.981958ms peak= in_use= node: N14 (EinSum(X(sp)@WD(pe)->Y(se)+BIAS(e))), max_poly_len: 4096
+2026-08-28T07:07:38.267159Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=4.667µs peak= in_use= node: N15 (Add Some(AddQuantInfo { left_multiplier: 10810003, right_multiplier: 23814, right_shift: 26, intermediate_bit_size: 61, output_scaling: ScalingFactor { min: -101.65164, max: 101.65164, scale: 0.049646713, quantized_domain: (-2048, 2047) } })), max_poly_len: 4096
+2026-08-28T07:07:38.267221Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=5.333µs peak= in_use= node: N171 (Requant: right shift: 26, scale: 1), max_poly_len: 4096
+2026-08-28T07:07:38.267303Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=76.625µs peak= in_use= node: N16 (LayerNorm(dimension size: 768)), max_poly_len: 4096
+2026-08-28T07:07:38.267359Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=1.916µs peak= in_use= node: N172 (Requant: right shift: 20, scale: 22691), max_poly_len: 4096
+2026-08-28T07:07:38.330328Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=62.958208ms peak= in_use= node: N17 (EinSum(X(se)@WQ(ehd):WK(ehd):WV(ehd)->Q(hsd)+BIAS(hd):K(hsd)+BIAS(hd):V(hsd)+BIAS(hd))), max_poly_len: 4096
+2026-08-28T07:07:38.330417Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=5µs peak= in_use= node: N173 (Requant: right shift: 27, scale: 31118), max_poly_len: 4096
+2026-08-28T07:07:38.330475Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=3.958µs peak= in_use= node: N174 (Requant: right shift: 27, scale: 22734), max_poly_len: 4096
+2026-08-28T07:07:38.330487Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=6.459µs peak= in_use= node: N18 (EinSum(Q(hqd)@K(hsd)->A(hqs))), max_poly_len: 4096
+2026-08-28T07:07:38.330494Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=1.75µs peak= in_use= node: N19 (CasualMask(neg_inf: -2147483648)), max_poly_len: 4096
+2026-08-28T07:07:38.330501Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=1.75µs peak= in_use= node: N20 (Softmax), max_poly_len: 4096
+2026-08-28T07:07:38.330555Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=1.792µs peak= in_use= node: N175 (Requant: right shift: 27, scale: 22709), max_poly_len: 4096
+2026-08-28T07:07:38.330562Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=2.791µs peak= in_use= node: N21 (EinSum(A(hqs)@V(hsd)->O(hqd))), max_poly_len: 4096
+2026-08-28T07:07:38.330627Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=1.708µs peak= in_use= node: N176 (Requant: right shift: 30, scale: 19773), max_poly_len: 4096
+2026-08-28T07:07:38.351503Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=20.869167ms peak= in_use= node: N22 (EinSum(O(hqd)@WO(hde)->Y(qe)+BIAS(e))), max_poly_len: 4096
+2026-08-28T07:07:38.351526Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=2.458µs peak= in_use= node: N23 (Add Some(AddQuantInfo { left_multiplier: 102175960, right_multiplier: 8059, right_shift: 27, intermediate_bit_size: 62, output_scaling: ScalingFactor { min: -133.52899, max: 133.52899, scale: 0.065215625, quantized_domain: (-2048, 2047) } })), max_poly_len: 4096
+2026-08-28T07:07:38.351579Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=2.375µs peak= in_use= node: N177 (Requant: right shift: 27, scale: 1), max_poly_len: 4096
+2026-08-28T07:07:38.351660Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=75.708µs peak= in_use= node: N24 (LayerNorm(dimension size: 768)), max_poly_len: 4096
+2026-08-28T07:07:38.351712Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=1.75µs peak= in_use= node: N178 (Requant: right shift: 23, scale: 31528), max_poly_len: 4096
+2026-08-28T07:07:38.438124Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=86.40075ms peak= in_use= node: N25 (EinSum(X(se)@WU(ep)->U(sp)+BIAS(p))), max_poly_len: 4096
+2026-08-28T07:07:38.438151Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=5.166µs peak= in_use= node: N26 (GeLU), max_poly_len: 4096
+2026-08-28T07:07:38.521373Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=83.210417ms peak= in_use= node: N27 (EinSum(X(sp)@WD(pe)->Y(se)+BIAS(e))), max_poly_len: 4096
+2026-08-28T07:07:38.521411Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=4.75µs peak= in_use= node: N28 (Add Some(AddQuantInfo { left_multiplier: 30066400, right_multiplier: 24832, right_shift: 27, intermediate_bit_size: 62, output_scaling: ScalingFactor { min: -596.0792, max: 596.0792, scale: 0.2911254, quantized_domain: (-2048, 2047) } })), max_poly_len: 4096
+2026-08-28T07:07:38.521472Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=6.125µs peak= in_use= node: N179 (Requant: right shift: 27, scale: 1), max_poly_len: 4096
+2026-08-28T07:07:38.521551Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=73.375µs peak= in_use= node: N29 (LayerNorm(dimension size: 768)), max_poly_len: 4096
+2026-08-28T07:07:38.521604Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=1.792µs peak= in_use= node: N180 (Requant: right shift: 21, scale: 25823), max_poly_len: 4096
+2026-08-28T07:07:38.584318Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=62.703333ms peak= in_use= node: N30 (EinSum(X(se)@WQ(ehd):WK(ehd):WV(ehd)->Q(hsd)+BIAS(hd):K(hsd)+BIAS(hd):V(hsd)+BIAS(hd))), max_poly_len: 4096
+2026-08-28T07:07:38.584413Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=8µs peak= in_use= node: N181 (Requant: right shift: 26, scale: 28635), max_poly_len: 4096
+2026-08-28T07:07:38.584467Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=5.25µs peak= in_use= node: N182 (Requant: right shift: 25, scale: 19188), max_poly_len: 4096
+2026-08-28T07:07:38.584478Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=5.834µs peak= in_use= node: N31 (EinSum(Q(hqd)@K(hsd)->A(hqs))), max_poly_len: 4096
+2026-08-28T07:07:38.584484Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=1.417µs peak= in_use= node: N32 (CasualMask(neg_inf: -2147483648)), max_poly_len: 4096
+2026-08-28T07:07:38.584494Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=4.958µs peak= in_use= node: N33 (Softmax), max_poly_len: 4096
+2026-08-28T07:07:38.584543Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=1.458µs peak= in_use= node: N183 (Requant: right shift: 26, scale: 23920), max_poly_len: 4096
+2026-08-28T07:07:38.584550Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=2.958µs peak= in_use= node: N34 (EinSum(A(hqs)@V(hsd)->O(hqd))), max_poly_len: 4096
+2026-08-28T07:07:38.584599Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=1.458µs peak= in_use= node: N184 (Requant: right shift: 29, scale: 17868), max_poly_len: 4096
+2026-08-28T07:07:38.605454Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=20.84575ms peak= in_use= node: N35 (EinSum(O(hqd)@WO(hde)->Y(qe)+BIAS(e))), max_poly_len: 4096
+2026-08-28T07:07:38.605482Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=3.458µs peak= in_use= node: N36 (Add Some(AddQuantInfo { left_multiplier: 67109520, right_multiplier: 243, right_shift: 26, intermediate_bit_size: 62, output_scaling: ScalingFactor { min: -596.07336, max: 596.07336, scale: 0.29112253, quantized_domain: (-2048, 2047) } })), max_poly_len: 4096
+2026-08-28T07:07:38.605535Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=3.084µs peak= in_use= node: N185 (Requant: right shift: 26, scale: 1), max_poly_len: 4096
+2026-08-28T07:07:38.605611Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=70.083µs peak= in_use= node: N37 (LayerNorm(dimension size: 768)), max_poly_len: 4096
+2026-08-28T07:07:38.605662Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=1.667µs peak= in_use= node: N186 (Requant: right shift: 23, scale: 16690), max_poly_len: 4096
+2026-08-28T07:07:38.691561Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=85.886ms peak= in_use= node: N38 (EinSum(X(se)@WU(ep)->U(sp)+BIAS(p))), max_poly_len: 4096
+2026-08-28T07:07:38.691598Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=7.292µs peak= in_use= node: N39 (GeLU), max_poly_len: 4096
+2026-08-28T07:07:38.777010Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=85.391167ms peak= in_use= node: N40 (EinSum(X(sp)@WD(pe)->Y(se)+BIAS(e))), max_poly_len: 4096
+2026-08-28T07:07:38.777044Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=3.708µs peak= in_use= node: N41 (Add Some(AddQuantInfo { left_multiplier: 32445166, right_multiplier: 25197, right_shift: 27, intermediate_bit_size: 62, output_scaling: ScalingFactor { min: -2465.81, max: 2465.81, scale: 1.2043028, quantized_domain: (-2048, 2047) } })), max_poly_len: 4096
+2026-08-28T07:07:38.777099Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=3.5µs peak= in_use= node: N187 (Requant: right shift: 27, scale: 1), max_poly_len: 4096
+2026-08-28T07:07:38.777181Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=74.875µs peak= in_use= node: N42 (LayerNorm(dimension size: 768)), max_poly_len: 4096
+2026-08-28T07:07:38.777242Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=2.167µs peak= in_use= node: N188 (Requant: right shift: 22, scale: 28584), max_poly_len: 4096
+2026-08-28T07:07:38.842329Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=65.072833ms peak= in_use= node: N43 (EinSum(X(se)@WQ(ehd):WK(ehd):WV(ehd)->Q(hsd)+BIAS(hd):K(hsd)+BIAS(hd):V(hsd)+BIAS(hd))), max_poly_len: 4096
+2026-08-28T07:07:38.842405Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=6.25µs peak= in_use= node: N189 (Requant: right shift: 25, scale: 20873), max_poly_len: 4096
+2026-08-28T07:07:38.842458Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=2.333µs peak= in_use= node: N190 (Requant: right shift: 26, scale: 24668), max_poly_len: 4096
+2026-08-28T07:07:38.842472Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=7.5µs peak= in_use= node: N44 (EinSum(Q(hqd)@K(hsd)->A(hqs))), max_poly_len: 4096
+2026-08-28T07:07:38.842479Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=1.791µs peak= in_use= node: N45 (CasualMask(neg_inf: -2147483648)), max_poly_len: 4096
+2026-08-28T07:07:38.842486Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=2.208µs peak= in_use= node: N46 (Softmax), max_poly_len: 4096
+2026-08-28T07:07:38.842534Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=1.709µs peak= in_use= node: N191 (Requant: right shift: 25, scale: 26092), max_poly_len: 4096
+2026-08-28T07:07:38.842542Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=3.125µs peak= in_use= node: N47 (EinSum(A(hqs)@V(hsd)->O(hqd))), max_poly_len: 4096
+2026-08-28T07:07:38.842589Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=1.667µs peak= in_use= node: N192 (Requant: right shift: 30, scale: 19841), max_poly_len: 4096
+2026-08-28T07:07:38.864109Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=21.498875ms peak= in_use= node: N48 (EinSum(O(hqd)@WO(hde)->Y(qe)+BIAS(e))), max_poly_len: 4096
+2026-08-28T07:07:38.864149Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=4.75µs peak= in_use= node: N49 (Add Some(AddQuantInfo { left_multiplier: 67184808, right_multiplier: 65, right_shift: 26, intermediate_bit_size: 62, output_scaling: ScalingFactor { min: -2463.0227, max: 2463.0227, scale: 1.2029415, quantized_domain: (-2048, 2047) } })), max_poly_len: 4096
+2026-08-28T07:07:38.864203Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=3.625µs peak= in_use= node: N193 (Requant: right shift: 26, scale: 1), max_poly_len: 4096
+2026-08-28T07:07:38.864285Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=75.5µs peak= in_use= node: N50 (LayerNorm(dimension size: 768)), max_poly_len: 4096
+2026-08-28T07:07:38.864339Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=2.5µs peak= in_use= node: N194 (Requant: right shift: 22, scale: 29463), max_poly_len: 4096
+2026-08-28T07:07:38.954210Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=89.857834ms peak= in_use= node: N51 (EinSum(X(se)@WU(ep)->U(sp)+BIAS(p))), max_poly_len: 4096
+2026-08-28T07:07:38.954241Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=5.709µs peak= in_use= node: N52 (GeLU), max_poly_len: 4096
+2026-08-28T07:07:39.040735Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=86.482834ms peak= in_use= node: N53 (EinSum(X(sp)@WD(pe)->Y(se)+BIAS(e))), max_poly_len: 4096
+2026-08-28T07:07:39.040767Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=4.084µs peak= in_use= node: N54 (Add Some(AddQuantInfo { left_multiplier: 31528478, right_multiplier: 1139, right_shift: 25, intermediate_bit_size: 62, output_scaling: ScalingFactor { min: -2621.2915, max: 2621.2915, scale: 1.28024, quantized_domain: (-2048, 2047) } })), max_poly_len: 4096
+2026-08-28T07:07:39.040817Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=3.875µs peak= in_use= node: N195 (Requant: right shift: 25, scale: 1), max_poly_len: 4096
+2026-08-28T07:07:39.040896Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=73.042µs peak= in_use= node: N55 (LayerNorm(dimension size: 768)), max_poly_len: 4096
+2026-08-28T07:07:39.040943Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=2.167µs peak= in_use= node: N196 (Requant: right shift: 22, scale: 28629), max_poly_len: 4096
+2026-08-28T07:07:39.103712Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=62.757209ms peak= in_use= node: N56 (EinSum(X(se)@WQ(ehd):WK(ehd):WV(ehd)->Q(hsd)+BIAS(hd):K(hsd)+BIAS(hd):V(hsd)+BIAS(hd))), max_poly_len: 4096
+2026-08-28T07:07:39.103785Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=6.125µs peak= in_use= node: N197 (Requant: right shift: 26, scale: 24448), max_poly_len: 4096
+2026-08-28T07:07:39.103858Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=2.708µs peak= in_use= node: N198 (Requant: right shift: 26, scale: 31527), max_poly_len: 4096
+2026-08-28T07:07:39.103871Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=7.25µs peak= in_use= node: N57 (EinSum(Q(hqd)@K(hsd)->A(hqs))), max_poly_len: 4096
+2026-08-28T07:07:39.103881Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=3.916µs peak= in_use= node: N58 (CasualMask(neg_inf: -2147483648)), max_poly_len: 4096
+2026-08-28T07:07:39.103888Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=2.375µs peak= in_use= node: N59 (Softmax), max_poly_len: 4096
+2026-08-28T07:07:39.103933Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=1.792µs peak= in_use= node: N199 (Requant: right shift: 25, scale: 17233), max_poly_len: 4096
+2026-08-28T07:07:39.103941Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=3.042µs peak= in_use= node: N60 (EinSum(A(hqs)@V(hsd)->O(hqd))), max_poly_len: 4096
+2026-08-28T07:07:39.103985Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=1.708µs peak= in_use= node: N200 (Requant: right shift: 30, scale: 23433), max_poly_len: 4096
+2026-08-28T07:07:39.125566Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=21.574666ms peak= in_use= node: N61 (EinSum(O(hqd)@WO(hde)->Y(qe)+BIAS(e))), max_poly_len: 4096
+2026-08-28T07:07:39.125590Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=3.083µs peak= in_use= node: N62 (Add Some(AddQuantInfo { left_multiplier: 67136920, right_multiplier: 54, right_shift: 26, intermediate_bit_size: 62, output_scaling: ScalingFactor { min: -2620.196, max: 2620.196, scale: 1.279705, quantized_domain: (-2048, 2047) } })), max_poly_len: 4096
+2026-08-28T07:07:39.125636Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=2.5µs peak= in_use= node: N201 (Requant: right shift: 26, scale: 1), max_poly_len: 4096
+2026-08-28T07:07:39.125713Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=72.292µs peak= in_use= node: N63 (LayerNorm(dimension size: 768)), max_poly_len: 4096
+2026-08-28T07:07:39.125756Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=1.75µs peak= in_use= node: N202 (Requant: right shift: 22, scale: 29546), max_poly_len: 4096
+2026-08-28T07:07:39.216362Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=90.593709ms peak= in_use= node: N64 (EinSum(X(se)@WU(ep)->U(sp)+BIAS(p))), max_poly_len: 4096
+2026-08-28T07:07:39.216391Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=5.625µs peak= in_use= node: N65 (GeLU), max_poly_len: 4096
+2026-08-28T07:07:39.303188Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=86.786583ms peak= in_use= node: N66 (EinSum(X(sp)@WD(pe)->Y(se)+BIAS(e))), max_poly_len: 4096
+2026-08-28T07:07:39.303232Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=3.959µs peak= in_use= node: N67 (Add Some(AddQuantInfo { left_multiplier: 31829952, right_multiplier: 189, right_shift: 25, intermediate_bit_size: 62, output_scaling: ScalingFactor { min: -2762.1528, max: 2762.1528, scale: 1.3490368, quantized_domain: (-2048, 2047) } })), max_poly_len: 4096
+2026-08-28T07:07:39.303280Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=3µs peak= in_use= node: N203 (Requant: right shift: 25, scale: 1), max_poly_len: 4096
+2026-08-28T07:07:39.303356Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=70µs peak= in_use= node: N68 (LayerNorm(dimension size: 768)), max_poly_len: 4096
+2026-08-28T07:07:39.303400Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=2.083µs peak= in_use= node: N204 (Requant: right shift: 22, scale: 28116), max_poly_len: 4096
+2026-08-28T07:07:39.367053Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=63.6425ms peak= in_use= node: N69 (EinSum(X(se)@WQ(ehd):WK(ehd):WV(ehd)->Q(hsd)+BIAS(hd):K(hsd)+BIAS(hd):V(hsd)+BIAS(hd))), max_poly_len: 4096
+2026-08-28T07:07:39.367242Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=7.042µs peak= in_use= node: N205 (Requant: right shift: 26, scale: 30961), max_poly_len: 4096
+2026-08-28T07:07:39.367289Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=3.583µs peak= in_use= node: N206 (Requant: right shift: 26, scale: 24727), max_poly_len: 4096
+2026-08-28T07:07:39.367301Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=5.792µs peak= in_use= node: N70 (EinSum(Q(hqd)@K(hsd)->A(hqs))), max_poly_len: 4096
+2026-08-28T07:07:39.367308Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=1.584µs peak= in_use= node: N71 (CasualMask(neg_inf: -2147483648)), max_poly_len: 4096
+2026-08-28T07:07:39.367316Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=1.916µs peak= in_use= node: N72 (Softmax), max_poly_len: 4096
+2026-08-28T07:07:39.367358Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=1.917µs peak= in_use= node: N207 (Requant: right shift: 26, scale: 27637), max_poly_len: 4096
+2026-08-28T07:07:39.367366Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=2.666µs peak= in_use= node: N73 (EinSum(A(hqs)@V(hsd)->O(hqd))), max_poly_len: 4096
+2026-08-28T07:07:39.367408Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=1.875µs peak= in_use= node: N208 (Requant: right shift: 30, scale: 31883), max_poly_len: 4096
+2026-08-28T07:07:39.392733Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=25.309ms peak= in_use= node: N74 (EinSum(O(hqd)@WO(hde)->Y(qe)+BIAS(e))), max_poly_len: 4096
+2026-08-28T07:07:39.392798Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=6.625µs peak= in_use= node: N75 (Add Some(AddQuantInfo { left_multiplier: 67140552, right_multiplier: 53, right_shift: 26, intermediate_bit_size: 62, output_scaling: ScalingFactor { min: -2760.849, max: 2760.849, scale: 1.3484001, quantized_domain: (-2048, 2047) } })), max_poly_len: 4096
+2026-08-28T07:07:39.392850Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=3.959µs peak= in_use= node: N209 (Requant: right shift: 26, scale: 1), max_poly_len: 4096
+2026-08-28T07:07:39.392938Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=82.208µs peak= in_use= node: N76 (LayerNorm(dimension size: 768)), max_poly_len: 4096
+2026-08-28T07:07:39.392988Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=3.084µs peak= in_use= node: N210 (Requant: right shift: 22, scale: 29548), max_poly_len: 4096
+2026-08-28T07:07:39.571124Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=178.112541ms peak= in_use= node: N77 (EinSum(X(se)@WU(ep)->U(sp)+BIAS(p))), max_poly_len: 4096
+2026-08-28T07:07:39.571172Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=8.5µs peak= in_use= node: N78 (GeLU), max_poly_len: 4096
+2026-08-28T07:07:39.658638Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=87.448667ms peak= in_use= node: N79 (EinSum(X(sp)@WD(pe)->Y(se)+BIAS(e))), max_poly_len: 4096
+2026-08-28T07:07:39.658675Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=5.459µs peak= in_use= node: N80 (Add Some(AddQuantInfo { left_multiplier: 32436546, right_multiplier: 50, right_shift: 25, intermediate_bit_size: 62, output_scaling: ScalingFactor { min: -2855.9985, max: 2855.9985, scale: 1.3948711, quantized_domain: (-2048, 2047) } })), max_poly_len: 4096
+2026-08-28T07:07:39.659246Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=5.167µs peak= in_use= node: N211 (Requant: right shift: 25, scale: 1), max_poly_len: 4096
+2026-08-28T07:07:39.659561Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=304.625µs peak= in_use= node: N81 (LayerNorm(dimension size: 768)), max_poly_len: 4096
+2026-08-28T07:07:39.659611Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=4.875µs peak= in_use= node: N212 (Requant: right shift: 22, scale: 30365), max_poly_len: 4096
+2026-08-28T07:07:39.726890Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=67.267833ms peak= in_use= node: N82 (EinSum(X(se)@WQ(ehd):WK(ehd):WV(ehd)->Q(hsd)+BIAS(hd):K(hsd)+BIAS(hd):V(hsd)+BIAS(hd))), max_poly_len: 4096
+2026-08-28T07:07:39.726966Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=6.5µs peak= in_use= node: N213 (Requant: right shift: 26, scale: 28583), max_poly_len: 4096
+2026-08-28T07:07:39.727006Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=2µs peak= in_use= node: N214 (Requant: right shift: 26, scale: 26195), max_poly_len: 4096
+2026-08-28T07:07:39.727028Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=7.333µs peak= in_use= node: N83 (EinSum(Q(hqd)@K(hsd)->A(hqs))), max_poly_len: 4096
+2026-08-28T07:07:39.727036Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=1.959µs peak= in_use= node: N84 (CasualMask(neg_inf: -2147483648)), max_poly_len: 4096
+2026-08-28T07:07:39.727044Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=2.166µs peak= in_use= node: N85 (Softmax), max_poly_len: 4096
+2026-08-28T07:07:39.727082Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=1.875µs peak= in_use= node: N215 (Requant: right shift: 25, scale: 17313), max_poly_len: 4096
+2026-08-28T07:07:39.727090Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=3.042µs peak= in_use= node: N86 (EinSum(A(hqs)@V(hsd)->O(hqd))), max_poly_len: 4096
+2026-08-28T07:07:39.727131Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=1.667µs peak= in_use= node: N216 (Requant: right shift: 30, scale: 26455), max_poly_len: 4096
+2026-08-28T07:07:39.750256Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=23.111875ms peak= in_use= node: N87 (EinSum(O(hqd)@WO(hde)->Y(qe)+BIAS(e))), max_poly_len: 4096
+2026-08-28T07:07:39.750298Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=8.792µs peak= in_use= node: N88 (Add Some(AddQuantInfo { left_multiplier: 134181032, right_multiplier: 96, right_shift: 27, intermediate_bit_size: 62, output_scaling: ScalingFactor { min: -2856.7798, max: 2856.7798, scale: 1.3952526, quantized_domain: (-2048, 2047) } })), max_poly_len: 4096
+2026-08-28T07:07:39.750343Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=4.833µs peak= in_use= node: N217 (Requant: right shift: 27, scale: 1), max_poly_len: 4096
+2026-08-28T07:07:39.750427Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=77.875µs peak= in_use= node: N89 (LayerNorm(dimension size: 768)), max_poly_len: 4096
+2026-08-28T07:07:39.750466Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=2.25µs peak= in_use= node: N218 (Requant: right shift: 22, scale: 30071), max_poly_len: 4096
+2026-08-28T07:07:39.848834Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=98.3535ms peak= in_use= node: N90 (EinSum(X(se)@WU(ep)->U(sp)+BIAS(p))), max_poly_len: 4096
+2026-08-28T07:07:39.848868Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=6.083µs peak= in_use= node: N91 (GeLU), max_poly_len: 4096
+2026-08-28T07:07:39.939047Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=90.16525ms peak= in_use= node: N92 (EinSum(X(sp)@WD(pe)->Y(se)+BIAS(e))), max_poly_len: 4096
+2026-08-28T07:07:39.939103Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=5.209µs peak= in_use= node: N93 (Add Some(AddQuantInfo { left_multiplier: 32915276, right_multiplier: 47, right_shift: 25, intermediate_bit_size: 62, output_scaling: ScalingFactor { min: -2912.2532, max: 2912.2532, scale: 1.4223459, quantized_domain: (-2048, 2047) } })), max_poly_len: 4096
+2026-08-28T07:07:39.939143Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=3.375µs peak= in_use= node: N219 (Requant: right shift: 25, scale: 1), max_poly_len: 4096
+2026-08-28T07:07:39.939227Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=78.709µs peak= in_use= node: N94 (LayerNorm(dimension size: 768)), max_poly_len: 4096
+2026-08-28T07:07:39.939263Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=2µs peak= in_use= node: N220 (Requant: right shift: 21, scale: 17062), max_poly_len: 4096
+2026-08-28T07:07:40.009064Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=69.789417ms peak= in_use= node: N95 (EinSum(X(se)@WQ(ehd):WK(ehd):WV(ehd)->Q(hsd)+BIAS(hd):K(hsd)+BIAS(hd):V(hsd)+BIAS(hd))), max_poly_len: 4096
+2026-08-28T07:07:40.009124Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=5.541µs peak= in_use= node: N221 (Requant: right shift: 25, scale: 17431), max_poly_len: 4096
+2026-08-28T07:07:40.009159Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=2.166µs peak= in_use= node: N222 (Requant: right shift: 26, scale: 30830), max_poly_len: 4096
+2026-08-28T07:07:40.009171Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=6.166µs peak= in_use= node: N96 (EinSum(Q(hqd)@K(hsd)->A(hqs))), max_poly_len: 4096
+2026-08-28T07:07:40.009178Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=2µs peak= in_use= node: N97 (CasualMask(neg_inf: -2147483648)), max_poly_len: 4096
+2026-08-28T07:07:40.009184Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=1.75µs peak= in_use= node: N98 (Softmax), max_poly_len: 4096
+2026-08-28T07:07:40.009217Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=1.667µs peak= in_use= node: N223 (Requant: right shift: 26, scale: 27324), max_poly_len: 4096
+2026-08-28T07:07:40.009224Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=2.792µs peak= in_use= node: N99 (EinSum(A(hqs)@V(hsd)->O(hqd))), max_poly_len: 4096
+2026-08-28T07:07:40.009256Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=1.709µs peak= in_use= node: N224 (Requant: right shift: 29, scale: 22215), max_poly_len: 4096
+2026-08-28T07:07:40.031160Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=21.891458ms peak= in_use= node: N100 (EinSum(O(hqd)@WO(hde)->Y(qe)+BIAS(e))), max_poly_len: 4096
+2026-08-28T07:07:40.031194Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=5.084µs peak= in_use= node: N101 (Add Some(AddQuantInfo { left_multiplier: 134194928, right_multiplier: 84, right_shift: 27, intermediate_bit_size: 62, output_scaling: ScalingFactor { min: -2912.748, max: 2912.748, scale: 1.4225875, quantized_domain: (-2048, 2047) } })), max_poly_len: 4096
+2026-08-28T07:07:40.031239Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=3.583µs peak= in_use= node: N225 (Requant: right shift: 27, scale: 1), max_poly_len: 4096
+2026-08-28T07:07:40.031327Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=82.25µs peak= in_use= node: N102 (LayerNorm(dimension size: 768)), max_poly_len: 4096
+2026-08-28T07:07:40.031360Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=2.083µs peak= in_use= node: N226 (Requant: right shift: 22, scale: 30068), max_poly_len: 4096
+2026-08-28T07:07:40.126164Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=94.792042ms peak= in_use= node: N103 (EinSum(X(se)@WU(ep)->U(sp)+BIAS(p))), max_poly_len: 4096
+2026-08-28T07:07:40.126202Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=7µs peak= in_use= node: N104 (GeLU), max_poly_len: 4096
+2026-08-28T07:07:40.222746Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=96.529167ms peak= in_use= node: N105 (EinSum(X(sp)@WD(pe)->Y(se)+BIAS(e))), max_poly_len: 4096
+2026-08-28T07:07:40.222781Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=4.459µs peak= in_use= node: N106 (Add Some(AddQuantInfo { left_multiplier: 33173918, right_multiplier: 104, right_shift: 25, intermediate_bit_size: 62, output_scaling: ScalingFactor { min: -2946.158, max: 2946.158, scale: 1.438905, quantized_domain: (-2048, 2047) } })), max_poly_len: 4096
+2026-08-28T07:07:40.222823Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=5.833µs peak= in_use= node: N227 (Requant: right shift: 25, scale: 1), max_poly_len: 4096
+2026-08-28T07:07:40.223298Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=465.333µs peak= in_use= node: N107 (LayerNorm(dimension size: 768)), max_poly_len: 4096
+2026-08-28T07:07:40.223338Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=4.041µs peak= in_use= node: N228 (Requant: right shift: 21, scale: 18110), max_poly_len: 4096
+2026-08-28T07:07:40.348017Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=124.662792ms peak= in_use= node: N108 (EinSum(X(se)@WQ(ehd):WK(ehd):WV(ehd)->Q(hsd)+BIAS(hd):K(hsd)+BIAS(hd):V(hsd)+BIAS(hd))), max_poly_len: 4096
+2026-08-28T07:07:40.348083Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=10.875µs peak= in_use= node: N229 (Requant: right shift: 26, scale: 28846), max_poly_len: 4096
+2026-08-28T07:07:40.348114Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=2.208µs peak= in_use= node: N230 (Requant: right shift: 25, scale: 18810), max_poly_len: 4096
+2026-08-28T07:07:40.348128Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=7.833µs peak= in_use= node: N109 (EinSum(Q(hqd)@K(hsd)->A(hqs))), max_poly_len: 4096
+2026-08-28T07:07:40.348135Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=1.917µs peak= in_use= node: N110 (CasualMask(neg_inf: -2147483648)), max_poly_len: 4096
+2026-08-28T07:07:40.348142Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=2.209µs peak= in_use= node: N111 (Softmax), max_poly_len: 4096
+2026-08-28T07:07:40.348170Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=1.916µs peak= in_use= node: N231 (Requant: right shift: 26, scale: 31679), max_poly_len: 4096
+2026-08-28T07:07:40.348178Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=2.917µs peak= in_use= node: N112 (EinSum(A(hqs)@V(hsd)->O(hqd))), max_poly_len: 4096
+2026-08-28T07:07:40.348210Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=1.708µs peak= in_use= node: N232 (Requant: right shift: 29, scale: 21083), max_poly_len: 4096
+2026-08-28T07:07:40.371566Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=23.342417ms peak= in_use= node: N113 (EinSum(O(hqd)@WO(hde)->Y(qe)+BIAS(e))), max_poly_len: 4096
+2026-08-28T07:07:40.371614Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=5.208µs peak= in_use= node: N114 (Add Some(AddQuantInfo { left_multiplier: 134141560, right_multiplier: 97, right_shift: 27, intermediate_bit_size: 62, output_scaling: ScalingFactor { min: -2947.8308, max: 2947.8308, scale: 1.4397221, quantized_domain: (-2048, 2047) } })), max_poly_len: 4096
+2026-08-28T07:07:40.371646Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=4.292µs peak= in_use= node: N233 (Requant: right shift: 27, scale: 1), max_poly_len: 4096
+2026-08-28T07:07:40.371740Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=88.125µs peak= in_use= node: N115 (LayerNorm(dimension size: 768)), max_poly_len: 4096
+2026-08-28T07:07:40.371772Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=1.959µs peak= in_use= node: N234 (Requant: right shift: 22, scale: 30727), max_poly_len: 4096
+2026-08-28T07:07:40.466816Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=95.029667ms peak= in_use= node: N116 (EinSum(X(se)@WU(ep)->U(sp)+BIAS(p))), max_poly_len: 4096
+2026-08-28T07:07:40.466857Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=10.167µs peak= in_use= node: N117 (GeLU), max_poly_len: 4096
+2026-08-28T07:07:40.559444Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=92.575166ms peak= in_use= node: N118 (EinSum(X(sp)@WD(pe)->Y(se)+BIAS(e))), max_poly_len: 4096
+2026-08-28T07:07:40.559479Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=4.5µs peak= in_use= node: N119 (Add Some(AddQuantInfo { left_multiplier: 33338772, right_multiplier: 177, right_shift: 25, intermediate_bit_size: 62, output_scaling: ScalingFactor { min: -2966.8997, max: 2966.8997, scale: 1.4490353, quantized_domain: (-2048, 2047) } })), max_poly_len: 4096
+2026-08-28T07:07:40.559508Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=3.625µs peak= in_use= node: N235 (Requant: right shift: 25, scale: 1), max_poly_len: 4096
+2026-08-28T07:07:40.559590Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=75.916µs peak= in_use= node: N120 (LayerNorm(dimension size: 768)), max_poly_len: 4096
+2026-08-28T07:07:40.559616Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=2.167µs peak= in_use= node: N236 (Requant: right shift: 21, scale: 20969), max_poly_len: 4096
+2026-08-28T07:07:40.628411Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=68.7825ms peak= in_use= node: N121 (EinSum(X(se)@WQ(ehd):WK(ehd):WV(ehd)->Q(hsd)+BIAS(hd):K(hsd)+BIAS(hd):V(hsd)+BIAS(hd))), max_poly_len: 4096
+2026-08-28T07:07:40.628459Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=5.916µs peak= in_use= node: N237 (Requant: right shift: 26, scale: 27299), max_poly_len: 4096
+2026-08-28T07:07:40.628484Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=2.583µs peak= in_use= node: N238 (Requant: right shift: 26, scale: 28733), max_poly_len: 4096
+2026-08-28T07:07:40.628496Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=7.125µs peak= in_use= node: N122 (EinSum(Q(hqd)@K(hsd)->A(hqs))), max_poly_len: 4096
+2026-08-28T07:07:40.628503Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=1.709µs peak= in_use= node: N123 (CasualMask(neg_inf: -2147483648)), max_poly_len: 4096
+2026-08-28T07:07:40.628510Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=2.334µs peak= in_use= node: N124 (Softmax), max_poly_len: 4096
+2026-08-28T07:07:40.628533Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=1.875µs peak= in_use= node: N239 (Requant: right shift: 26, scale: 28863), max_poly_len: 4096
+2026-08-28T07:07:40.628541Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=3µs peak= in_use= node: N125 (EinSum(A(hqs)@V(hsd)->O(hqd))), max_poly_len: 4096
+2026-08-28T07:07:40.628563Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=1.709µs peak= in_use= node: N240 (Requant: right shift: 29, scale: 18727), max_poly_len: 4096
+2026-08-28T07:07:40.650770Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=22.195625ms peak= in_use= node: N126 (EinSum(O(hqd)@WO(hde)->Y(qe)+BIAS(e))), max_poly_len: 4096
+2026-08-28T07:07:40.650809Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=5µs peak= in_use= node: N127 (Add Some(AddQuantInfo { left_multiplier: 134150064, right_multiplier: 93, right_shift: 27, intermediate_bit_size: 62, output_scaling: ScalingFactor { min: -2968.3962, max: 2968.3962, scale: 1.4497662, quantized_domain: (-2048, 2047) } })), max_poly_len: 4096
+2026-08-28T07:07:40.650851Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=3.959µs peak= in_use= node: N241 (Requant: right shift: 27, scale: 1), max_poly_len: 4096
+2026-08-28T07:07:40.650930Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=72.625µs peak= in_use= node: N128 (LayerNorm(dimension size: 768)), max_poly_len: 4096
+2026-08-28T07:07:40.650956Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=3.042µs peak= in_use= node: N242 (Requant: right shift: 22, scale: 31949), max_poly_len: 4096
+2026-08-28T07:07:40.742664Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=91.694667ms peak= in_use= node: N129 (EinSum(X(se)@WU(ep)->U(sp)+BIAS(p))), max_poly_len: 4096
+2026-08-28T07:07:40.742697Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=5.542µs peak= in_use= node: N130 (GeLU), max_poly_len: 4096
+2026-08-28T07:07:40.833862Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=91.150875ms peak= in_use= node: N131 (EinSum(X(sp)@WD(pe)->Y(se)+BIAS(e))), max_poly_len: 4096
+2026-08-28T07:07:40.833904Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=5.167µs peak= in_use= node: N132 (Add Some(AddQuantInfo { left_multiplier: 33454198, right_multiplier: 185, right_shift: 25, intermediate_bit_size: 62, output_scaling: ScalingFactor { min: -2977.29, max: 2977.29, scale: 1.4541099, quantized_domain: (-2048, 2047) } })), max_poly_len: 4096
+2026-08-28T07:07:40.833930Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=4.333µs peak= in_use= node: N243 (Requant: right shift: 25, scale: 1), max_poly_len: 4096
+2026-08-28T07:07:40.834285Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=347.292µs peak= in_use= node: N133 (LayerNorm(dimension size: 768)), max_poly_len: 4096
+2026-08-28T07:07:40.834314Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=3.625µs peak= in_use= node: N244 (Requant: right shift: 21, scale: 24798), max_poly_len: 4096
+2026-08-28T07:07:40.906432Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=72.105041ms peak= in_use= node: N134 (EinSum(X(se)@WQ(ehd):WK(ehd):WV(ehd)->Q(hsd)+BIAS(hd):K(hsd)+BIAS(hd):V(hsd)+BIAS(hd))), max_poly_len: 4096
+2026-08-28T07:07:40.906483Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=6.041µs peak= in_use= node: N245 (Requant: right shift: 26, scale: 28431), max_poly_len: 4096
+2026-08-28T07:07:40.906503Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=2.042µs peak= in_use= node: N246 (Requant: right shift: 26, scale: 29086), max_poly_len: 4096
+2026-08-28T07:07:40.906516Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=7µs peak= in_use= node: N135 (EinSum(Q(hqd)@K(hsd)->A(hqs))), max_poly_len: 4096
+2026-08-28T07:07:40.906523Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=1.792µs peak= in_use= node: N136 (CasualMask(neg_inf: -2147483648)), max_poly_len: 4096
+2026-08-28T07:07:40.906530Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=1.917µs peak= in_use= node: N137 (Softmax), max_poly_len: 4096
+2026-08-28T07:07:40.906548Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=1.75µs peak= in_use= node: N247 (Requant: right shift: 26, scale: 25591), max_poly_len: 4096
+2026-08-28T07:07:40.906556Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=2.958µs peak= in_use= node: N138 (EinSum(A(hqs)@V(hsd)->O(hqd))), max_poly_len: 4096
+2026-08-28T07:07:40.906574Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=1.792µs peak= in_use= node: N248 (Requant: right shift: 29, scale: 18030), max_poly_len: 4096
+2026-08-28T07:07:40.933151Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=26.567709ms peak= in_use= node: N139 (EinSum(O(hqd)@WO(hde)->Y(qe)+BIAS(e))), max_poly_len: 4096
+2026-08-28T07:07:40.933189Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=4.167µs peak= in_use= node: N140 (Add Some(AddQuantInfo { left_multiplier: 134170848, right_multiplier: 178, right_shift: 27, intermediate_bit_size: 62, output_scaling: ScalingFactor { min: -2978.3303, max: 2978.3303, scale: 1.454618, quantized_domain: (-2048, 2047) } })), max_poly_len: 4096
+2026-08-28T07:07:40.933210Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=4.75µs peak= in_use= node: N249 (Requant: right shift: 27, scale: 1), max_poly_len: 4096
+2026-08-28T07:07:40.933291Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=74.042µs peak= in_use= node: N141 (LayerNorm(dimension size: 768)), max_poly_len: 4096
+2026-08-28T07:07:40.933308Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=2.292µs peak= in_use= node: N250 (Requant: right shift: 22, scale: 31692), max_poly_len: 4096
+2026-08-28T07:07:41.033248Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=99.928458ms peak= in_use= node: N142 (EinSum(X(se)@WU(ep)->U(sp)+BIAS(p))), max_poly_len: 4096
+2026-08-28T07:07:41.033280Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=6.166µs peak= in_use= node: N143 (GeLU), max_poly_len: 4096
+2026-08-28T07:07:41.130647Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=97.352458ms peak= in_use= node: N144 (EinSum(X(sp)@WD(pe)->Y(se)+BIAS(e))), max_poly_len: 4096
+2026-08-28T07:07:41.130681Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=5.084µs peak= in_use= node: N145 (Add Some(AddQuantInfo { left_multiplier: 33552974, right_multiplier: 304, right_shift: 25, intermediate_bit_size: 62, output_scaling: ScalingFactor { min: -2978.4597, max: 2978.4597, scale: 1.4546812, quantized_domain: (-2048, 2047) } })), max_poly_len: 4096
+2026-08-28T07:07:41.130700Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=3.875µs peak= in_use= node: N251 (Requant: right shift: 25, scale: 1), max_poly_len: 4096
+2026-08-28T07:07:41.130783Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=77.542µs peak= in_use= node: N146 (LayerNorm(dimension size: 768)), max_poly_len: 4096
+2026-08-28T07:07:41.130798Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=2.25µs peak= in_use= node: N252 (Requant: right shift: 21, scale: 20991), max_poly_len: 4096
+2026-08-28T07:07:41.197749Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=66.936875ms peak= in_use= node: N147 (EinSum(X(se)@WQ(ehd):WK(ehd):WV(ehd)->Q(hsd)+BIAS(hd):K(hsd)+BIAS(hd):V(hsd)+BIAS(hd))), max_poly_len: 4096
+2026-08-28T07:07:41.197793Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=6.292µs peak= in_use= node: N253 (Requant: right shift: 26, scale: 31254), max_poly_len: 4096
+2026-08-28T07:07:41.197808Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=2.708µs peak= in_use= node: N254 (Requant: right shift: 25, scale: 21901), max_poly_len: 4096
+2026-08-28T07:07:41.197822Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=7.917µs peak= in_use= node: N148 (EinSum(Q(hqd)@K(hsd)->A(hqs))), max_poly_len: 4096
+2026-08-28T07:07:41.197829Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=1.792µs peak= in_use= node: N149 (CasualMask(neg_inf: -2147483648)), max_poly_len: 4096
+2026-08-28T07:07:41.197836Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=1.916µs peak= in_use= node: N150 (Softmax), max_poly_len: 4096
+2026-08-28T07:07:41.197849Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=2.25µs peak= in_use= node: N255 (Requant: right shift: 26, scale: 29367), max_poly_len: 4096
+2026-08-28T07:07:41.197857Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=2.959µs peak= in_use= node: N151 (EinSum(A(hqs)@V(hsd)->O(hqd))), max_poly_len: 4096
+2026-08-28T07:07:41.197868Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=1.75µs peak= in_use= node: N256 (Requant: right shift: 31, scale: 32768), max_poly_len: 4096
+2026-08-28T07:07:41.222011Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=24.133209ms peak= in_use= node: N152 (EinSum(O(hqd)@WO(hde)->Y(qe)+BIAS(e))), max_poly_len: 4096
+2026-08-28T07:07:41.222046Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=4.25µs peak= in_use= node: N153 (Add Some(AddQuantInfo { left_multiplier: 116093648, right_multiplier: 2254, right_shift: 24, intermediate_bit_size: 62, output_scaling: ScalingFactor { min: -430.43066, max: 430.43066, scale: 0.21022254, quantized_domain: (-2048, 2047) } })), max_poly_len: 4096
+2026-08-28T07:07:41.222062Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=4.875µs peak= in_use= node: N257 (Requant: right shift: 24, scale: 1), max_poly_len: 4096
+2026-08-28T07:07:41.222146Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=75.291µs peak= in_use= node: N154 (LayerNorm(dimension size: 768)), max_poly_len: 4096
+2026-08-28T07:07:41.222158Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=2.5µs peak= in_use= node: N258 (Requant: right shift: 19, scale: 17131), max_poly_len: 4096
+2026-08-28T07:07:41.314626Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=92.457292ms peak= in_use= node: N155 (EinSum(X(se)@WU(ep)->U(sp)+BIAS(p))), max_poly_len: 4096
+2026-08-28T07:07:41.314661Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=5.042µs peak= in_use= node: N156 (GeLU), max_poly_len: 4096
+2026-08-28T07:07:41.406793Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=92.118709ms peak= in_use= node: N157 (EinSum(X(sp)@WD(pe)->Y(se)+BIAS(e))), max_poly_len: 4096
+2026-08-28T07:07:41.406824Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=3.875µs peak= in_use= node: N158 (Add Some(AddQuantInfo { left_multiplier: 21325334, right_multiplier: 1105, right_shift: 24, intermediate_bit_size: 62, output_scaling: ScalingFactor { min: -338.6314, max: 338.6314, scale: 0.16538775, quantized_domain: (-2048, 2047) } })), max_poly_len: 4096
+2026-08-28T07:07:41.406836Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=3.75µs peak= in_use= node: N259 (Requant: right shift: 24, scale: 1), max_poly_len: 4096
+2026-08-28T07:07:41.406917Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=75.167µs peak= in_use= node: N159 (LayerNorm(dimension size: 768)), max_poly_len: 4096
+2026-08-28T07:07:41.406927Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=2.125µs peak= in_use= node: N260 (Requant: right shift: 22, scale: 20028), max_poly_len: 4096
+2026-08-28T07:07:43.300087Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=1.893110667s peak= in_use= node: N160 (EinSum(X(se)@WE(ve)->O(sv))), max_poly_len: 4096
+2026-08-28T07:07:43.300185Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=8µs peak= in_use= node: N161 (Logits::Argmax), max_poly_len: 65536
+2026-08-28T07:07:43.300554Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=3.25µs peak= in_use= table type: Table { operation: Exp, input_scale_factor: 1169018213, output_scale_factor: 1199570944, table_bit_size: 16 }, max_poly_len: 65536
+2026-08-28T07:07:43.300574Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=1.292µs peak= in_use= table type: Table { operation: ShiftCheck, input_scale_factor: 1065353216, output_scale_factor: 1065353216, table_bit_size: 16 }, max_poly_len: 65536
+2026-08-28T07:07:43.300580Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=875ns peak= in_use= table type: Table { operation: SignedZeroCheck, input_scale_factor: 1065353216, output_scale_factor: 1065353216, table_bit_size: 16 }, max_poly_len: 65536
+2026-08-28T07:07:43.300587Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=750ns peak= in_use= table type: Table { operation: ZeroCheck, input_scale_factor: 1065353216, output_scale_factor: 1065353216, table_bit_size: 16 }, max_poly_len: 65536
+2026-08-28T07:07:43.300592Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=917ns peak= in_use= table type: Table { operation: GeLU, input_scale_factor: 1107441092, output_scale_factor: 1107441092, table_bit_size: 12 }, max_poly_len: 65536
+2026-08-28T07:07:43.300596Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=667ns peak= in_use= table type: Table { operation: GeLU, input_scale_factor: 1123621279, output_scale_factor: 1123621279, table_bit_size: 12 }, max_poly_len: 65536
+2026-08-28T07:07:43.300600Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=666ns peak= in_use= table type: Table { operation: GeLU, input_scale_factor: 1124888582, output_scale_factor: 1137456583, table_bit_size: 12 }, max_poly_len: 65536
+2026-08-28T07:07:43.300604Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=666ns peak= in_use= table type: Table { operation: GeLU, input_scale_factor: 1125524432, output_scale_factor: 1137600487, table_bit_size: 12 }, max_poly_len: 65536
+2026-08-28T07:07:43.300608Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=625ns peak= in_use= table type: Table { operation: GeLU, input_scale_factor: 1126845583, output_scale_factor: 1126845583, table_bit_size: 12 }, max_poly_len: 65536
+2026-08-28T07:07:43.300613Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=666ns peak= in_use= table type: Table { operation: GeLU, input_scale_factor: 1128282857, output_scale_factor: 1128282857, table_bit_size: 12 }, max_poly_len: 65536
+2026-08-28T07:07:43.300616Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=584ns peak= in_use= table type: Table { operation: GeLU, input_scale_factor: 1130076666, output_scale_factor: 1135021388, table_bit_size: 12 }, max_poly_len: 65536
+2026-08-28T07:07:43.300620Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=583ns peak= in_use= table type: Table { operation: GeLU, input_scale_factor: 1132689203, output_scale_factor: 1143357946, table_bit_size: 12 }, max_poly_len: 65536
+2026-08-28T07:07:43.300624Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=791ns peak= in_use= table type: Table { operation: GeLU, input_scale_factor: 1133081383, output_scale_factor: 1134134346, table_bit_size: 12 }, max_poly_len: 65536
+2026-08-28T07:07:43.300628Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=666ns peak= in_use= table type: Table { operation: GeLU, input_scale_factor: 1133148903, output_scale_factor: 1143424874, table_bit_size: 12 }, max_poly_len: 65536
+2026-08-28T07:07:43.300632Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=666ns peak= in_use= table type: Table { operation: GeLU, input_scale_factor: 1133656785, output_scale_factor: 1140179163, table_bit_size: 12 }, max_poly_len: 65536
+2026-08-28T07:07:43.300636Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=625ns peak= in_use= table type: Table { operation: GeLU, input_scale_factor: 1135284034, output_scale_factor: 1135284034, table_bit_size: 12 }, max_poly_len: 65536
+2026-08-28T07:07:43.300640Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=625ns peak= in_use= table type: Table { operation: Requantise, input_scale_factor: 1065353216, output_scale_factor: 1065353216, table_bit_size: 12 }, max_poly_len: 65536
+2026-08-28T07:07:43.300644Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=584ns peak= in_use= table type: Table { operation: Requantise, input_scale_factor: 1065353216, output_scale_factor: 1065353216, table_bit_size: 10 }, max_poly_len: 65536
+2026-08-28T07:07:43.300648Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: Context: lookup generation ...
+2026-08-28T07:07:43.300656Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=7.917µs peak= in_use= lookup generated.
+2026-08-28T07:07:43.300660Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: Context: commitment generating ...
+2026-08-28T07:07:43.300690Z DEBUG zkml_generate_contexts{inputs=1}: zkml::poly_commit::context: Building PCS params for 20 max variables...
+2026-08-28T07:07:45.244181Z DEBUG zkml_generate_contexts{inputs=1}: zkml::poly_commit::context: elapsed=1.943468125s peak= in_use= PPs & VPs built
+2026-08-28T07:07:53.563563Z DEBUG zkml_generate_contexts{inputs=1}: zkml::poly_commit::context: elapsed=8.312656833s peak= in_use= model commitments built
+2026-08-28T07:07:53.563614Z DEBUG zkml_generate_contexts{inputs=1}: zkml::iop::context: elapsed=10.262895625s peak= in_use= commitment generated.
+2026-08-28T07:07:53.586972Z  INFO zkml::model::llm: LLM: running model with initial shape: [3]
+2026-08-28T07:07:53.587031Z  INFO zkml::model::llm: Running iteration 3 with input tensor [3]
+2026-08-28T07:07:55.274731Z  INFO zkml::model::llm: Running iteration 4 with input tensor [1]
+2026-08-28T07:07:55.944917Z  INFO zkml::model::llm: Running iteration 5 with input tensor [1]
+2026-08-28T07:07:56.612238Z  INFO zkml::model::llm: Running iteration 6 with input tensor [1]
+2026-08-28T07:07:57.249309Z  INFO zkml::model::llm: Running iteration 7 with input tensor [1]
+2026-08-28T07:07:57.892635Z  INFO zkml::model::llm: Running iteration 8 with input tensor [1]
+2026-08-28T07:07:58.524045Z  INFO zkml::model::llm: Running iteration 9 with input tensor [1]
+2026-08-28T07:07:59.158974Z  INFO zkml::model::llm: Running iteration 10 with input tensor [1]
+2026-08-28T07:07:59.790174Z  INFO zkml::model::llm: Running last iteration (heavy) with 10 tokens
+2026-08-28T07:08:03.340247Z  INFO zkml::model::llm: Sealing chunk boundaries and proving the sampled subset
+2026-08-28T07:08:03.347686Z DEBUG zkml::iop::chunking: Chunking an LLM with 24 Add nodes in 27 chunks
+2026-08-28T07:08:03.497621Z DEBUG zkml::iop::sampling: anchor chunks: {ChunkID(0), ChunkID(26)}, sampled chunks: {ChunkID(1), ChunkID(10), ChunkID(24)}
+2026-08-28T07:08:03.497669Z DEBUG zkml::iop::prover: == Instantiate witness context ==
+2026-08-28T07:08:03.497680Z DEBUG instantiate_witness_ctx_for_chunk: zkml::lookup::context: == Witness poly commitments generation ==
+2026-08-28T07:08:03.819242Z DEBUG instantiate_witness_ctx_for_chunk: zkml::lookup::context: == Witness poly commitments generation metrics elapsed=321.547666ms peak= in_use= ==
+2026-08-28T07:08:03.819302Z DEBUG zkml::iop::prover: == Witness context metrics elapsed=321.624ms peak= in_use= ==
+2026-08-28T07:08:03.819307Z DEBUG zkml::iop::prover: == Challenge storage ==
+2026-08-28T07:08:03.819321Z DEBUG zkml::iop::prover: == Challenge storage metrics elapsed=6.375µs peak= in_use= ==
+2026-08-28T07:08:03.819325Z DEBUG zkml::iop::prover: == Generating claims ==
+2026-08-28T07:08:03.819378Z DEBUG zkml::iop::prover: proving layer "Logits::Argmax"
+2026-08-28T07:08:03.930143Z  WARN dp_crypto::sumcheck::util: thread size 11 is not power of 2, using 8 threads instead.
+2026-08-28T07:08:04.402464Z DEBUG zkml::iop::prover: proving layer "EinSum(X(se)@WE(ve)->O(sv))"
+2026-08-28T07:08:07.395083Z DEBUG zkml::iop::prover: == Claims generation metrics elapsed=3.575710458s peak= in_use= ==
+2026-08-28T07:08:07.395137Z DEBUG zkml::iop::prover: == Generating Lookup Table claims ==
+2026-08-28T07:08:07.425509Z DEBUG zkml::iop::prover: == Lookup Table claims generation metrics elapsed=30.354709ms peak= in_use= ==
+2026-08-28T07:08:07.425541Z DEBUG zkml::iop::prover: == Generate proof ==
+2026-08-28T07:08:11.927556Z DEBUG zkml::iop::prover: == Generate proof metrics elapsed=4.501977958s peak= in_use= ==
+2026-08-28T07:08:11.928963Z DEBUG zkml::iop::prover: == Instantiate witness context ==
+2026-08-28T07:08:11.928981Z DEBUG instantiate_witness_ctx_for_chunk: zkml::lookup::context: == Witness poly commitments generation ==
+2026-08-28T07:08:11.978048Z DEBUG instantiate_witness_ctx_for_chunk: zkml::lookup::context: == Witness poly commitments generation metrics elapsed=49.051792ms peak= in_use= ==
+2026-08-28T07:08:11.978104Z DEBUG zkml::iop::prover: == Witness context metrics elapsed=49.128ms peak= in_use= ==
+2026-08-28T07:08:11.978110Z DEBUG zkml::iop::prover: == Challenge storage ==
+2026-08-28T07:08:11.978122Z DEBUG zkml::iop::prover: == Challenge storage metrics elapsed=7.75µs peak= in_use= ==
+2026-08-28T07:08:11.978125Z DEBUG zkml::iop::prover: == Generating claims ==
+2026-08-28T07:08:11.978608Z DEBUG zkml::iop::prover: proving layer "Requant: right shift: 22, scale: 20028"
+2026-08-28T07:08:12.020506Z DEBUG zkml::iop::prover: proving layer "LayerNorm(dimension size: 768)"
+2026-08-28T07:08:12.057853Z DEBUG zkml::iop::prover: proving layer "Requant: right shift: 24, scale: 1"
+2026-08-28T07:08:12.114366Z DEBUG zkml::iop::prover: proving layer "Add Some(AddQuantInfo { left_multiplier: 21325334, right_multiplier: 1105, right_shift: 24, intermediate_bit_size: 62, output_scaling: ScalingFactor { min: -338.6314, max: 338.6314, scale: 0.16538775, quantized_domain: (-2048, 2047) } })"
+2026-08-28T07:08:12.115570Z DEBUG zkml::iop::prover: == Claims generation metrics elapsed=137.437916ms peak= in_use= ==
+2026-08-28T07:08:12.115588Z DEBUG zkml::iop::prover: == Generating Lookup Table claims ==
+2026-08-28T07:08:12.203035Z DEBUG zkml::iop::prover: == Lookup Table claims generation metrics elapsed=87.435959ms peak= in_use= ==
+2026-08-28T07:08:12.203061Z DEBUG zkml::iop::prover: == Generate proof ==
+2026-08-28T07:08:12.481783Z DEBUG zkml::iop::prover: == Generate proof metrics elapsed=278.712083ms peak= in_use= ==
+2026-08-28T07:08:12.482027Z DEBUG zkml::iop::prover: == Instantiate witness context ==
+2026-08-28T07:08:12.482038Z DEBUG instantiate_witness_ctx_for_chunk: zkml::lookup::context: == Witness poly commitments generation ==
+2026-08-28T07:08:12.601548Z DEBUG instantiate_witness_ctx_for_chunk: zkml::lookup::context: == Witness poly commitments generation metrics elapsed=119.496417ms peak= in_use= ==
+2026-08-28T07:08:12.601614Z DEBUG zkml::iop::prover: == Witness context metrics elapsed=119.577083ms peak= in_use= ==
+2026-08-28T07:08:12.601619Z DEBUG zkml::iop::prover: == Challenge storage ==
+2026-08-28T07:08:12.601631Z DEBUG zkml::iop::prover: == Challenge storage metrics elapsed=7.792µs peak= in_use= ==
+2026-08-28T07:08:12.601635Z DEBUG zkml::iop::prover: == Generating claims ==
+2026-08-28T07:08:12.602541Z DEBUG zkml::iop::prover: proving layer "EinSum(X(sp)@WD(pe)->Y(se)+BIAS(e))"
+2026-08-28T07:08:12.719138Z DEBUG zkml::iop::prover: proving layer "GeLU"
+2026-08-28T07:08:12.852713Z DEBUG zkml::iop::prover: proving layer "EinSum(X(se)@WU(ep)->U(sp)+BIAS(p))"
+2026-08-28T07:08:12.965149Z DEBUG zkml::iop::prover: proving layer "Requant: right shift: 22, scale: 30068"
+2026-08-28T07:08:13.007887Z DEBUG zkml::iop::prover: proving layer "LayerNorm(dimension size: 768)"
+2026-08-28T07:08:13.046336Z DEBUG zkml::iop::prover: proving layer "Requant: right shift: 27, scale: 1"
+2026-08-28T07:08:13.101537Z DEBUG zkml::iop::prover: proving layer "Add Some(AddQuantInfo { left_multiplier: 134194928, right_multiplier: 84, right_shift: 27, intermediate_bit_size: 62, output_scaling: ScalingFactor { min: -2912.748, max: 2912.748, scale: 1.4225875, quantized_domain: (-2048, 2047) } })"
+2026-08-28T07:08:13.102252Z DEBUG zkml::iop::prover: == Claims generation metrics elapsed=500.607792ms peak= in_use= ==
+2026-08-28T07:08:13.102272Z DEBUG zkml::iop::prover: == Generating Lookup Table claims ==
+2026-08-28T07:08:13.192891Z DEBUG zkml::iop::prover: == Lookup Table claims generation metrics elapsed=90.607542ms peak= in_use= ==
+2026-08-28T07:08:13.192916Z DEBUG zkml::iop::prover: == Generate proof ==
+2026-08-28T07:08:16.548085Z DEBUG zkml::iop::prover: == Generate proof metrics elapsed=3.355139833s peak= in_use= ==
+2026-08-28T07:08:16.549504Z DEBUG zkml::iop::prover: == Instantiate witness context ==
+2026-08-28T07:08:16.549518Z DEBUG instantiate_witness_ctx_for_chunk: zkml::lookup::context: == Witness poly commitments generation ==
+2026-08-28T07:08:16.628428Z DEBUG instantiate_witness_ctx_for_chunk: zkml::lookup::context: == Witness poly commitments generation metrics elapsed=78.895458ms peak= in_use= ==
+2026-08-28T07:08:16.628485Z DEBUG zkml::iop::prover: == Witness context metrics elapsed=78.969625ms peak= in_use= ==
+2026-08-28T07:08:16.628489Z DEBUG zkml::iop::prover: == Challenge storage ==
+2026-08-28T07:08:16.628502Z DEBUG zkml::iop::prover: == Challenge storage metrics elapsed=8.333µs peak= in_use= ==
+2026-08-28T07:08:16.628505Z DEBUG zkml::iop::prover: == Generating claims ==
+2026-08-28T07:08:16.629571Z DEBUG zkml::iop::prover: proving layer "EinSum(X(sp)@WD(pe)->Y(se)+BIAS(e))"
+2026-08-28T07:08:16.748860Z DEBUG zkml::iop::prover: proving layer "GeLU"
+2026-08-28T07:08:16.892117Z DEBUG zkml::iop::prover: proving layer "EinSum(X(se)@WU(ep)->U(sp)+BIAS(p))"
+2026-08-28T07:08:17.008044Z DEBUG zkml::iop::prover: proving layer "Requant: right shift: 19, scale: 19000"
+2026-08-28T07:08:17.048634Z DEBUG zkml::iop::prover: proving layer "LayerNorm(dimension size: 768)"
+2026-08-28T07:08:17.087557Z DEBUG zkml::iop::prover: proving layer "Requant: right shift: 28, scale: 1"
+2026-08-28T07:08:17.143866Z DEBUG zkml::iop::prover: proving layer "Add Some(AddQuantInfo { left_multiplier: 70684048, right_multiplier: 32554, right_shift: 28, intermediate_bit_size: 62, output_scaling: ScalingFactor { min: -16.37421, max: 16.37421, scale: 0.007997172, quantized_domain: (-2048, 2047) } })"
+2026-08-28T07:08:17.144580Z DEBUG zkml::iop::prover: == Claims generation metrics elapsed=516.065542ms peak= in_use= ==
+2026-08-28T07:08:17.144598Z DEBUG zkml::iop::prover: == Generating Lookup Table claims ==
+2026-08-28T07:08:17.240272Z DEBUG zkml::iop::prover: == Lookup Table claims generation metrics elapsed=95.664125ms peak= in_use= ==
+2026-08-28T07:08:17.240290Z DEBUG zkml::iop::prover: == Generate proof ==
+2026-08-28T07:08:20.497754Z DEBUG zkml::iop::prover: == Generate proof metrics elapsed=3.25742925s peak= in_use= ==
+2026-08-28T07:08:20.498488Z DEBUG zkml::iop::prover: == Instantiate witness context ==
+2026-08-28T07:08:20.498505Z DEBUG instantiate_witness_ctx_for_chunk: zkml::lookup::context: == Witness poly commitments generation ==
+2026-08-28T07:08:20.504753Z DEBUG instantiate_witness_ctx_for_chunk: zkml::lookup::context: == Witness poly commitments generation metrics elapsed=6.234375ms peak= in_use= ==
+2026-08-28T07:08:20.504790Z DEBUG zkml::iop::prover: == Witness context metrics elapsed=6.290125ms peak= in_use= ==
+2026-08-28T07:08:20.504795Z DEBUG zkml::iop::prover: == Challenge storage ==
+2026-08-28T07:08:20.504800Z DEBUG zkml::iop::prover: == Challenge storage metrics elapsed=1.5µs peak= in_use= ==
+2026-08-28T07:08:20.504804Z DEBUG zkml::iop::prover: == Generating claims ==
+2026-08-28T07:08:20.505447Z DEBUG zkml::iop::prover: proving layer "Positional(10x768)"
+2026-08-28T07:08:20.507536Z DEBUG zkml::iop::prover: proving layer "Embeddings(vocab:50257, hidden:768)"
+2026-08-28T07:08:23.089888Z DEBUG zkml::iop::prover: == Claims generation metrics elapsed=2.585060417s peak= in_use= ==
+2026-08-28T07:08:23.090663Z DEBUG zkml::iop::prover: == Generating Lookup Table claims ==
+2026-08-28T07:08:23.090686Z DEBUG zkml::iop::prover: == Lookup Table claims generation metrics elapsed=8.625µs peak= in_use= ==
+2026-08-28T07:08:23.090691Z DEBUG zkml::iop::prover: == Generate proof ==
+2026-08-28T07:08:27.263188Z DEBUG zkml::iop::prover: == Generate proof metrics elapsed=4.172461917s peak= in_use= ==
+2026-08-28T07:08:27.266622Z  INFO zkml::model::llm::test: manifest covers 27 chunks, proven subset: 5
+2026-08-28T07:08:27.267457Z  INFO zkml::model::llm::test: Sampled proof size: 487.42 KiB
+2026-08-28T07:08:27.274956Z DEBUG zkml_llm_sampled_verify{max_context=10 input_tokens=1 output_tensors=1}: zkml::iop::chunking: Chunking an LLM with 24 Add nodes in 27 chunks
+test model::llm::test::test_llm_sampled_prove_gpt2 ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 253 filtered out; finished in 53.46s
+

@@ -1,0 +1,39 @@
+   Compiling zkml v2.0.1 (/root/deep-prove/zkml)
+warning: type `PolySpill` is more private than the item `CommittedPolynomial::<'a, F, PCS>::batch_commit_with_spill`
+   --> zkml/src/poly_commit/context.rs:190:5
+    |
+190 | /     pub(crate) fn batch_commit_with_spill(
+191 | |         prover_params: &PCS::ProverSetup,
+192 | |         polys: Vec<(DensePolynomial<'a, F>, Option<PolySpill>)>,
+193 | |     ) -> anyhow::Result<Vec<Self>>
+194 | |     where
+195 | |         PCS: CommitmentScheme<Field = F>,
+    | |_________________________________________^ associated function `CommittedPolynomial::<'a, F, PCS>::batch_commit_with_spill` is reachable at visibility `pub(crate)`
+    |
+note: but type `PolySpill` is only usable at visibility `pub(self)`
+   --> zkml/src/poly_commit/context.rs:62:1
+    |
+ 62 | struct PolySpill {
+    | ^^^^^^^^^^^^^^^^
+    = note: `#[warn(private_interfaces)]` on by default
+
+warning: type `CommitInput` is more private than the item `GlobalCommitmentContext::<'a, F, PCS>::new`
+   --> zkml/src/poly_commit/context.rs:297:5
+    |
+297 | /     pub fn new<R: Rng>(
+298 | |         witness_poly_num_vars: usize,
+299 | |         polys: HashMap<CommitmentId, CommitInput>,
+300 | |         lookup_ctx: &[&Table],
+301 | |         max_node_id: NodeId,
+302 | |         rng: &mut R,
+303 | |     ) -> Result<GlobalCommitmentContext<'a, F, PCS>> {
+    | |____________________________________________________^ associated function `GlobalCommitmentContext::<'a, F, PCS>::new` is reachable at visibility `pub`
+    |
+note: but type `CommitInput` is only usable at visibility `pub(crate)`
+   --> zkml/src/poly_commit/context.rs:40:1
+    |
+ 40 | pub(crate) enum CommitInput {
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: `zkml` (lib) generated 2 warnings
+    Finished `release` profile [optimized + debuginfo] target(s) in 58.29s

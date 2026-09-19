@@ -1,0 +1,11 @@
+run,calibration_config,first_token_match_pct,per_token_match_pct,full_sentence_match_pct,teacher_forced_match_pct,quantize_s
+after_fix,random [seeded(seed=42) / minmax],88,53,31,89,13
+after_fix,random32 [seeded(seed=42) / minmax],100,52,31,87,17
+after_fix,corpus-minmax [tokens(32 sequences) / minmax],88,55,31,91,17
+after_fix,"corpus-q999 [tokens(32 sequences) / quantiles(0.001,0.999)]",6,1,0,3,32
+after_fix,generic:random [seeded(seed=42) / minmax / generic-observer],12,5,0,16,10
+before_fix_generic_observer,random [seeded(seed=42) / minmax],19,4,0,,12
+before_fix_generic_observer,corpus-minmax [tokens(32 sequences) / minmax],6,2,0,,16
+after_fix_rerun,random [seeded(seed=42) / minmax],88,49,25,89,12
+after_fix_rerun,random [seeded(seed=42) / minmax],88,53,31,89,13
+after_fix_rerun,random [seeded(seed=42) / minmax],88,53,31,89,13

@@ -1,0 +1,2 @@
+sealed_chunks=163 proven_chunks=5 proof_size=4.34 MiB total_s=69500.1
+peak_memory: load+quantize 387 GB resident; streaming weight commitment ~60 GB working set; whole pipeline < 2 TB (host limit). Source: operator notes, streaming-refactor-plan.md

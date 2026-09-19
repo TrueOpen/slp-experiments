@@ -1,0 +1,50 @@
+==============================================================
+  可验证推理服务模拟
+  模型: TinyLlama/TinyLlama-1.1B-Chat-v1.0
+  12 个请求，按窗口 [4, 6, 2] 到达；槽位 16，最大 6 槽 → 模型上下文 96；每请求最多生成 4 token；SAMPLES=2
+  TAMPER=1：最后一个窗口 worker 将宣称一个篡改过的答案
+==============================================================
+
+[A] 登记模型版本（确定性校准 → 量化 → 权重承诺 → 发布验证上下文）
+    校准: seeded(seed=42)，digest 5cf309bea4f4…
+    量化权重指纹: 452a1bec1230…
+    发布验证上下文 119.95 KiB（含全部权重承诺）
+[A] 完成，用时 370.7s
+
+────────── 窗口 0：4 个请求到达 ──────────
+    [0] "The sky is" → "the Must and and"
+    [1] "Once upon a time" → ". A few of"
+    [2] "The capital of France is" → "The  The"
+    [3] "My favorite food is" → "Myy, My"
+    服务(批量解码) 53.0s，答案已返回
+2026-09-13T00:29:42.856560Z  WARN dp_crypto::sumcheck::util: thread size 30 is not power of 2, using 16 threads instead.
+    出证 114.8s：封存 47 层、证明 4 层，证明 1765 KiB，回执 io=42b020356fef…/004a2f9649c6…
+    验证 2.4s：✅ 全部 4 个请求的 prompt/答案均绑定到该模型版本的证明
+
+────────── 窗口 1：6 个请求到达 ──────────
+    [4] "In the year 2050" → ".   In"
+    [5] "Water boils at" → "the 1."
+    [6] "The quick brown fox" → "of a, and"
+    [7] "Rust is a language" → ""
+    [8] "To be or not to be" → ". The it is"
+    [9] "The moon orbits" → "to. Details."
+    服务(批量解码) 19.4s，答案已返回
+    出证 160.0s：封存 47 层、证明 4 层，证明 3235 KiB，回执 io=2ef4c2601101…/dbdb364495e3…
+    验证 3.5s：✅ 全部 6 个请求的 prompt/答案均绑定到该模型版本的证明
+
+────────── 窗口 2：2 个请求到达 ──────────
+    [10] "A triangle has" → "IR01s"
+    [11] "Music makes me" → "Overshat."
+    服务(批量解码) 48.5s，答案已返回
+    出证 116.2s：封存 47 层、证明 4 层，证明 1603 KiB，回执 io=00969d4c18a6…/adbae7b05dc1…
+    ⚠️ worker 篡改：把请求 [10] 的第一个生成 token 从 23292 改为 12345 后再发布
+    验证 2.4s：❌ 拒绝（one hot encoding claim is incorrect）
+
+==============================================================
+  汇总（模型 llama2-quant-452a1bec1230）
+  窗口 | 请求 | token | 解码s | 出证s | 验证s | 证明KiB | 证/封 | 结果
+     0 |    4 |    36 |  53.0 | 114.8 |   2.4 |    1765 |  4/47 | ✅ 接受
+     1 |    6 |    60 |  19.4 | 160.0 |   3.5 |    3235 |  4/47 | ✅ 接受
+     2 |    2 |    16 |  48.5 | 116.2 |   2.4 |    1603 |  4/47 | ❌ 拒绝
+  合计 12 个请求、3 份证明；出证 390.9s（平均每请求 32.6s）；验证 8.3s
+  TAMPER 场景：篡改的窗口被拒绝 ✅（其余窗口正常接受）

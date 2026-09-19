@@ -1,0 +1,21 @@
+==============================================================
+  测试语料对比  模型 TinyLlama/TinyLlama-1.1B-Chat-v1.0  语料 /root/calib_wikitext2.txt
+  测试块 64 × 32 token（从第 1024 个 token 起，与校准段不重叠）→ 1984 个下一 token 预测位
+  校准配置 ["random", "corpus", "generic"]（corpus 用语料前 32×32 token）
+==============================================================
+
+[f32 参考] 61.5s  PPL 66.58  top-1 命中 30.4%
+
+[random [seeded(seed=42) / minmax]] 量化 38.3s → PPL 80.57  top-1 命中 28.8%  与 f32 top-1 一致 76.4%  top-5 重叠 75.9%  KL(f32‖量化) 0.3229 nat
+
+[corpus [tokens(32 sequences) / minmax]] 量化 19.1s → PPL 80.39  top-1 命中 28.7%  与 f32 top-1 一致 77.3%  top-5 重叠 76.9%  KL(f32‖量化) 0.3224 nat
+
+[generic [seeded(seed=42) / minmax / generic-observer]] 量化 11.0s → PPL 2308.17  top-1 命中 5.1%  与 f32 top-1 一致 13.7%  top-5 重叠 19.2%  KL(f32‖量化) 4.0277 nat
+
+==============================================================
+  汇总（测试语料 1984 个预测位，教师强制）
+  模型 | PPL | top-1 命中 | 与 f32 top-1 一致 | top-5 重叠 | KL(f32‖量化)/位 | 量化耗时
+  f32 原始模型 | 66.58 | 30.4% | 100% | 100% | 0 | -
+  random [seeded(seed=42) / minmax] | 80.57 | 28.8% | 76.4% | 75.9% | 0.3229 | 38s
+  corpus [tokens(32 sequences) / minmax] | 80.39 | 28.7% | 77.3% | 76.9% | 0.3224 | 19s
+  generic [seeded(seed=42) / minmax / generic-observer] | 2308.17 | 5.1% | 13.7% | 19.2% | 4.0277 | 11s

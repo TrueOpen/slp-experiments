@@ -1,0 +1,7 @@
+check,slot,result
+leak_check_swap_neighbours,0,✓ 不变
+leak_check_swap_neighbours,1,✓ 不变
+leak_check_swap_neighbours,2,✓ 不变
+equivalence_vs_single_prompt,0,✓ 一致
+equivalence_vs_single_prompt,1,✗ 不一致
+equivalence_vs_single_prompt,2,✗ 不一致

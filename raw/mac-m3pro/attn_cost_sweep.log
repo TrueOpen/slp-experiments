@@ -1,0 +1,25 @@
+=== SEQ=16 ===
+ATTN_COST_CSV,seq=16,kind=attn,chunk=Chunk(13),run_s=14.9,prove_s=3.35,proof_kib=580.7
+ATTN_COST_CSV,seq=16,kind=mlp,chunk=Chunk(12),run_s=14.9,prove_s=3.94,proof_kib=149.3
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 255 filtered out; finished in 41.14s
+          6365970432  maximum resident set size
+=== SEQ=32 ===
+ATTN_COST_CSV,seq=32,kind=attn,chunk=Chunk(13),run_s=31.7,prove_s=3.66,proof_kib=648.3
+ATTN_COST_CSV,seq=32,kind=mlp,chunk=Chunk(12),run_s=31.7,prove_s=4.26,proof_kib=160.8
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 255 filtered out; finished in 58.94s
+          8719253504  maximum resident set size
+=== SEQ=64 ===
+ATTN_COST_CSV,seq=64,kind=attn,chunk=Chunk(13),run_s=63.9,prove_s=4.39,proof_kib=717.4
+ATTN_COST_CSV,seq=64,kind=mlp,chunk=Chunk(12),run_s=63.9,prove_s=4.95,proof_kib=172.9
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 255 filtered out; finished in 93.26s
+          8205975552  maximum resident set size
+=== SEQ=128 ===
+ATTN_COST_CSV,seq=128,kind=attn,chunk=Chunk(13),run_s=134.5,prove_s=5.78,proof_kib=788.0
+ATTN_COST_CSV,seq=128,kind=mlp,chunk=Chunk(12),run_s=134.5,prove_s=5.68,proof_kib=185.5
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 255 filtered out; finished in 166.67s
+          9030336512  maximum resident set size
+=== SEQ=256 ===
+ATTN_COST_CSV,seq=256,kind=attn,chunk=Chunk(14),run_s=269.2,prove_s=10.05,proof_kib=860.1
+ATTN_COST_CSV,seq=256,kind=mlp,chunk=Chunk(13),run_s=269.2,prove_s=7.79,proof_kib=198.7
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 255 filtered out; finished in 309.40s
+          9304293376  maximum resident set size

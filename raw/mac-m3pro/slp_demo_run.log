@@ -1,0 +1,156 @@
+   Compiling smallvec v1.15.1
+   Compiling bytes v1.11.1
+   Compiling serde_json v1.0.149
+   Compiling arrayvec v0.7.6
+   Compiling darling_core v0.21.3
+   Compiling subtle v2.6.1
+   Compiling generic-array v0.14.7
+   Compiling ring v0.17.14
+   Compiling futures-util v0.3.32
+   Compiling futures-channel v0.3.32
+   Compiling clap_builder v4.5.60
+   Compiling parking_lot_core v0.9.12
+   Compiling naga v26.0.0
+   Compiling icu_normalizer v2.1.1
+   Compiling keccak v0.1.6
+   Compiling parking_lot v0.12.5
+   Compiling tokio v1.50.0
+   Compiling http v1.4.0
+   Compiling crypto-common v0.1.7
+   Compiling block-buffer v0.10.4
+   Compiling digest v0.10.7
+   Compiling ark-serialize v0.5.0 (https://github.com/a16z/arkworks-algebra?branch=dev%2Ftwist-shout#76bb3a45)
+   Compiling tract-data v0.21.10
+   Compiling idna_adapter v1.2.1
+   Compiling idna v1.1.0
+   Compiling cubecl-common v0.9.0-pre.6 (https://github.com/tracel-ai/cubecl.git?rev=7cd8e9c869d363edcbf989fd905eb4b28df938ab#7cd8e9c8)
+   Compiling ark-ff v0.5.0 (https://github.com/a16z/arkworks-algebra?branch=dev%2Ftwist-shout#76bb3a45)
+   Compiling darling_macro v0.21.3
+   Compiling http-body v1.0.1
+   Compiling clap v4.5.60
+   Compiling darling v0.21.3
+   Compiling sha2 v0.10.9
+   Compiling enumset_derive v0.14.0
+   Compiling cubecl-macros-internal v0.9.0-pre.6 (https://github.com/tracel-ai/cubecl.git?rev=7cd8e9c869d363edcbf989fd905eb4b28df938ab#7cd8e9c8)
+   Compiling cubecl-macros v0.9.0-pre.6 (https://github.com/tracel-ai/cubecl.git?rev=7cd8e9c869d363edcbf989fd905eb4b28df938ab#7cd8e9c8)
+   Compiling tract-linalg v0.21.10
+   Compiling enumset v1.1.10
+   Compiling form_urlencoded v1.2.2
+   Compiling text_placeholder v0.5.1
+   Compiling url v2.5.8
+   Compiling cubecl-ir v0.9.0-pre.6 (https://github.com/tracel-ai/cubecl.git?rev=7cd8e9c869d363edcbf989fd905eb4b28df938ab#7cd8e9c8)
+   Compiling http-body-util v0.1.3
+   Compiling tokio-util v0.7.18
+   Compiling h2 v0.4.13
+   Compiling tract-core v0.21.10
+   Compiling tower v0.5.3
+   Compiling tower-http v0.6.8
+   Compiling wgpu-hal v26.0.6
+   Compiling cubecl-runtime v0.9.0-pre.6 (https://github.com/tracel-ai/cubecl.git?rev=7cd8e9c869d363edcbf989fd905eb4b28df938ab#7cd8e9c8)
+   Compiling rustls-webpki v0.103.9
+   Compiling rustls v0.23.37
+   Compiling wgpu-core-deps-apple v26.0.0
+   Compiling wgpu-core v26.0.1
+   Compiling hyper v1.8.1
+   Compiling cubecl-core v0.9.0-pre.6 (https://github.com/tracel-ai/cubecl.git?rev=7cd8e9c869d363edcbf989fd905eb4b28df938ab#7cd8e9c8)
+   Compiling ark-poly v0.5.0 (https://github.com/a16z/arkworks-algebra?branch=dev%2Ftwist-shout#76bb3a45)
+   Compiling ark-relations v0.5.1
+   Compiling hyper-util v0.1.20
+   Compiling cubecl-opt v0.9.0-pre.6 (https://github.com/tracel-ai/cubecl.git?rev=7cd8e9c869d363edcbf989fd905eb4b28df938ab#7cd8e9c8)
+   Compiling cubecl-cpp v0.9.0-pre.6 (https://github.com/tracel-ai/cubecl.git?rev=7cd8e9c869d363edcbf989fd905eb4b28df938ab#7cd8e9c8)
+   Compiling wgpu v26.0.1
+   Compiling cubecl-std v0.9.0-pre.6 (https://github.com/tracel-ai/cubecl.git?rev=7cd8e9c869d363edcbf989fd905eb4b28df938ab#7cd8e9c8)
+   Compiling cubecl-wgpu v0.9.0-pre.6 (https://github.com/tracel-ai/cubecl.git?rev=7cd8e9c869d363edcbf989fd905eb4b28df938ab#7cd8e9c8)
+   Compiling cubecl v0.9.0-pre.6 (https://github.com/tracel-ai/cubecl.git?rev=7cd8e9c869d363edcbf989fd905eb4b28df938ab#7cd8e9c8)
+   Compiling burn-std v0.20.0-pre.6 (https://github.com/tracel-ai/burn.git?rev=c071730459a135b4d06ad0e14c8a0e5771e5ba58#c0717304)
+   Compiling burn-backend v0.20.0-pre.6 (https://github.com/tracel-ai/burn.git?rev=c071730459a135b4d06ad0e14c8a0e5771e5ba58#c0717304)
+   Compiling cubek-matmul v0.1.0-pre.1 (https://github.com/tracel-ai/cubek?rev=8097a621dfd3a6a89f8d0433994e8c1adba377c2#8097a621)
+   Compiling cubek-random v0.1.0-pre.1 (https://github.com/tracel-ai/cubek?rev=8097a621dfd3a6a89f8d0433994e8c1adba377c2#8097a621)
+   Compiling burn-ir v0.20.0-pre.6 (https://github.com/tracel-ai/burn.git?rev=c071730459a135b4d06ad0e14c8a0e5771e5ba58#c0717304)
+   Compiling burn-tensor v0.20.0-pre.6 (https://github.com/tracel-ai/burn.git?rev=c071730459a135b4d06ad0e14c8a0e5771e5ba58#c0717304)
+   Compiling cubek-reduce v0.1.0-pre.1 (https://github.com/tracel-ai/cubek?rev=8097a621dfd3a6a89f8d0433994e8c1adba377c2#8097a621)
+   Compiling cubek-quant v0.1.0-pre.1 (https://github.com/tracel-ai/cubek?rev=8097a621dfd3a6a89f8d0433994e8c1adba377c2#8097a621)
+   Compiling tokio-rustls v0.26.4
+   Compiling ark-ec v0.5.0 (https://github.com/a16z/arkworks-algebra?branch=dev%2Ftwist-shout#76bb3a45)
+   Compiling cubek-attention v0.1.0-pre.1 (https://github.com/tracel-ai/cubek?rev=8097a621dfd3a6a89f8d0433994e8c1adba377c2#8097a621)
+   Compiling cubek-convolution v0.1.0-pre.1 (https://github.com/tracel-ai/cubek?rev=8097a621dfd3a6a89f8d0433994e8c1adba377c2#8097a621)
+   Compiling hyper-rustls v0.27.7
+   Compiling burn-core v0.20.0-pre.6 (https://github.com/tracel-ai/burn.git?rev=c071730459a135b4d06ad0e14c8a0e5771e5ba58#c0717304)
+   Compiling rustls-platform-verifier v0.6.2
+   Compiling ark-snark v0.5.1
+   Compiling ureq-proto v0.5.3
+   Compiling blake2 v0.10.6
+   Compiling merlin v3.0.0
+   Compiling reqwest v0.13.2
+   Compiling prometheus-client v0.23.1
+   Compiling cubek v0.1.0-pre.1 (https://github.com/tracel-ai/cubek?rev=8097a621dfd3a6a89f8d0433994e8c1adba377c2#8097a621)
+   Compiling burn-cubecl v0.20.0-pre.6 (https://github.com/tracel-ai/burn.git?rev=c071730459a135b4d06ad0e14c8a0e5771e5ba58#c0717304)
+   Compiling ureq v3.2.0
+   Compiling tracing-subscriber v0.3.22
+   Compiling ark-crypto-primitives v0.5.0
+   Compiling burn-autodiff v0.20.0-pre.6 (https://github.com/tracel-ai/burn.git?rev=c071730459a135b4d06ad0e14c8a0e5771e5ba58#c0717304)
+   Compiling tract-nnef v0.21.10
+   Compiling tokio-stream v0.1.18
+   Compiling crossterm v0.29.0
+   Compiling console v0.16.2
+   Compiling divan v0.1.21
+   Compiling indicatif v0.18.4
+   Compiling tract-onnx-opl v0.21.10
+   Compiling burn-wgpu v0.20.0-pre.6 (https://github.com/tracel-ai/burn.git?rev=c071730459a135b4d06ad0e14c8a0e5771e5ba58#c0717304)
+   Compiling burn-ndarray v0.20.0-pre.6 (https://github.com/tracel-ai/burn.git?rev=c071730459a135b4d06ad0e14c8a0e5771e5ba58#c0717304)
+   Compiling blake3 v1.8.3
+   Compiling vise v0.3.2
+   Compiling comfy-table v7.2.2
+   Compiling tokio-metrics v0.4.9
+   Compiling telemetry v2.0.1 (/Users/<user>/Documents/zkml/deep-prove/telemetry)
+   Compiling ark-poly-commit v0.5.0
+   Compiling prost v0.11.9
+   Compiling ark-bn254 v0.5.0 (https://github.com/a16z/arkworks-algebra?branch=dev%2Ftwist-shout#76bb3a45)
+   Compiling burn-optim v0.20.0-pre.6 (https://github.com/tracel-ai/burn.git?rev=c071730459a135b4d06ad0e14c8a0e5771e5ba58#c0717304)
+   Compiling burn-nn v0.20.0-pre.6 (https://github.com/tracel-ai/burn.git?rev=c071730459a135b4d06ad0e14c8a0e5771e5ba58#c0717304)
+   Compiling tract-hir v0.21.10
+   Compiling safetensors v0.7.0
+   Compiling unicode-normalization-alignments v0.1.12
+   Compiling tenstore v2.0.1 (/Users/<user>/Documents/zkml/deep-prove/tenstore)
+   Compiling tokenizers v0.22.2
+   Compiling candle-core v0.9.2
+   Compiling dp-crypto v0.1.0 (https://github.com/Lagrange-Labs/dp-crypto.git?branch=feat%2Fhkzg_gpu#22e8e93c)
+   Compiling gguf-rs v0.1.7
+   Compiling tract-onnx v0.21.10
+   Compiling safetensors v0.6.2
+   Compiling burn v0.20.0-pre.6 (https://github.com/tracel-ai/burn.git?rev=c071730459a135b4d06ad0e14c8a0e5771e5ba58#c0717304)
+   Compiling tinytemplate v1.2.1
+   Compiling rstest v0.25.0
+   Compiling criterion v0.6.0
+   Compiling zkml v2.0.1 (/Users/<user>/Documents/zkml/deep-prove/zkml)
+    Finished `release` profile [optimized + debuginfo] target(s) in 1m 32s
+     Running `/Users/<user>/Documents/zkml/deep-prove/target/release/examples/slp-demo`
+
+========================================================================
+  SLP DEMO 1/2  --  QUANTIZED (canonical) model: full ZK, tiers 0-3
+========================================================================
+[worker] prompt        : "The sky is"
+2026-08-28T08:38:02.257954Z  WARN dp_crypto::sumcheck::util: thread size 11 is not power of 2, using 8 threads instead.
+[worker] receipt       : model=gpt2.Q8_0.gguf, quantized=true, proven 5/27 chunks
+[worker] proof size    : 526.63 KiB
+[verifier] tier-2 sampled GKR proof .......... ACCEPT ✓
+[verifier] tampered output ................... REJECT ✓  (Verification failed for node with ID N161: Logit::Argmax)
+[verifier] tier-1 Freivalds (exact, d=768) ... ACCEPT ✓
+[verifier] tier-1 tampered matmul ............ REJECT ✓
+
+========================================================================
+  SLP DEMO 2/2  --  fp16 (non-quantized) model: ZK unavailable, tier-1 only
+========================================================================
+[worker] fp16 model: GKR tier-2 is UNAVAILABLE (circuit needs field integers).
+[worker] fallback  : tier-1 Freivalds with a calibrated tolerance band.
+
+[verifier] tier-1 Freivalds (fp16, honest) ... ACCEPT ✓ (within tol 0.1)
+[verifier] tier-1 gross tamper ............... REJECT ✓
+[verifier] tier-1 in-tolerance drift ........ ADMITTED ⚠  (fp16 attack surface: audit-grade only)
+
+========================================================================
+  DEMO COMPLETE
+========================================================================
+Quantized model  -> sealed + sampled GKR proof + Freivalds, cheat caught.
+fp16 model       -> tier-1 Freivalds tolerance check, cheat caught, in-tolerance drift admitted (the fp16 attack surface).
+

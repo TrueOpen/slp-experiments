@@ -1,0 +1,4 @@
+model,ppl,top1_hit_pct,argmax_agree_f32_pct,top5_overlap_pct,kl_f32_q_nats
+f32 原始模型,11.94,50.5,100,100,0
+corpus [tokens(32 sequences) / minmax],12.95,49.2,84.8,82.5,0.1182
+random [seeded(seed=42) / minmax],12.94,49.2,84.9,82.5,0.1182

@@ -1,0 +1,152 @@
+==============================================================
+  量化忠实度评测  模型 TinyLlama/TinyLlama-1.1B-Chat-v1.0  MAXCTX=24  每题生成 8 token  评测 prompt 16 条
+  校准配置: ["random", "random32", "corpus-minmax", "corpus-q999", "generic:random"]   语料: /root/calib_wikitext2.txt × 32 条×24 token
+==============================================================
+2026-09-13T10:42:27.949213Z  INFO zkml::model::llm: LLM Driver: Loading model llama2 from SafeTensors: model_cache/TinyLlama/TinyLlama-1.1B-Chat-v1.0/model.safetensors
+2026-09-13T10:42:28.586802Z  INFO cubecl_cuda::compute::server: Peer data transfer not available for device 0
+2026-09-13T10:42:40.317284Z  INFO zkml_model_run{inputs=1 nodes=334}:zkml_layer_run{node_id=N2 op="rms-norm"}: cubecl_runtime::tune::tune_cache: Load autotune cache ...
+2026-09-13T10:42:40.317458Z  INFO zkml_model_run{inputs=1 nodes=334}:zkml_layer_run{node_id=N2 op="rms-norm"}: cubecl_runtime::tune::tune_cache: Loaded 18 autotune cached entries
+2026-09-13T10:42:40.467645Z  INFO zkml_model_run{inputs=1 nodes=334}:zkml_layer_run{node_id=N3 op="einsum"}: cubecl_runtime::tune::tune_cache: Load autotune cache ...
+2026-09-13T10:42:40.467843Z  INFO zkml_model_run{inputs=1 nodes=334}:zkml_layer_run{node_id=N3 op="einsum"}: cubecl_runtime::tune::tune_cache: Loaded 79 autotune cached entries
+2026-09-13T10:42:43.544597Z  INFO zkml_model_run{inputs=1 nodes=334}:zkml_layer_run{node_id=N17 op="rms-norm"}: cubecl_runtime::tune::tune_cache: Load autotune cache ...
+2026-09-13T10:42:43.544954Z  INFO zkml_model_run{inputs=1 nodes=334}:zkml_layer_run{node_id=N17 op="rms-norm"}: cubecl_runtime::tune::tune_cache: Loaded 24 autotune cached entries
+
+[参考] 原始 f32 模型贪心解码 59.9s
+    "The capital of Germany is" → "Berlin.\n\n2. The capital"
+    "Photosynthesis is the process by which" → "plants and other organisms convert light energy"
+    "In 1969, humans first landed on" → "the moon. The Apollo 1"
+    "The largest ocean on Earth is" → "the Pacific Ocean, which covers approximately"
+2026-09-13T10:43:27.851511Z  INFO zkml::model::llm: LLM Driver: Loading model llama2 from SafeTensors: model_cache/TinyLlama/TinyLlama-1.1B-Chat-v1.0/model.safetensors
+2026-09-13T10:43:38.574790Z  INFO zkml::model::llm: quantization calibration: seeded(seed=42) / minmax (1 sequence(s) x 24 tokens), digest 9b599cbf887c7bf245ba977ddc1a32612999f29def342710d6078afecc830809
+2026-09-13T10:43:40.385763Z  INFO zkml::quantization::strategy: Quantized model with 579 layers, output node ids: [Node(335)]
+2026-09-13T10:46:12.886791Z  INFO slp_fidelity: [random] prompt 0 (6 tok) 贪心 8 步 51.7s
+2026-09-13T10:47:01.048231Z  INFO slp_fidelity: [random] prompt 1 (10 tok) 贪心 8 步 48.2s
+2026-09-13T10:47:49.203680Z  INFO slp_fidelity: [random] prompt 2 (13 tok) 贪心 8 步 48.2s
+2026-09-13T10:48:37.470853Z  INFO slp_fidelity: [random] prompt 3 (7 tok) 贪心 8 步 48.3s
+2026-09-13T10:49:26.162554Z  INFO slp_fidelity: [random] prompt 4 (9 tok) 贪心 8 步 48.7s
+2026-09-13T10:50:14.880268Z  INFO slp_fidelity: [random] prompt 5 (7 tok) 贪心 8 步 48.7s
+2026-09-13T10:51:03.826233Z  INFO slp_fidelity: [random] prompt 6 (5 tok) 贪心 8 步 48.9s
+2026-09-13T10:51:52.973901Z  INFO slp_fidelity: [random] prompt 7 (7 tok) 贪心 8 步 49.1s
+2026-09-13T10:52:42.290304Z  INFO slp_fidelity: [random] prompt 8 (7 tok) 贪心 8 步 49.3s
+2026-09-13T10:53:30.160049Z  INFO slp_fidelity: [random] prompt 9 (9 tok) 贪心 8 步 47.9s
+2026-09-13T10:54:19.662575Z  INFO slp_fidelity: [random] prompt 10 (8 tok) 贪心 8 步 49.5s
+2026-09-13T10:55:08.918544Z  INFO slp_fidelity: [random] prompt 11 (6 tok) 贪心 8 步 49.3s
+2026-09-13T10:55:56.837312Z  INFO slp_fidelity: [random] prompt 12 (7 tok) 贪心 8 步 47.9s
+2026-09-13T10:56:46.349908Z  INFO slp_fidelity: [random] prompt 13 (8 tok) 贪心 8 步 49.5s
+2026-09-13T10:57:35.603651Z  INFO slp_fidelity: [random] prompt 14 (6 tok) 贪心 8 步 49.3s
+2026-09-13T10:58:25.302068Z  INFO slp_fidelity: [random] prompt 15 (5 tok) 贪心 8 步 49.7s
+
+[random [seeded(seed=42) / minmax]] 量化 12.6s → 首 token 一致 88%，逐 token 一致 53%，整句一致 31%，教师强制逐步一致 89%
+    "The capital of Germany is" → "Berlin. The capital of France is Paris"
+    "Photosynthesis is the process by which" → "plants convert light energy into chemical energy in"
+    "In 1969, humans first landed on" → "the moon. The Apollo 1"
+    "The largest ocean on Earth is" → "the Pacific Ocean, which covers approximately"
+2026-09-13T10:58:25.305846Z  INFO zkml::model::llm: LLM Driver: Loading model llama2 from SafeTensors: model_cache/TinyLlama/TinyLlama-1.1B-Chat-v1.0/model.safetensors
+2026-09-13T10:58:35.582117Z  INFO zkml::model::llm: quantization calibration: seeded(seed=42) / minmax (32 sequence(s) x 24 tokens), digest 3cb58ebd0bde64700b0b4839243fcd860b6ae1a0d8c2af883bc36cd12385997e
+2026-09-13T10:58:41.941363Z  INFO zkml::quantization::strategy: Quantized model with 579 layers, output node ids: [Node(335)]
+2026-09-13T11:01:11.728663Z  INFO slp_fidelity: [random32] prompt 0 (6 tok) 贪心 8 步 50.7s
+2026-09-13T11:02:00.908340Z  INFO slp_fidelity: [random32] prompt 1 (10 tok) 贪心 8 步 49.2s
+2026-09-13T11:02:50.782371Z  INFO slp_fidelity: [random32] prompt 2 (13 tok) 贪心 8 步 49.9s
+2026-09-13T11:03:41.387191Z  INFO slp_fidelity: [random32] prompt 3 (7 tok) 贪心 8 步 50.6s
+2026-09-13T11:04:30.784324Z  INFO slp_fidelity: [random32] prompt 4 (9 tok) 贪心 8 步 49.4s
+2026-09-13T11:05:20.910610Z  INFO slp_fidelity: [random32] prompt 5 (7 tok) 贪心 8 步 50.1s
+2026-09-13T11:06:09.712177Z  INFO slp_fidelity: [random32] prompt 6 (5 tok) 贪心 8 步 48.8s
+2026-09-13T11:06:56.660240Z  INFO slp_fidelity: [random32] prompt 7 (7 tok) 贪心 8 步 46.9s
+2026-09-13T11:07:45.496378Z  INFO slp_fidelity: [random32] prompt 8 (7 tok) 贪心 8 步 48.8s
+2026-09-13T11:08:34.037662Z  INFO slp_fidelity: [random32] prompt 9 (9 tok) 贪心 8 步 48.5s
+2026-09-13T11:09:23.444156Z  INFO slp_fidelity: [random32] prompt 10 (8 tok) 贪心 8 步 49.4s
+2026-09-13T11:10:12.510277Z  INFO slp_fidelity: [random32] prompt 11 (6 tok) 贪心 8 步 49.1s
+2026-09-13T11:11:01.927339Z  INFO slp_fidelity: [random32] prompt 12 (7 tok) 贪心 8 步 49.4s
+2026-09-13T11:11:52.727749Z  INFO slp_fidelity: [random32] prompt 13 (8 tok) 贪心 8 步 50.8s
+2026-09-13T11:12:43.126749Z  INFO slp_fidelity: [random32] prompt 14 (6 tok) 贪心 8 步 50.4s
+2026-09-13T11:13:33.312104Z  INFO slp_fidelity: [random32] prompt 15 (5 tok) 贪心 8 步 50.2s
+
+[random32 [seeded(seed=42) / minmax]] 量化 16.7s → 首 token 一致 100%，逐 token 一致 52%，整句一致 31%，教师强制逐步一致 87%
+    "The capital of Germany is" → "Berlin. The capital of the United States"
+    "Photosynthesis is the process by which" → "plants convert light energy into chemical energy."
+    "In 1969, humans first landed on" → "the moon. In 197"
+    "The largest ocean on Earth is" → "the Pacific Ocean, which covers approximately"
+2026-09-13T11:13:33.315896Z  INFO zkml::model::llm: LLM Driver: Loading model llama2 from SafeTensors: model_cache/TinyLlama/TinyLlama-1.1B-Chat-v1.0/model.safetensors
+2026-09-13T11:13:43.482260Z  INFO zkml::model::llm: quantization calibration: tokens(32 sequences) / minmax (32 sequence(s) x 24 tokens), digest 221cc95515207e01cbfc5dea63d3d6821837ebea12fb562c973882dc962787d7
+2026-09-13T11:13:49.756559Z  INFO zkml::quantization::strategy: Quantized model with 579 layers, output node ids: [Node(335)]
+2026-09-13T11:16:18.357203Z  INFO slp_fidelity: [corpus-minmax] prompt 0 (6 tok) 贪心 8 步 49.9s
+2026-09-13T11:17:08.125254Z  INFO slp_fidelity: [corpus-minmax] prompt 1 (10 tok) 贪心 8 步 49.8s
+2026-09-13T11:17:58.009160Z  INFO slp_fidelity: [corpus-minmax] prompt 2 (13 tok) 贪心 8 步 49.9s
+2026-09-13T11:18:46.732912Z  INFO slp_fidelity: [corpus-minmax] prompt 3 (7 tok) 贪心 8 步 48.7s
+2026-09-13T11:19:36.239373Z  INFO slp_fidelity: [corpus-minmax] prompt 4 (9 tok) 贪心 8 步 49.5s
+2026-09-13T11:20:25.001935Z  INFO slp_fidelity: [corpus-minmax] prompt 5 (7 tok) 贪心 8 步 48.8s
+2026-09-13T11:21:09.111349Z  INFO slp_fidelity: [corpus-minmax] prompt 6 (5 tok) 贪心 6 步 44.1s
+2026-09-13T11:21:59.058531Z  INFO slp_fidelity: [corpus-minmax] prompt 7 (7 tok) 贪心 8 步 49.9s
+2026-09-13T11:22:48.726176Z  INFO slp_fidelity: [corpus-minmax] prompt 8 (7 tok) 贪心 8 步 49.7s
+2026-09-13T11:23:38.115799Z  INFO slp_fidelity: [corpus-minmax] prompt 9 (9 tok) 贪心 8 步 49.4s
+2026-09-13T11:24:27.203048Z  INFO slp_fidelity: [corpus-minmax] prompt 10 (8 tok) 贪心 8 步 49.1s
+2026-09-13T11:25:16.864066Z  INFO slp_fidelity: [corpus-minmax] prompt 11 (6 tok) 贪心 8 步 49.7s
+2026-09-13T11:26:07.745050Z  INFO slp_fidelity: [corpus-minmax] prompt 12 (7 tok) 贪心 8 步 50.9s
+2026-09-13T11:26:58.347385Z  INFO slp_fidelity: [corpus-minmax] prompt 13 (8 tok) 贪心 8 步 50.6s
+2026-09-13T11:27:48.927195Z  INFO slp_fidelity: [corpus-minmax] prompt 14 (6 tok) 贪心 8 步 50.6s
+2026-09-13T11:28:39.625880Z  INFO slp_fidelity: [corpus-minmax] prompt 15 (5 tok) 贪心 8 步 50.7s
+
+[corpus-minmax [tokens(32 sequences) / minmax]] 量化 16.5s → 首 token 一致 88%，逐 token 一致 55%，整句一致 31%，教师强制逐步一致 91%
+    "The capital of Germany is" → "Berlin. The capital of Germany is Berlin"
+    "Photosynthesis is the process by which" → "plants and algae convert light energy into"
+    "In 1969, humans first landed on" → "the moon. In 197"
+    "The largest ocean on Earth is" → "the Pacific Ocean, which covers approximately"
+2026-09-13T11:28:39.630603Z  INFO zkml::model::llm: LLM Driver: Loading model llama2 from SafeTensors: model_cache/TinyLlama/TinyLlama-1.1B-Chat-v1.0/model.safetensors
+2026-09-13T11:28:50.092472Z  INFO zkml::model::llm: quantization calibration: tokens(32 sequences) / quantiles(0.001,0.999) (32 sequence(s) x 24 tokens), digest 221cc95515207e01cbfc5dea63d3d6821837ebea12fb562c973882dc962787d7
+2026-09-13T11:29:11.882454Z  INFO zkml::quantization::strategy: Quantized model with 579 layers, output node ids: [Node(335)]
+2026-09-13T11:31:40.188071Z  INFO slp_fidelity: [corpus-q999] prompt 0 (6 tok) 贪心 8 步 49.1s
+2026-09-13T11:32:28.342049Z  INFO slp_fidelity: [corpus-q999] prompt 1 (10 tok) 贪心 8 步 48.2s
+2026-09-13T11:33:16.102071Z  INFO slp_fidelity: [corpus-q999] prompt 2 (13 tok) 贪心 8 步 47.8s
+2026-09-13T11:34:03.319617Z  INFO slp_fidelity: [corpus-q999] prompt 3 (7 tok) 贪心 8 步 47.2s
+2026-09-13T11:34:51.016953Z  INFO slp_fidelity: [corpus-q999] prompt 4 (9 tok) 贪心 8 步 47.7s
+2026-09-13T11:35:38.195557Z  INFO slp_fidelity: [corpus-q999] prompt 5 (7 tok) 贪心 8 步 47.2s
+2026-09-13T11:36:27.305903Z  INFO slp_fidelity: [corpus-q999] prompt 6 (5 tok) 贪心 8 步 49.1s
+2026-09-13T11:37:16.407805Z  INFO slp_fidelity: [corpus-q999] prompt 7 (7 tok) 贪心 8 步 49.1s
+2026-09-13T11:38:06.530894Z  INFO slp_fidelity: [corpus-q999] prompt 8 (7 tok) 贪心 8 步 50.1s
+2026-09-13T11:38:56.513056Z  INFO slp_fidelity: [corpus-q999] prompt 9 (9 tok) 贪心 8 步 50.0s
+2026-09-13T11:39:44.894559Z  INFO slp_fidelity: [corpus-q999] prompt 10 (8 tok) 贪心 8 步 48.4s
+2026-09-13T11:40:33.780361Z  INFO slp_fidelity: [corpus-q999] prompt 11 (6 tok) 贪心 8 步 48.9s
+2026-09-13T11:41:22.244166Z  INFO slp_fidelity: [corpus-q999] prompt 12 (7 tok) 贪心 8 步 48.5s
+2026-09-13T11:42:10.876587Z  INFO slp_fidelity: [corpus-q999] prompt 13 (8 tok) 贪心 8 步 48.6s
+2026-09-13T11:42:59.922882Z  INFO slp_fidelity: [corpus-q999] prompt 14 (6 tok) 贪心 8 步 49.0s
+2026-09-13T11:43:49.555001Z  INFO slp_fidelity: [corpus-q999] prompt 15 (5 tok) 贪心 8 步 49.6s
+
+[corpus-q999 [tokens(32 sequences) / quantiles(0.001,0.999)]] 量化 32.3s → 首 token 一致 6%，逐 token 一致 1%，整句一致 0%，教师强制逐步一致 3%
+    "The capital of Germany is" → "in in in in in in in in"
+    "Photosynthesis is the process by which" → "is as as as as as as as"
+    "In 1969, humans first landed on" → "\",\"\",\"\",\"\",\"\",\"\",\"\",\""
+    "The largest ocean on Earth is" → "because because because because because because because because"
+2026-09-13T11:43:49.559441Z  INFO zkml::model::llm: LLM Driver: Loading model llama2 from SafeTensors: model_cache/TinyLlama/TinyLlama-1.1B-Chat-v1.0/model.safetensors
+2026-09-13T11:43:59.625725Z  INFO zkml::quantization::strategy: Using the 1 provided representative inputs to quantize model
+2026-09-13T11:43:59.937193Z  INFO zkml::quantization::strategy: Quantized model with 579 layers, output node ids: [Node(335)]
+2026-09-13T11:44:16.802099Z  INFO slp_fidelity: [generic:random] prompt 0 (6 tok) 贪心 8 步 5.3s
+2026-09-13T11:44:22.406528Z  INFO slp_fidelity: [generic:random] prompt 1 (10 tok) 贪心 8 步 5.6s
+2026-09-13T11:44:28.250409Z  INFO slp_fidelity: [generic:random] prompt 2 (13 tok) 贪心 8 步 5.8s
+2026-09-13T11:44:33.689790Z  INFO slp_fidelity: [generic:random] prompt 3 (7 tok) 贪心 8 步 5.4s
+2026-09-13T11:44:39.272767Z  INFO slp_fidelity: [generic:random] prompt 4 (9 tok) 贪心 8 步 5.6s
+2026-09-13T11:44:44.736297Z  INFO slp_fidelity: [generic:random] prompt 5 (7 tok) 贪心 8 步 5.5s
+2026-09-13T11:44:50.067761Z  INFO slp_fidelity: [generic:random] prompt 6 (5 tok) 贪心 8 步 5.3s
+2026-09-13T11:44:55.628521Z  INFO slp_fidelity: [generic:random] prompt 7 (7 tok) 贪心 8 步 5.6s
+2026-09-13T11:45:01.068987Z  INFO slp_fidelity: [generic:random] prompt 8 (7 tok) 贪心 8 步 5.4s
+2026-09-13T11:45:06.691555Z  INFO slp_fidelity: [generic:random] prompt 9 (9 tok) 贪心 8 步 5.6s
+2026-09-13T11:45:12.187738Z  INFO slp_fidelity: [generic:random] prompt 10 (8 tok) 贪心 8 步 5.5s
+2026-09-13T11:45:17.605693Z  INFO slp_fidelity: [generic:random] prompt 11 (6 tok) 贪心 8 步 5.4s
+2026-09-13T11:45:23.068583Z  INFO slp_fidelity: [generic:random] prompt 12 (7 tok) 贪心 8 步 5.5s
+2026-09-13T11:45:28.635047Z  INFO slp_fidelity: [generic:random] prompt 13 (8 tok) 贪心 8 步 5.6s
+2026-09-13T11:45:34.495742Z  INFO slp_fidelity: [generic:random] prompt 14 (6 tok) 贪心 8 步 5.9s
+2026-09-13T11:45:39.946298Z  INFO slp_fidelity: [generic:random] prompt 15 (5 tok) 贪心 8 步 5.5s
+
+[generic:random [seeded(seed=42) / minmax / generic-observer]] 量化 10.5s → 首 token 一致 12%，逐 token 一致 5%，整句一致 0%，教师强制逐步一致 16%
+    "The capital of Germany is" → ". the  1000"
+    "Photosynthesis is the process by which" → "is the number of hours.\nThe"
+    "In 1969, humans first landed on" → "the 1, and  1"
+    "The largest ocean on Earth is" → "a.\nThe a of the"
+
+==============================================================
+  汇总（相对原始 f32 模型，16 条未参与校准的 prompt，每条生成 8 token）
+  配置 | 首token一致 | 逐token一致 | 整句一致 | 教师强制逐步一致 | 量化耗时
+  random [seeded(seed=42) / minmax] |    88% |    53% |    31% |    89% | 13s
+  random32 [seeded(seed=42) / minmax] |   100% |    52% |    31% |    87% | 17s
+  corpus-minmax [tokens(32 sequences) / minmax] |    88% |    55% |    31% |    91% | 17s
+  corpus-q999 [tokens(32 sequences) / quantiles(0.001,0.999)] |     6% |     1% |     0% |     3% | 32s
+  generic:random [seeded(seed=42) / minmax / generic-observer] |    12% |     5% |     0% |    16% | 10s

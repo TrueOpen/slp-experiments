@@ -1,0 +1,4 @@
+batch_B,slot_len,gen_tokens_per_slot,samples_s,packed_inference_s,packed_prove_s,proof_mib,verify_s,separate_prove_s_each,separate_prove_s_total
+3,16,4,2,15.2,116.4,2.91,2.5,96.9;105.4;93.3,295.6
+6,16,4,2,76.5,144.3,3.20,2.9,,
+12,16,4,2,107.2,181.9,2.11,2.1,,

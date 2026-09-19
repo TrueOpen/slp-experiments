@@ -1,0 +1,7 @@
+samples_s,seal_and_prove_s,sealed_chunks,proven_chunks,proof_size,verify_s
+0,62.5,47,2,75.50 KiB,0.9
+2,159.1,47,4,1.25 MiB,1.5
+5,276.8,47,7,1.77 MiB,1.7
+10,324.7,47,12,5.08 MiB,3.7
+1000,1256.1,47,47,25.98 MiB,17.7
+upstream_single_chunk_full,did not complete: prover stack overflow (exit 134),,,,

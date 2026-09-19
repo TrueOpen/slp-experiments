@@ -1,0 +1,11 @@
+run,calibration_digest_prefix,weight_fingerprint_prefix,activation_scale_fingerprint_prefix,repeat1,repeat2
+1,9b599cbf887c,452a1bec1230,148d2819c3a0,match,match
+2,9b599cbf887c,452a1bec1230,148d2819c3a0,match,match
+3,9b599cbf887c,452a1bec1230,148d2819c3a0,match,match
+4,9b599cbf887c,452a1bec1230,148d2819c3a0,match,match
+5,9b599cbf887c,452a1bec1230,148d2819c3a0,mismatch,match
+6,9b599cbf887c,452a1bec1230,148d2819c3a0,match,match
+7,9b599cbf887c,452a1bec1230,148d2819c3a0,match,match
+8,9b599cbf887c,452a1bec1230,148d2819c3a0,mismatch,mismatch
+9,9b599cbf887c,452a1bec1230,148d2819c3a0,match,mismatch
+10,9b599cbf887c,452a1bec1230,148d2819c3a0,match,match

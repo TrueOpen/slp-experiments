@@ -1,0 +1,119 @@
+========================================================
+  SLP 批量证明（sequence packing）
+  模型: TinyLlama/TinyLlama-1.1B-Chat-v1.0
+  3 条 prompt × 槽位 16 = 打包长度 48，每槽最多生成 4 token，SAMPLES=2
+    [0] "The sky is"
+    [1] "Once upon a time"
+    [2] "The capital of France is"
+========================================================
+
+[stage] 1/5 加载+量化（块对角注意力） …
+2026-09-11T16:32:33.429018Z  INFO zkml::model::llm: LLM Driver: Loading model llama2 from SafeTensors: model_cache/TinyLlama/TinyLlama-1.1B-Chat-v1.0/model.safetensors
+2026-09-11T16:32:34.079895Z  INFO cubecl_cuda::compute::server: Peer data transfer not available for device 0
+2026-09-11T16:32:44.709751Z  INFO zkml::model::llm: packed inference: 22 attention layers switched to block-diagonal masks of 16 positions
+2026-09-11T16:32:44.710066Z  INFO zkml::quantization::strategy: Using the 1 provided representative inputs to quantize model
+2026-09-11T16:32:44.825727Z  INFO zkml_layer_run{node_id=N2 op="rms-norm"}: cubecl_runtime::tune::tune_cache: Load autotune cache ...
+2026-09-11T16:32:44.825897Z  INFO zkml_layer_run{node_id=N2 op="rms-norm"}: cubecl_runtime::tune::tune_cache: Loaded 14 autotune cached entries
+2026-09-11T16:32:44.980802Z  INFO zkml_layer_run{node_id=N3 op="einsum"}: cubecl_runtime::tune::tune_cache: Load autotune cache ...
+2026-09-11T16:32:44.981834Z  INFO zkml_layer_run{node_id=N3 op="einsum"}: cubecl_runtime::tune::tune_cache: Loaded 63 autotune cached entries
+2026-09-11T16:32:49.194875Z  INFO zkml_layer_run{node_id=N334 op="logits"}: cubecl_runtime::tune::tune_cache: Load autotune cache ...
+2026-09-11T16:32:49.195047Z  INFO zkml_layer_run{node_id=N334 op="logits"}: cubecl_runtime::tune::tune_cache: Loaded 21 autotune cached entries
+2026-09-11T16:32:51.000095Z  INFO zkml::quantization::strategy: Quantized model with 579 layers, output node ids: [Node(335)]
+[stage] 1/5 加载+量化（块对角注意力） ✓  用时 17.6s
+
+[stage] 2/5 生成上下文(权重承诺) …
+2026-09-11T16:35:05.241026Z  INFO zkml_generate_contexts{inputs=1}:HyperKZG::batch_commit: ec_gpu_gen::multiexp: Multiexp: 1 working device(s) selected.
+2026-09-11T16:35:05.241101Z  INFO zkml_generate_contexts{inputs=1}:HyperKZG::batch_commit: ec_gpu_gen::multiexp: Multiexp: Device 0: NVIDIA GeForce RTX 4090 (Chunk-size: 176852172)
+[stage] 2/5 生成上下文(权重承诺) ✓  用时 335.8s
+
+[stage] 3/5 打包推理（锁步解码） …
+2026-09-11T16:38:26.906960Z  INFO zkml::model::llm: packed inference: round 0/4, 48 tokens over 3 slots
+2026-09-11T16:38:35.000589Z  INFO zkml::model::llm: packed inference: round 1/4, 48 tokens over 3 slots
+2026-09-11T16:38:37.008968Z  INFO zkml::model::llm: packed inference: round 2/4, 48 tokens over 3 slots
+2026-09-11T16:38:38.833925Z  INFO zkml::model::llm: packed inference: round 3/4, 48 tokens over 3 slots
+2026-09-11T16:38:40.601537Z  INFO zkml::model::llm: packed inference: round 4/4, 48 tokens over 3 slots
+[stage] 3/5 打包推理（锁步解码） ✓  用时 15.2s
+    槽位 0: prompt 4 token + 生成 4 token → ids [1, 450, 14744, 338, 263, 29871, 29896, 29900]
+    槽位 1: prompt 5 token + 生成 4 token → ids [1, 9038, 2501, 263, 931, 29889, 13, 29909, 2846]
+    槽位 2: prompt 6 token + 生成 4 token → ids [1, 450, 7483, 310, 3444, 338, 263, 2107, 29889, 450]
+
+[stage] 4/5 sampled 证明（一份证明覆盖全部槽位） …
+2026-09-11T16:38:42.420885Z  INFO zkml::model::llm: Sealing chunk boundaries and proving the sampled subset
+2026-09-11T16:39:00.908687Z  WARN dp_crypto::sumcheck::util: thread size 30 is not power of 2, using 16 threads instead.
+[stage] 4/5 sampled 证明（一份证明覆盖全部槽位） ✓  用时 116.4s
+    → 封存 47 层, 证明其中 4 层
+    → 证明大小 2.91 MiB
+
+[stage] 5/5 sampled 验证 + 逐槽位 prompt/解码绑定 …
+[stage] 5/5 sampled 验证 + 逐槽位 prompt/解码绑定 ✓  用时 2.5s
+
+✅ 打包路径全部通过。总用时 488.0s；3 次推理共用 1 份证明，证明阶段 116.4s
+
+---- COMPARE: 逐条单独推理+证明（同一模型规模，MAXCTX=16）----
+
+[stage] 加载+量化（普通因果注意力） …
+2026-09-11T16:40:46.483765Z  INFO zkml::model::llm: LLM Driver: Loading model llama2 from SafeTensors: model_cache/TinyLlama/TinyLlama-1.1B-Chat-v1.0/model.safetensors
+2026-09-11T16:40:55.921345Z  INFO zkml::quantization::strategy: Using the 1 provided representative inputs to quantize model
+2026-09-11T16:40:57.220451Z  INFO zkml::quantization::strategy: Quantized model with 579 layers, output node ids: [Node(335)]
+[stage] 加载+量化（普通因果注意力） ✓  用时 10.8s
+
+[stage] 生成上下文(权重承诺) …
+[stage] 生成上下文(权重承诺) ✓  用时 363.9s
+2026-09-11T16:47:01.172650Z  INFO zkml::model::llm: LLM: running model with initial shape: [4]
+2026-09-11T16:47:01.172943Z  INFO zkml::model::llm: Running iteration 4 with input tensor [4]
+2026-09-11T16:47:03.317783Z  INFO zkml::model::llm: Running iteration 5 with input tensor [1]
+2026-09-11T16:47:06.586219Z  INFO zkml::model::llm: Running iteration 6 with input tensor [1]
+2026-09-11T16:47:07.650944Z  INFO zkml::model::llm: Running iteration 7 with input tensor [1]
+2026-09-11T16:47:08.146003Z  INFO zkml::model::llm: Running iteration 8 with input tensor [1]
+2026-09-11T16:47:09.911892Z  INFO zkml::model::llm: Running iteration 9 with input tensor [1]
+2026-09-11T16:47:11.032006Z  INFO zkml::model::llm: Running iteration 10 with input tensor [1]
+2026-09-11T16:47:11.775051Z  INFO zkml::model::llm: Running iteration 11 with input tensor [1]
+2026-09-11T16:47:12.259974Z  INFO zkml::model::llm: Running iteration 12 with input tensor [1]
+2026-09-11T16:47:12.976074Z  INFO zkml::model::llm: Running iteration 13 with input tensor [1]
+2026-09-11T16:47:13.462020Z  INFO zkml::model::llm: Running iteration 14 with input tensor [1]
+2026-09-11T16:47:13.950437Z  INFO zkml::model::llm: Running iteration 15 with input tensor [1]
+2026-09-11T16:47:14.440793Z  INFO zkml::model::llm: Running iteration 16 with input tensor [1]
+2026-09-11T16:47:15.199964Z  INFO zkml::model::llm: Running last iteration (heavy) with 16 tokens
+
+[stage] 单独证明 prompt [0] …
+2026-09-11T16:47:17.466923Z  INFO zkml::model::llm: Sealing chunk boundaries and proving the sampled subset
+[stage] 单独证明 prompt [0] ✓  用时 96.9s
+2026-09-11T16:48:56.530975Z  INFO zkml::model::llm: LLM: running model with initial shape: [5]
+2026-09-11T16:48:56.531243Z  INFO zkml::model::llm: Running iteration 5 with input tensor [5]
+2026-09-11T16:48:56.896503Z  INFO zkml_layer_run{node_id=N9 op="einsum"}: cubecl_runtime::tune::tuner: Tuning MatmulAutotuneKey - Definition: MatmulProblemDefinition { m: 64, n: 64, k: 8, lhs_pow2_factor: 0, lhs_stride_factor: 3, rhs_pow2_factor: 4, rhs_stride_factor: 9, elem_lhs: Scalar(Int(I64)), elem_rhs: Scalar(Int(I64)), elem_out: Scalar(Int(I64)), matrix_layout_lhs: Contiguous, matrix_layout_rhs: Contiguous }, Analysis: MatmulAutotuneAnalysis { scale_global: Small, kind: General }
+2026-09-11T16:49:05.211142Z  INFO zkml::model::llm: Running iteration 6 with input tensor [1]
+2026-09-11T16:49:05.704679Z  INFO zkml::model::llm: Running iteration 7 with input tensor [1]
+2026-09-11T16:49:06.196503Z  INFO zkml::model::llm: Running iteration 8 with input tensor [1]
+2026-09-11T16:49:06.687529Z  INFO zkml::model::llm: Running iteration 9 with input tensor [1]
+2026-09-11T16:49:07.174038Z  INFO zkml::model::llm: Running iteration 10 with input tensor [1]
+2026-09-11T16:49:07.660526Z  INFO zkml::model::llm: Running iteration 11 with input tensor [1]
+2026-09-11T16:49:08.146233Z  INFO zkml::model::llm: Running iteration 12 with input tensor [1]
+2026-09-11T16:49:08.629347Z  INFO zkml::model::llm: Running iteration 13 with input tensor [1]
+2026-09-11T16:49:09.117771Z  INFO zkml::model::llm: Running iteration 14 with input tensor [1]
+2026-09-11T16:49:09.604671Z  INFO zkml::model::llm: Running iteration 15 with input tensor [1]
+2026-09-11T16:49:10.091627Z  INFO zkml::model::llm: Running iteration 16 with input tensor [1]
+2026-09-11T16:49:10.581166Z  INFO zkml::model::llm: Running last iteration (heavy) with 16 tokens
+
+[stage] 单独证明 prompt [1] …
+2026-09-11T16:49:11.775547Z  INFO zkml::model::llm: Sealing chunk boundaries and proving the sampled subset
+[stage] 单独证明 prompt [1] ✓  用时 105.4s
+2026-09-11T16:50:59.326426Z  INFO zkml::model::llm: LLM: running model with initial shape: [6]
+2026-09-11T16:50:59.326609Z  INFO zkml::model::llm: Running iteration 6 with input tensor [6]
+2026-09-11T16:50:59.821650Z  INFO zkml_layer_run{node_id=N9 op="einsum"}: cubecl_runtime::tune::tuner: Tuning MatmulAutotuneKey - Definition: MatmulProblemDefinition { m: 64, n: 64, k: 8, lhs_pow2_factor: 1, lhs_stride_factor: 4, rhs_pow2_factor: 4, rhs_stride_factor: 9, elem_lhs: Scalar(Int(I64)), elem_rhs: Scalar(Int(I64)), elem_out: Scalar(Int(I64)), matrix_layout_lhs: Contiguous, matrix_layout_rhs: Contiguous }, Analysis: MatmulAutotuneAnalysis { scale_global: Small, kind: General }
+2026-09-11T16:51:09.921751Z  INFO zkml::model::llm: Running iteration 7 with input tensor [1]
+2026-09-11T16:51:10.508075Z  INFO zkml::model::llm: Running iteration 8 with input tensor [1]
+2026-09-11T16:51:10.994557Z  INFO zkml::model::llm: Running iteration 9 with input tensor [1]
+2026-09-11T16:51:11.480758Z  INFO zkml::model::llm: Running iteration 10 with input tensor [1]
+2026-09-11T16:51:11.963689Z  INFO zkml::model::llm: Running iteration 11 with input tensor [1]
+2026-09-11T16:51:12.445357Z  INFO zkml::model::llm: Running iteration 12 with input tensor [1]
+2026-09-11T16:51:12.925460Z  INFO zkml::model::llm: Running iteration 13 with input tensor [1]
+2026-09-11T16:51:13.415977Z  INFO zkml::model::llm: Running iteration 14 with input tensor [1]
+2026-09-11T16:51:13.893421Z  INFO zkml::model::llm: Running iteration 15 with input tensor [1]
+2026-09-11T16:51:14.377803Z  INFO zkml::model::llm: Running iteration 16 with input tensor [1]
+2026-09-11T16:51:14.855048Z  INFO zkml::model::llm: Running last iteration (heavy) with 16 tokens
+
+[stage] 单独证明 prompt [2] …
+2026-09-11T16:51:16.061787Z  INFO zkml::model::llm: Sealing chunk boundaries and proving the sampled subset
+[stage] 单独证明 prompt [2] ✓  用时 93.3s
+
+📊 证明阶段耗时：逐条 3 份证明合计 295.6s  vs  打包 1 份证明 116.4s  （2.54×）

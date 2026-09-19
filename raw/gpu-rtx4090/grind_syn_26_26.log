@@ -1,0 +1,19 @@
+   Compiling zkml v2.0.1 (/Users/<user>/Documents/zkml/deep-prove/zkml)
+    Finished `release` profile [optimized + debuginfo] target(s) in 48.06s
+     Running unittests src/lib.rs (/Users/<user>/Documents/zkml/deep-prove/target/release/deps/zkml-9ecc2ed759d0618b)
+
+running 1 test
+test iop::sampling::test::grinding_experiment_synthetic ... 2026-09-14T07:24:33.289579Z  WARN zkml::quantization::strategy: No representative inputs provided, generating random ones
+GRIND_SETUP label=synthetic-L26 chunks=26 anchors=2 M=24 target=(2,1) shared_polys=1 num_vars=[3]
+GRIND_ROW label=synthetic-L26 M=24 s=1 b=2 coverage=0.0833 q=0.9167 theory_trials=1.09 mean_trials=1.11 max_trials=4 reps=200 per_trial_ms=0.217
+BEACON_ROW label=synthetic-L26 M=24 s=1 b=2 beacons=2000 escape_frac=0.9160 q=0.9167
+GRIND_ROW label=synthetic-L26 M=24 s=3 b=2 coverage=0.2391 q=0.7609 theory_trials=1.31 mean_trials=1.34 max_trials=4 reps=200 per_trial_ms=0.199
+BEACON_ROW label=synthetic-L26 M=24 s=3 b=2 beacons=2000 escape_frac=0.7450 q=0.7609
+GRIND_ROW label=synthetic-L26 M=24 s=5 b=2 coverage=0.3804 q=0.6196 theory_trials=1.61 mean_trials=1.60 max_trials=5 reps=200 per_trial_ms=0.197
+BEACON_ROW label=synthetic-L26 M=24 s=5 b=2 beacons=2000 escape_frac=0.6015 q=0.6196
+GRIND_ROW label=synthetic-L26 M=24 s=10 b=2 coverage=0.6703 q=0.3297 theory_trials=3.03 mean_trials=3.00 max_trials=13 reps=200 per_trial_ms=0.198
+BEACON_ROW label=synthetic-L26 M=24 s=10 b=2 beacons=2000 escape_frac=0.3275 q=0.3297
+ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 279 filtered out; finished in 0.73s
+

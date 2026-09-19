@@ -1,0 +1,11 @@
+seq_len,chunk_kind,chunk_id,run_s,prove_s,proof_kib
+16,attn,Chunk(13),14.9,3.35,580.7
+16,mlp,Chunk(12),14.9,3.94,149.3
+32,attn,Chunk(13),31.7,3.66,648.3
+32,mlp,Chunk(12),31.7,4.26,160.8
+64,attn,Chunk(13),63.9,4.39,717.4
+64,mlp,Chunk(12),63.9,4.95,172.9
+128,attn,Chunk(13),134.5,5.78,788.0
+128,mlp,Chunk(12),134.5,5.68,185.5
+256,attn,Chunk(14),269.2,10.05,860.1
+256,mlp,Chunk(13),269.2,7.79,198.7

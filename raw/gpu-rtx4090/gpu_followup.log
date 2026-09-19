@@ -1,0 +1,51 @@
+[followup] build start Mon Sep 14 05:36:22 UTC 2026
+    Finished `release` profile [optimized + debuginfo] target(s) in 30.50s
+[followup] build done exit=0 Mon Sep 14 05:36:53 UTC 2026
+[followup] waiting for slp-corpus-eval to exit Mon Sep 14 05:36:53 UTC 2026
+[followup] eval finished, experiments start Mon Sep 14 17:39:02 UTC 2026
+[followup] expA full-vs-sampled start Mon Sep 14 17:39:32 UTC 2026
+/root/run_followup.sh: line 14: 46603 Aborted                 RUST_LOG=warn HF=TinyLlama/TinyLlama-1.1B-Chat-v1.0 PROMPT="The sky is" MAXCTX=8 SAMPLES=0,2,5,10,1000 FULL=1 /root/deep-prove/target/release/examples/slp-70b > /root/gpu_full_vs_sampled.log 2>&1
+[followup] expA exit=134 Mon Sep 14 18:29:49 UTC 2026
+  SLP 大模型分步验证
+[followup] expB determinism start Mon Sep 14 18:29:49 UTC 2026
+[followup] det run 1 exit=0 Mon Sep 14 18:37:07 UTC 2026
+    [random] 校准 digest 9b599cbf887c…  量化权重指纹 452a1bec1230…  激活缩放指纹 148d2819c3a0…
+    [random] 推理重复 2 次，其中 2 次与首次完全一致（同一量化模型、同一输入）
+[random [seeded(seed=42) / minmax]] 量化 12.9s → 首 token 一致 88%，逐 token 一致 53%，整句一致 31%，教师强制逐步一致 89%
+[followup] det run 2 exit=0 Mon Sep 14 18:43:56 UTC 2026
+    [random] 校准 digest 9b599cbf887c…  量化权重指纹 452a1bec1230…  激活缩放指纹 148d2819c3a0…
+    [random] 推理重复 2 次，其中 2 次与首次完全一致（同一量化模型、同一输入）
+[random [seeded(seed=42) / minmax]] 量化 11.9s → 首 token 一致 88%，逐 token 一致 53%，整句一致 31%，教师强制逐步一致 89%
+[followup] det run 3 exit=0 Mon Sep 14 18:51:10 UTC 2026
+    [random] 校准 digest 9b599cbf887c…  量化权重指纹 452a1bec1230…  激活缩放指纹 148d2819c3a0…
+    [random] 推理重复 2 次，其中 2 次与首次完全一致（同一量化模型、同一输入）
+[random [seeded(seed=42) / minmax]] 量化 11.0s → 首 token 一致 88%，逐 token 一致 53%，整句一致 31%，教师强制逐步一致 89%
+[followup] det run 4 exit=0 Mon Sep 14 18:57:56 UTC 2026
+    [random] 校准 digest 9b599cbf887c…  量化权重指纹 452a1bec1230…  激活缩放指纹 148d2819c3a0…
+    [random] 推理重复 2 次，其中 2 次与首次完全一致（同一量化模型、同一输入）
+[random [seeded(seed=42) / minmax]] 量化 11.5s → 首 token 一致 88%，逐 token 一致 53%，整句一致 31%，教师强制逐步一致 89%
+[followup] det run 5 exit=0 Mon Sep 14 19:04:45 UTC 2026
+    [random] 校准 digest 9b599cbf887c…  量化权重指纹 452a1bec1230…  激活缩放指纹 148d2819c3a0…
+    [random] 推理重复 2 次，其中 1 次与首次完全一致（同一量化模型、同一输入）
+[random [seeded(seed=42) / minmax]] 量化 10.4s → 首 token 一致 88%，逐 token 一致 53%，整句一致 31%，教师强制逐步一致 89%
+[followup] det run 6 exit=0 Mon Sep 14 19:11:23 UTC 2026
+    [random] 校准 digest 9b599cbf887c…  量化权重指纹 452a1bec1230…  激活缩放指纹 148d2819c3a0…
+    [random] 推理重复 2 次，其中 2 次与首次完全一致（同一量化模型、同一输入）
+[random [seeded(seed=42) / minmax]] 量化 12.0s → 首 token 一致 88%，逐 token 一致 53%，整句一致 31%，教师强制逐步一致 89%
+[followup] det run 7 exit=0 Mon Sep 14 19:18:29 UTC 2026
+    [random] 校准 digest 9b599cbf887c…  量化权重指纹 452a1bec1230…  激活缩放指纹 148d2819c3a0…
+    [random] 推理重复 2 次，其中 2 次与首次完全一致（同一量化模型、同一输入）
+[random [seeded(seed=42) / minmax]] 量化 12.4s → 首 token 一致 88%，逐 token 一致 53%，整句一致 31%，教师强制逐步一致 89%
+[followup] det run 8 exit=0 Mon Sep 14 19:25:14 UTC 2026
+    [random] 校准 digest 9b599cbf887c…  量化权重指纹 452a1bec1230…  激活缩放指纹 148d2819c3a0…
+    [random] 推理重复 2 次，其中 0 次与首次完全一致（同一量化模型、同一输入）
+[random [seeded(seed=42) / minmax]] 量化 11.4s → 首 token 一致 88%，逐 token 一致 53%，整句一致 31%，教师强制逐步一致 89%
+[followup] det run 9 exit=0 Mon Sep 14 19:31:55 UTC 2026
+    [random] 校准 digest 9b599cbf887c…  量化权重指纹 452a1bec1230…  激活缩放指纹 148d2819c3a0…
+    [random] 推理重复 2 次，其中 1 次与首次完全一致（同一量化模型、同一输入）
+[random [seeded(seed=42) / minmax]] 量化 12.4s → 首 token 一致 88%，逐 token 一致 53%，整句一致 31%，教师强制逐步一致 89%
+[followup] det run 10 exit=0 Mon Sep 14 19:39:18 UTC 2026
+    [random] 校准 digest 9b599cbf887c…  量化权重指纹 452a1bec1230…  激活缩放指纹 148d2819c3a0…
+    [random] 推理重复 2 次，其中 2 次与首次完全一致（同一量化模型、同一输入）
+[random [seeded(seed=42) / minmax]] 量化 13.2s → 首 token 一致 88%，逐 token 一致 53%，整句一致 31%，教师强制逐步一致 89%
+[followup] all done Mon Sep 14 19:39:18 UTC 2026

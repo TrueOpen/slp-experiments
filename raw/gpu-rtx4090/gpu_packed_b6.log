@@ -1,0 +1,83 @@
+========================================================
+  SLP 批量证明（sequence packing）
+  模型: TinyLlama/TinyLlama-1.1B-Chat-v1.0
+  6 条 prompt × 槽位 16 = 打包长度 96，每槽最多生成 4 token，SAMPLES=2
+    [0] "The sky is"
+    [1] "Once upon a time"
+    [2] "The capital of France is"
+    [3] "My favorite food is"
+    [4] "In the year 2050"
+    [5] "Water boils at"
+========================================================
+
+[stage] 1/5 加载+量化（块对角注意力） …
+2026-09-11T16:55:08.072174Z  INFO zkml::model::llm: LLM Driver: Loading model llama2 from SafeTensors: model_cache/TinyLlama/TinyLlama-1.1B-Chat-v1.0/model.safetensors
+2026-09-11T16:55:08.793102Z  INFO cubecl_cuda::compute::server: Peer data transfer not available for device 0
+2026-09-11T16:55:20.044922Z  INFO zkml::model::llm: packed inference: 22 attention layers switched to block-diagonal masks of 16 positions
+2026-09-11T16:55:20.045293Z  INFO zkml::quantization::strategy: Using the 1 provided representative inputs to quantize model
+2026-09-11T16:55:20.169898Z  INFO zkml_layer_run{node_id=N2 op="rms-norm"}: cubecl_runtime::tune::tune_cache: Load autotune cache ...
+2026-09-11T16:55:20.170071Z  INFO zkml_layer_run{node_id=N2 op="rms-norm"}: cubecl_runtime::tune::tune_cache: Loaded 14 autotune cached entries
+2026-09-11T16:55:20.170087Z  INFO zkml_layer_run{node_id=N2 op="rms-norm"}: cubecl_runtime::tune::tuner: Tuning FusedReduceAutotuneKey - ReduceKey: ReduceAutotuneKey { elem_input: Float(F32), elem_output: Float(F32), elem_acc: Float(F32), axis_is_contiguous: true, vector_size: 1024, vector_count: 512 }, FuseNumReads: 1, FuseNumWrites: 1, FuseNumOps: 1
+2026-09-11T16:55:20.206592Z  INFO zkml_layer_run{node_id=N2 op="rms-norm"}: cubecl_runtime::tune::tune_cache: Load autotune cache ...
+2026-09-11T16:55:20.206765Z  INFO zkml_layer_run{node_id=N2 op="rms-norm"}: cubecl_runtime::tune::tune_cache: Loaded 21 autotune cached entries
+2026-09-11T16:55:20.206781Z  INFO zkml_layer_run{node_id=N2 op="rms-norm"}: cubecl_runtime::tune::tuner: Tuning ReduceAutotuneKey - ElemInput: Float(F32), ElemOutput: Float(F32), ElemAcc: Float(F32), AxisIsContiguous: true, VectorSize: 1024, VectorCount: 512
+2026-09-11T16:55:21.898394Z  INFO zkml_layer_run{node_id=N3 op="einsum"}: cubecl_runtime::tune::tune_cache: Load autotune cache ...
+2026-09-11T16:55:21.898587Z  INFO zkml_layer_run{node_id=N3 op="einsum"}: cubecl_runtime::tune::tune_cache: Loaded 65 autotune cached entries
+2026-09-11T16:55:21.898605Z  INFO zkml_layer_run{node_id=N3 op="einsum"}: cubecl_runtime::tune::tuner: Tuning MatmulAutotuneKey - Definition: MatmulProblemDefinition { m: 128, n: 2048, k: 2048, lhs_pow2_factor: 4, lhs_stride_factor: 10, rhs_pow2_factor: 4, rhs_stride_factor: 10, elem_lhs: Scalar(Float(F32)), elem_rhs: Scalar(Float(F32)), elem_out: Scalar(Float(F32)), matrix_layout_lhs: Contiguous, matrix_layout_rhs: Contiguous }, Analysis: MatmulAutotuneAnalysis { scale_global: Large, kind: General }
+2026-09-11T16:55:31.573753Z  INFO zkml_layer_run{node_id=N3 op="einsum"}: cubecl_runtime::tune::tuner: Tuning MatmulAutotuneKey - Definition: MatmulProblemDefinition { m: 128, n: 256, k: 2048, lhs_pow2_factor: 4, lhs_stride_factor: 10, rhs_pow2_factor: 4, rhs_stride_factor: 10, elem_lhs: Scalar(Float(F32)), elem_rhs: Scalar(Float(F32)), elem_out: Scalar(Float(F32)), matrix_layout_lhs: Contiguous, matrix_layout_rhs: Contiguous }, Analysis: MatmulAutotuneAnalysis { scale_global: Large, kind: General }
+2026-09-11T16:55:32.156284Z  INFO zkml_layer_run{node_id=N4 op="einsum"}: cubecl_runtime::tune::tuner: Tuning MatmulAutotuneKey - Definition: MatmulProblemDefinition { m: 1024, n: 128, k: 64, lhs_pow2_factor: 4, lhs_stride_factor: 8, rhs_pow2_factor: 4, rhs_stride_factor: 8, elem_lhs: Scalar(Float(F32)), elem_rhs: Scalar(Float(F32)), elem_out: Scalar(Float(F32)), matrix_layout_lhs: Contiguous, matrix_layout_rhs: MildlyPermuted { transposed: true, batch_swap: false } }, Analysis: MatmulAutotuneAnalysis { scale_global: Medium, kind: General }
+2026-09-11T16:55:47.657107Z  INFO zkml_layer_run{node_id=N8 op="softmax"}: cubecl_runtime::tune::tuner: Tuning FusedReduceAutotuneKey - ReduceKey: ReduceAutotuneKey { elem_input: Float(F32), elem_output: Float(F32), elem_acc: Float(F32), axis_is_contiguous: true, vector_size: 256, vector_count: 4096 }, FuseNumReads: 1, FuseNumWrites: 2, FuseNumOps: 1
+2026-09-11T16:55:47.692767Z  INFO zkml_layer_run{node_id=N8 op="softmax"}: cubecl_runtime::tune::tuner: Tuning ReduceAutotuneKey - ElemInput: Float(F32), ElemOutput: Float(F32), ElemAcc: Float(F32), AxisIsContiguous: true, VectorSize: 256, VectorCount: 4096
+2026-09-11T16:55:48.876657Z  INFO zkml_layer_run{node_id=N8 op="softmax"}: cubecl_runtime::tune::tuner: Tuning FusedReduceAutotuneKey - ReduceKey: ReduceAutotuneKey { elem_input: Float(F32), elem_output: Float(F32), elem_acc: Float(F32), axis_is_contiguous: true, vector_size: 256, vector_count: 4096 }, FuseNumReads: 2, FuseNumWrites: 2, FuseNumOps: 2
+2026-09-11T16:55:49.316204Z  INFO zkml_layer_run{node_id=N9 op="einsum"}: cubecl_runtime::tune::tuner: Tuning MatmulAutotuneKey - Definition: MatmulProblemDefinition { m: 1024, n: 64, k: 128, lhs_pow2_factor: 4, lhs_stride_factor: 7, rhs_pow2_factor: 0, rhs_stride_factor: 0, elem_lhs: Scalar(Float(F32)), elem_rhs: Scalar(Float(F32)), elem_out: Scalar(Float(F32)), matrix_layout_lhs: Contiguous, matrix_layout_rhs: HighlyPermuted }, Analysis: MatmulAutotuneAnalysis { scale_global: Medium, kind: General }
+2026-09-11T16:56:00.647233Z  INFO zkml_layer_run{node_id=N13 op="einsum"}: cubecl_runtime::tune::tuner: Tuning MatmulAutotuneKey - Definition: MatmulProblemDefinition { m: 128, n: 8192, k: 2048, lhs_pow2_factor: 4, lhs_stride_factor: 10, rhs_pow2_factor: 4, rhs_stride_factor: 10, elem_lhs: Scalar(Float(F32)), elem_rhs: Scalar(Float(F32)), elem_out: Scalar(Float(F32)), matrix_layout_lhs: Contiguous, matrix_layout_rhs: Contiguous }, Analysis: MatmulAutotuneAnalysis { scale_global: Large, kind: General }
+2026-09-11T16:56:00.813540Z  INFO zkml_layer_run{node_id=N15 op="einsum"}: cubecl_runtime::tune::tuner: Tuning MatmulAutotuneKey - Definition: MatmulProblemDefinition { m: 128, n: 2048, k: 8192, lhs_pow2_factor: 4, lhs_stride_factor: 10, rhs_pow2_factor: 4, rhs_stride_factor: 10, elem_lhs: Scalar(Float(F32)), elem_rhs: Scalar(Float(F32)), elem_out: Scalar(Float(F32)), matrix_layout_lhs: Contiguous, matrix_layout_rhs: Contiguous }, Analysis: MatmulAutotuneAnalysis { scale_global: Large, kind: General }
+2026-09-11T16:56:01.409392Z  INFO zkml_layer_run{node_id=N333 op="einsum"}: cubecl_runtime::tune::tuner: Tuning MatmulAutotuneKey - Definition: MatmulProblemDefinition { m: 128, n: 32768, k: 2048, lhs_pow2_factor: 4, lhs_stride_factor: 10, rhs_pow2_factor: 4, rhs_stride_factor: 10, elem_lhs: Scalar(Float(F32)), elem_rhs: Scalar(Float(F32)), elem_out: Scalar(Float(F32)), matrix_layout_lhs: Contiguous, matrix_layout_rhs: MildlyPermuted { transposed: true, batch_swap: false } }, Analysis: MatmulAutotuneAnalysis { scale_global: Large, kind: General }
+2026-09-11T16:56:13.505957Z  INFO zkml_layer_run{node_id=N334 op="logits"}: cubecl_runtime::tune::tuner: Tuning ReduceAutotuneKey - ElemInput: Float(F32), ElemOutput: Int(I64), ElemAcc: Float(F32), AxisIsContiguous: true, VectorSize: 1024, VectorCount: 512
+2026-09-11T16:56:15.308264Z  INFO cubecl_runtime::tune::tuner: Tuning ReduceAutotuneKey - ElemInput: Float(F32), ElemOutput: Float(F32), ElemAcc: Float(F32), AxisIsContiguous: true, VectorSize: 64, VectorCount: 512
+2026-09-11T16:56:15.665055Z  INFO cubecl_runtime::tune::tuner: Tuning ReduceAutotuneKey - ElemInput: Float(F32), ElemOutput: Float(F32), ElemAcc: Float(F32), AxisIsContiguous: true, VectorSize: 256, VectorCount: 1
+2026-09-11T16:56:16.502070Z  INFO zkml::quantization::strategy: Quantized model with 579 layers, output node ids: [Node(335)]
+[stage] 1/5 加载+量化（块对角注意力） ✓  用时 68.5s
+
+[stage] 2/5 生成上下文(权重承诺) …
+2026-09-11T16:58:46.663906Z  INFO zkml_generate_contexts{inputs=1}:HyperKZG::batch_commit: ec_gpu_gen::multiexp: Multiexp: 1 working device(s) selected.
+2026-09-11T16:58:46.663985Z  INFO zkml_generate_contexts{inputs=1}:HyperKZG::batch_commit: ec_gpu_gen::multiexp: Multiexp: Device 0: NVIDIA GeForce RTX 4090 (Chunk-size: 176852172)
+[stage] 2/5 生成上下文(权重承诺) ✓  用时 347.9s
+
+[stage] 3/5 打包推理（锁步解码） …
+2026-09-11T17:02:04.426298Z  INFO zkml::model::llm: packed inference: round 0/4, 96 tokens over 6 slots
+2026-09-11T17:02:04.474007Z  INFO zkml_model_run{inputs=1 nodes=577}:zkml_layer_run{node_id=N2 op="rms-norm"}: cubecl_runtime::tune::tuner: Tuning FusedReduceAutotuneKey - ReduceKey: ReduceAutotuneKey { elem_input: Int(I64), elem_output: Int(I64), elem_acc: Int(I64), axis_is_contiguous: true, vector_size: 1024, vector_count: 512 }, FuseNumReads: 1, FuseNumWrites: 1, FuseNumOps: 1
+2026-09-11T17:02:04.510079Z  INFO zkml_model_run{inputs=1 nodes=577}:zkml_layer_run{node_id=N2 op="rms-norm"}: cubecl_runtime::tune::tuner: Tuning ReduceAutotuneKey - ElemInput: Int(I64), ElemOutput: Int(I64), ElemAcc: Int(I64), AxisIsContiguous: true, VectorSize: 1024, VectorCount: 512
+2026-09-11T17:02:05.537865Z  INFO zkml_model_run{inputs=1 nodes=577}:zkml_layer_run{node_id=N3 op="einsum"}: cubecl_runtime::tune::tuner: Tuning MatmulAutotuneKey - Definition: MatmulProblemDefinition { m: 128, n: 2048, k: 2048, lhs_pow2_factor: 4, lhs_stride_factor: 10, rhs_pow2_factor: 4, rhs_stride_factor: 10, elem_lhs: Scalar(Int(I64)), elem_rhs: Scalar(Int(I64)), elem_out: Scalar(Int(I64)), matrix_layout_lhs: Contiguous, matrix_layout_rhs: Contiguous }, Analysis: MatmulAutotuneAnalysis { scale_global: Large, kind: General }
+2026-09-11T17:02:16.705977Z  INFO zkml_model_run{inputs=1 nodes=577}:zkml_layer_run{node_id=N3 op="einsum"}: cubecl_runtime::tune::tuner: Tuning MatmulAutotuneKey - Definition: MatmulProblemDefinition { m: 128, n: 256, k: 2048, lhs_pow2_factor: 4, lhs_stride_factor: 10, rhs_pow2_factor: 4, rhs_stride_factor: 10, elem_lhs: Scalar(Int(I64)), elem_rhs: Scalar(Int(I64)), elem_out: Scalar(Int(I64)), matrix_layout_lhs: Contiguous, matrix_layout_rhs: Contiguous }, Analysis: MatmulAutotuneAnalysis { scale_global: Large, kind: General }
+2026-09-11T17:02:17.600105Z  INFO zkml_model_run{inputs=1 nodes=577}:zkml_layer_run{node_id=N4 op="einsum"}: cubecl_runtime::tune::tuner: Tuning MatmulAutotuneKey - Definition: MatmulProblemDefinition { m: 1024, n: 128, k: 64, lhs_pow2_factor: 4, lhs_stride_factor: 9, rhs_pow2_factor: 4, rhs_stride_factor: 9, elem_lhs: Scalar(Int(I64)), elem_rhs: Scalar(Int(I64)), elem_out: Scalar(Int(I64)), matrix_layout_lhs: Contiguous, matrix_layout_rhs: MildlyPermuted { transposed: true, batch_swap: false } }, Analysis: MatmulAutotuneAnalysis { scale_global: Medium, kind: General }
+2026-09-11T17:02:34.020214Z  INFO zkml_model_run{inputs=1 nodes=577}:zkml_layer_run{node_id=N8 op="softmax"}: cubecl_runtime::tune::tuner: Tuning ReduceAutotuneKey - ElemInput: Int(I64), ElemOutput: Int(I64), ElemAcc: Int(I64), AxisIsContiguous: true, VectorSize: 256, VectorCount: 4096
+2026-09-11T17:02:34.722136Z  INFO zkml_model_run{inputs=1 nodes=577}:zkml_layer_run{node_id=N8 op="softmax"}: cubecl_runtime::tune::tuner: Tuning FusedReduceAutotuneKey - ReduceKey: ReduceAutotuneKey { elem_input: Float(F32), elem_output: Float(F32), elem_acc: Float(F32), axis_is_contiguous: true, vector_size: 256, vector_count: 4096 }, FuseNumReads: 2, FuseNumWrites: 1, FuseNumOps: 2
+2026-09-11T17:02:35.415798Z  INFO zkml_model_run{inputs=1 nodes=577}:zkml_layer_run{node_id=N9 op="einsum"}: cubecl_runtime::tune::tuner: Tuning MatmulAutotuneKey - Definition: MatmulProblemDefinition { m: 1024, n: 64, k: 128, lhs_pow2_factor: 4, lhs_stride_factor: 8, rhs_pow2_factor: 4, rhs_stride_factor: 9, elem_lhs: Scalar(Int(I64)), elem_rhs: Scalar(Int(I64)), elem_out: Scalar(Int(I64)), matrix_layout_lhs: Contiguous, matrix_layout_rhs: Contiguous }, Analysis: MatmulAutotuneAnalysis { scale_global: Medium, kind: General }
+2026-09-11T17:02:50.288318Z  INFO zkml_model_run{inputs=1 nodes=577}:zkml_layer_run{node_id=N13 op="einsum"}: cubecl_runtime::tune::tuner: Tuning MatmulAutotuneKey - Definition: MatmulProblemDefinition { m: 128, n: 8192, k: 2048, lhs_pow2_factor: 4, lhs_stride_factor: 10, rhs_pow2_factor: 4, rhs_stride_factor: 10, elem_lhs: Scalar(Int(I64)), elem_rhs: Scalar(Int(I64)), elem_out: Scalar(Int(I64)), matrix_layout_lhs: Contiguous, matrix_layout_rhs: Contiguous }, Analysis: MatmulAutotuneAnalysis { scale_global: Large, kind: General }
+2026-09-11T17:02:50.472961Z  INFO zkml_model_run{inputs=1 nodes=577}:zkml_layer_run{node_id=N15 op="einsum"}: cubecl_runtime::tune::tuner: Tuning MatmulAutotuneKey - Definition: MatmulProblemDefinition { m: 128, n: 2048, k: 8192, lhs_pow2_factor: 4, lhs_stride_factor: 10, rhs_pow2_factor: 4, rhs_stride_factor: 10, elem_lhs: Scalar(Int(I64)), elem_rhs: Scalar(Int(I64)), elem_out: Scalar(Int(I64)), matrix_layout_lhs: Contiguous, matrix_layout_rhs: Contiguous }, Analysis: MatmulAutotuneAnalysis { scale_global: Large, kind: General }
+2026-09-11T17:02:50.995999Z  INFO zkml_model_run{inputs=1 nodes=577}:zkml_layer_run{node_id=N53 op="softmax"}: cubecl_runtime::tune::tuner: Tuning FusedReduceAutotuneKey - ReduceKey: ReduceAutotuneKey { elem_input: Float(F32), elem_output: Float(F32), elem_acc: Float(F32), axis_is_contiguous: true, vector_size: 256, vector_count: 4096 }, FuseNumReads: 1, FuseNumWrites: 1, FuseNumOps: 1
+2026-09-11T17:02:52.988235Z  INFO zkml_model_run{inputs=1 nodes=577}:zkml_layer_run{node_id=N333 op="einsum"}: cubecl_runtime::tune::tuner: Tuning MatmulAutotuneKey - Definition: MatmulProblemDefinition { m: 128, n: 32768, k: 2048, lhs_pow2_factor: 4, lhs_stride_factor: 10, rhs_pow2_factor: 4, rhs_stride_factor: 10, elem_lhs: Scalar(Int(I64)), elem_rhs: Scalar(Int(I64)), elem_out: Scalar(Int(I64)), matrix_layout_lhs: Contiguous, matrix_layout_rhs: MildlyPermuted { transposed: true, batch_swap: false } }, Analysis: MatmulAutotuneAnalysis { scale_global: Large, kind: General }
+2026-09-11T17:03:08.451898Z  INFO zkml::model::llm: packed inference: round 1/4, 96 tokens over 6 slots
+2026-09-11T17:03:11.523071Z  INFO zkml::model::llm: packed inference: round 2/4, 96 tokens over 6 slots
+2026-09-11T17:03:14.711478Z  INFO zkml::model::llm: packed inference: round 3/4, 96 tokens over 6 slots
+2026-09-11T17:03:17.805642Z  INFO zkml::model::llm: packed inference: round 4/4, 96 tokens over 6 slots
+[stage] 3/5 打包推理（锁步解码） ✓  用时 76.5s
+    槽位 0: prompt 4 token + 生成 4 token → ids [1, 450, 14744, 338, 263, 1781, 1734, 29889]
+    槽位 1: prompt 5 token + 生成 4 token → ids [1, 9038, 2501, 263, 931, 29889, 13, 1576, 1900]
+    槽位 2: prompt 6 token + 生成 4 token → ids [1, 450, 7483, 310, 3444, 338, 278, 29892, 29871, 13]
+    槽位 3: prompt 5 token + 生成 4 token → ids [1, 1619, 25448, 9687, 338, 263, 29871, 29896, 29900]
+    槽位 4: prompt 9 token + 生成 4 token → ids [1, 512, 278, 1629, 29871, 29906, 29900, 29945, 29900, 29889, 13, 13, 13]
+    槽位 5: prompt 5 token + 生成 4 token → ids [1, 13062, 1045, 2719, 472, 278, 29871, 29896, 29900]
+
+[stage] 4/5 sampled 证明（一份证明覆盖全部槽位） …
+2026-09-11T17:03:21.130770Z  INFO zkml::model::llm: Sealing chunk boundaries and proving the sampled subset
+2026-09-11T17:03:46.272036Z  WARN dp_crypto::sumcheck::util: thread size 30 is not power of 2, using 16 threads instead.
+[stage] 4/5 sampled 证明（一份证明覆盖全部槽位） ✓  用时 144.3s
+    → 封存 47 层, 证明其中 4 层
+    → 证明大小 3.20 MiB
+
+[stage] 5/5 sampled 验证 + 逐槽位 prompt/解码绑定 …
+[stage] 5/5 sampled 验证 + 逐槽位 prompt/解码绑定 ✓  用时 2.9s
+
+✅ 打包路径全部通过。总用时 640.3s；6 次推理共用 1 份证明，证明阶段 144.3s
