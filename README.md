@@ -1,5 +1,7 @@
 # SLP Proof-of-Concept Experiment Data
 
+**Project page:** [TrueOpen SLP proof-of-concept experiments](https://www.trueopen.ai/research/slp-poc/)
+
 Raw run logs and extracted data tables for the proof-of-concept phase of SLP (Sampled Layerwise Proofs), a verifiable-inference protocol for large language models, August–September 2026. The accompanying experiment report is `REPORT.md`.
 
 ## Layout
