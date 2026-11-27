@@ -1,5 +1,11 @@
 # Cryptographic verification — Proof-of-Concept Experiment Data
 
+**Open GPU network. Verifiable inference. Revenue for open-model creators.**
+
+一个提供可验证推理的开放算力网络，为开源模型作者创造收入
+
+[Website](https://trueopen.ai/) · [GitHub](https://github.com/TrueOpen) · [Hugging Face](https://huggingface.co/datasets/TrueOpenAI/lmcv-experiments)
+
 **Naming:** The public name is **Cryptographic verification** (中文：**密码学验证**). Published papers use **SLP**. Original reports, citations, filenames and repository URLs remain unchanged; the new name does not imply proof of unsampled computation.
 
 **Project page:** [trueopen.ai/research/slp-poc](https://www.trueopen.ai/research/slp-poc/)
