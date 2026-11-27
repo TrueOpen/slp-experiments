@@ -1,8 +1,10 @@
-# SLP Proof-of-Concept Experiment Data
+# Cryptographic verification — Proof-of-Concept Experiment Data
+
+**Naming:** The public name is **Cryptographic verification** (中文：**密码学验证**). Published papers use **SLP**. Original reports, citations, filenames and repository URLs remain unchanged; the new name does not imply proof of unsampled computation.
 
 **Project page:** [trueopen.ai/research/slp-poc](https://www.trueopen.ai/research/slp-poc/)
 
-Raw run logs and extracted data tables for the proof-of-concept phase of SLP (Sampled Layerwise Proofs), a verifiable-inference protocol for large language models, August–September 2026. The accompanying experiment report is `REPORT.md`.
+Raw run logs and extracted data tables for the proof-of-concept phase of **Cryptographic verification** (called SLP, Sampled Layerwise Proofs, in the published report), a verifiable-inference protocol for large language models, August–September 2026. The accompanying experiment report is `REPORT.md`.
 
 ## Layout
 
